@@ -6,18 +6,13 @@ import java.util.Map;
  * @author Ivo Willemsen
  * @version 1.0
  * Class that contains static methods to retrieve styles for text items and bitmap items
- * This abstract class encapsulates the other two concrete factories which are maintained in two
+ * This class encapsulates the two concrete factories which are maintained in two
  * static attributes.
  */
 public abstract class StyleFactory {
 
-    protected Map<Integer, Style> styles;
     private static BitmapStyleFactory bitmapStyleFactory = new BitmapStyleFactory();
     private static TextStyleFactory textStyleFactory = new TextStyleFactory();
-
-    protected Style getInstance(int level) {
-        return styles.get(level);
-    }
 
     /**
      * Retrieves the TextStyle associated with the level

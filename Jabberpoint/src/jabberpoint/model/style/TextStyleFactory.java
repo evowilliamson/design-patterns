@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Factory that, on initialization, constructs the available {@link BitmapStyle} objects
  */
-public class TextStyleFactory extends StyleFactory {
+public class TextStyleFactory extends BaseStyleFactory {
 
     TextStyleFactory() {
         styles = new HashMap<Integer, Style>();

@@ -16,7 +16,7 @@ public abstract class Style {
 
     /**
      * Constructor that creates a style. Accessor visibility should be package because only
-     * the {@link StyleFactory} should create Styles.
+     * the {@link BaseStyleFactory} concrete implementations should create Styles.
      * @param indent number of units that should be reserved as space X-wise.
      * @param leading number of units that should be reserved as space Y-wise.
      */

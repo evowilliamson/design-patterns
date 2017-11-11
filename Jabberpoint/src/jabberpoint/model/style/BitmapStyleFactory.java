@@ -1,12 +1,12 @@
 package jabberpoint.model.style;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
+ * @author Ivo Willemsen
  * Factory that, on initialization, constructs the available {@link BitmapStyle} objects
  */
-public class BitmapStyleFactory extends StyleFactory {
+public class BitmapStyleFactory extends BaseStyleFactory {
 
     BitmapStyleFactory() {
         styles = new HashMap<Integer, Style>();
