@@ -3,8 +3,6 @@ package jabberpoint.model.style;
 import java.util.Map;
 
 /**
- * @author Ivo Willemsen
- * @version 1.0
  * Class that contains static methods to retrieve styles for text items and bitmap items
  * This class encapsulates the two concrete factories which are maintained in two
  * static attributes.

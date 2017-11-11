@@ -1,8 +1,6 @@
 package jabberpoint.model.style;
 
 /**
- * @author Ivo Willemsen
- * @version 1.0
  * Abstract class for extending concrete implementations of different of style for
  * different type of drawable objects, like bitmaps, text, etc...
  *

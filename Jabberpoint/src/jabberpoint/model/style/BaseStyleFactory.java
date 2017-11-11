@@ -3,8 +3,6 @@ package jabberpoint.model.style;
 import java.util.Map;
 
 /**
- * @author Ivo Willemsen
- * @version 1.0
  * This abstract class is extended by concrete implementations that create the styles
  */
 public abstract class BaseStyleFactory {
