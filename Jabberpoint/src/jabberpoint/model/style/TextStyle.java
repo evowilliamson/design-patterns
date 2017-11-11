@@ -14,6 +14,9 @@ public class TextStyle extends Style {
 
     private Color color;
     private int fontSize;
+    private @NotNull Font font;
+
+    private static final String FONTNAME = "Helvetica";
 
     /**
      * Constructor that creates a style. Accessor visibility should be package because only
@@ -29,15 +32,22 @@ public class TextStyle extends Style {
             int indent,
             int leading) {
         super(indent, leading);
-
+        this.color = color;
+        this.fontSize = fontSize;
+        this.font = new Font(FONTNAME, Font.BOLD, fontSize);
     }
 
-    public Color getColor() {
-        return color;
+    /**
+     * Return the effective font
+     * @param scale the scale that is used
+     * @return the effective font
+     */
+    public Font getFont(float scale) {
+        return font.deriveFont(fontSize * scale);
     }
 
-    public int getFontSize() {
-        return fontSize;
+    @Override
+    public String toString() {
+        return "TextStyle{" + super.toString() + "color=" + color + ", fontSize=" + fontSize + '}';
     }
-
 }

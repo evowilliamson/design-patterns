@@ -15,7 +15,35 @@ public abstract class BaseStyleFactory {
      * @return instance of type Style
      */
     protected Style getInstance(int level) {
-        return styles.get(level);
+
+        Style style = styles.get(adjustLevel(level));
+        if (style == null) {
+            System.err.println("Styles not correctly configured");
+            System.exit(1);
+        }
+
+        return style;
+
     }
+
+    /**
+     * This method adjusts the level if not within boundaries
+     * @param level
+     * @return
+     */
+    private int adjustLevel(int level) {
+
+        if (level >= styles.size()) {
+            return styles.size() - 1;
+        }
+        else if (level < 0) {
+            return 0;
+        }
+        else {
+            return level;
+        }
+
+    }
+
 
 }

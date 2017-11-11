@@ -31,4 +31,8 @@ public abstract class Style {
         return leading;
     }
 
+    @Override
+    public String toString() {
+        return "Style{" + "indent=" + indent + ", leading=" + leading + '}';
+    }
 }

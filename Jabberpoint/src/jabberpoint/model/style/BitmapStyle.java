@@ -16,4 +16,9 @@ public class BitmapStyle extends Style {
     BitmapStyle(final int indent, final int leading) {
         super(indent, leading);
     }
+
+    @Override
+    public String toString() {
+        return "BitmapStyle{" + super.toString() + "}";
+    }
 }
