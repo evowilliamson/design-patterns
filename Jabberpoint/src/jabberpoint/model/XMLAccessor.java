@@ -1,3 +1,5 @@
+package jabberpoint.model;
+
 import java.util.Vector;
 import java.io.File;
 import java.io.IOException;

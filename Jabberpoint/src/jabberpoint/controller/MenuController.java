@@ -1,3 +1,10 @@
+package jabberpoint.controller;
+
+import jabberpoint.model.Accessor;
+import jabberpoint.model.Presentation;
+import jabberpoint.model.XMLAccessor;
+import jabberpoint.view.AboutBox;
+
 import java.awt.MenuBar;
 import java.awt.Frame;
 import java.awt.Menu;

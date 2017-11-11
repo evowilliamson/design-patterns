@@ -1,3 +1,5 @@
+package jabberpoint.model;
+
 import java.io.IOException;
 
 /**

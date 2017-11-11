@@ -1,3 +1,7 @@
+package jabberpoint.controller;
+
+import jabberpoint.model.Presentation;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
 
