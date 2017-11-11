@@ -4,12 +4,13 @@ import java.util.List;
 
 /**
  * SlideShow is the main class of the Model part of the MVC. It implements the
- * Singleton Pattern. It will make sure that only one instance is ever present
+ * Singleton Pattern. It will make sure that only one instance is ever present.
+ * This class delegates the drawing of the slide to the Slide class.
  */
 public class SlideShow {
     private static SlideShow instance = new SlideShow();
 
-    private List<SlideOld> slides;
+    private List<Slide> slides;
 
     private int currentSlideNumber;
 
@@ -24,11 +25,11 @@ public class SlideShow {
     }
 
     /**
-     * This method moves the slide show to the indicated slide number
+     * This method draws indicated slide number
      * @param slideNumber the slide number to which the slide show should advance
      */
-    public void goToSlide(int slideNumber) {
-
+    public void drawSlide(int slideNumber) {
+        this.getSlides().get(slideNumber).draw();
     }
 
     /**
@@ -39,11 +40,11 @@ public class SlideShow {
         return this.getSlides().size();
     }
 
-    public List<SlideOld> getSlides() {
+    public List<Slide> getSlides() {
         return slides;
     }
 
-    public void setSlides(final List<SlideOld> slides) {
+    public void setSlides(final List<Slide> slides) {
         this.slides = slides;
     }
 

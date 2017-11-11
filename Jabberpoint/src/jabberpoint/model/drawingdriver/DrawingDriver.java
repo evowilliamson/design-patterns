@@ -1,7 +1,7 @@
-package jabberpoint.model.drawingDriver;
+package jabberpoint.model.drawingdriver;
 
 import jabberpoint.model.Slide;
-import jabberpoint.model.SlideItem;
+import jabberpoint.model.slideitems.SlideItem;
 
 /**
  * DrawingDriver is the abstraction of different type of drawing interfaces that

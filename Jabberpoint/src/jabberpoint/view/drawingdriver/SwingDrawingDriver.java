@@ -1,4 +1,6 @@
-package jabberpoint.model.drawingDriver;
+package jabberpoint.view.drawingdriver;
+
+import jabberpoint.model.drawingdriver.DrawingDriver;
 
 /**
  * Implements the DrawingDriver contract for Swing API

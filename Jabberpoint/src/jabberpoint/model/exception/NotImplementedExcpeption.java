@@ -6,7 +6,9 @@ public class NotImplementedExcpeption extends RuntimeException {
      * Default constructor
      */
     public NotImplementedExcpeption() {
+
         super();
+        System.exit(1);
     }
 
     /**
@@ -16,6 +18,7 @@ public class NotImplementedExcpeption extends RuntimeException {
     public NotImplementedExcpeption(String message) {
 
         super(message);
+        System.exit(1);
 
     }
 

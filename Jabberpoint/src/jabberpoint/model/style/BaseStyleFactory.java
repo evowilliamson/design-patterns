@@ -1,5 +1,7 @@
 package jabberpoint.model.style;
 
+import jabberpoint.model.exception.ConfigurationException;
+
 import java.util.Map;
 
 /**
@@ -18,8 +20,7 @@ public abstract class BaseStyleFactory {
 
         Style style = styles.get(adjustLevel(level));
         if (style == null) {
-            System.err.println("Styles not correctly configured");
-            System.exit(1);
+            throw new ConfigurationException("Styles not correctly configured");
         }
 
         return style;
