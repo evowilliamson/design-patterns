@@ -1,7 +1,7 @@
 package jabberpoint.controller;
 
 import jabberpoint.model.Accessor;
-import jabberpoint.model.Presentation;
+import jabberpoint.model.PresentationOld;
 import jabberpoint.model.XMLAccessor;
 import jabberpoint.view.AboutBox;
 
@@ -28,7 +28,7 @@ import javax.swing.JOptionPane;
 public class MenuController extends MenuBar {
 	
 	private Frame parent; // het frame, alleen gebruikt als ouder voor de Dialogs
-	private Presentation presentation; // Er worden commando's gegeven aan de presentatie
+	private PresentationOld presentation; // Er worden commando's gegeven aan de presentatie
 	
 	private static final long serialVersionUID = 227L;
 	
@@ -52,7 +52,7 @@ public class MenuController extends MenuBar {
 	protected static final String LOADERR = "Load Error";
 	protected static final String SAVEERR = "Save Error";
 
-	public MenuController(Frame frame, Presentation pres) {
+	public MenuController(Frame frame, PresentationOld pres) {
 		parent = frame;
 		presentation = pres;
 		MenuItem menuItem;

@@ -1,7 +1,7 @@
 package jabberpoint.view;
 
-import jabberpoint.model.Presentation;
-import jabberpoint.model.Slide;
+import jabberpoint.model.PresentationOld;
+import jabberpoint.model.SlideOld;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,9 +24,9 @@ import javax.swing.JFrame;
 
 public class SlideViewerComponent extends JComponent {
 		
-	private Slide slide; // de huidige slide
+	private SlideOld slide; // de huidige slide
 	private Font labelFont = null; // het font voor labels
-	private Presentation presentation = null; // de presentatie
+	private PresentationOld presentation = null; // de presentatie
 	private JFrame frame = null;
 	
 	private static final long serialVersionUID = 227L;
@@ -39,7 +39,7 @@ public class SlideViewerComponent extends JComponent {
 	private static final int XPOS = 1100;
 	private static final int YPOS = 20;
 
-	public SlideViewerComponent(Presentation pres, JFrame frame) {
+	public SlideViewerComponent(PresentationOld pres, JFrame frame) {
 		setBackground(BGCOLOR); 
 		presentation = pres;
 		labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
@@ -47,10 +47,10 @@ public class SlideViewerComponent extends JComponent {
 	}
 
 	public Dimension getPreferredSize() {
-		return new Dimension(Slide.WIDTH, Slide.HEIGHT);
+		return new Dimension(SlideOld.WIDTH, SlideOld.HEIGHT);
 	}
 
-	public void update(Presentation presentation, Slide data) {
+	public void update(PresentationOld presentation, SlideOld data) {
 		if (data == null) {
 			repaint();
 			return;

@@ -1,6 +1,6 @@
 package jabberpoint.controller;
 
-import jabberpoint.model.Presentation;
+import jabberpoint.model.PresentationOld;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
@@ -16,9 +16,9 @@ import java.awt.event.KeyAdapter;
 */
 
 public class KeyController extends KeyAdapter {
-	private Presentation presentation; // Er worden commando's gegeven aan de presentatie
+	private PresentationOld presentation; // Er worden commando's gegeven aan de presentatie
 
-	public KeyController(Presentation p) {
+	public KeyController(PresentationOld p) {
 		presentation = p;
 	}
 

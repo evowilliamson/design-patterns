@@ -2,7 +2,7 @@ package jabberpoint.view;
 
 import jabberpoint.controller.KeyController;
 import jabberpoint.controller.MenuController;
-import jabberpoint.model.Presentation;
+import jabberpoint.model.PresentationOld;
 
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
@@ -27,7 +27,7 @@ public class SlideViewerFrame extends JFrame {
 	public final static int WIDTH = 1200;
 	public final static int HEIGHT = 800;
 	
-	public SlideViewerFrame(String title, Presentation presentation) {
+	public SlideViewerFrame(String title, PresentationOld presentation) {
 		super(title);
 		SlideViewerComponent slideViewerComponent = new SlideViewerComponent(presentation, this);
 		presentation.setShowView(slideViewerComponent);
@@ -36,7 +36,7 @@ public class SlideViewerFrame extends JFrame {
 
 // De GUI opzetten
 	public void setupWindow(SlideViewerComponent 
-			slideViewerComponent, Presentation presentation) {
+			slideViewerComponent, PresentationOld presentation) {
 		setTitle(JABTITLE);
 		addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent e) {

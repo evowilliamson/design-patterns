@@ -1,7 +1,7 @@
 package jabberpoint;
 
 import jabberpoint.model.Accessor;
-import jabberpoint.model.Presentation;
+import jabberpoint.model.PresentationOld;
 import jabberpoint.model.StyleOld;
 import jabberpoint.model.XMLAccessor;
 import jabberpoint.view.SlideViewerFrame;
@@ -33,7 +33,7 @@ public class JabberPoint {
 	public static void main(String argv[]) {
 		
 		StyleOld.createStyles();
-		Presentation presentation = new Presentation();
+		PresentationOld presentation = new PresentationOld();
 		new SlideViewerFrame(JABVERSION, presentation);
 		try {
 			if (argv.length == 0) { // een demo presentatie

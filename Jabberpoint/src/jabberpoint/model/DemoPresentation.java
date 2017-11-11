@@ -12,10 +12,10 @@ package jabberpoint.model;
 
 class DemoPresentation extends Accessor {
 
-	public void loadFile(Presentation presentation, String unusedFilename) {
+	public void loadFile(PresentationOld presentation, String unusedFilename) {
 		presentation.setTitle("Demo Presentation");
-		Slide slide;
-		slide = new Slide();
+		SlideOld slide;
+		slide = new SlideOld();
 		slide.setTitle("JabberPoint");
 		slide.append(1, "Het Java Presentatie Tool");
 		slide.append(2, "Copyright (c) 1996-2000: Ian Darwin");
@@ -29,7 +29,7 @@ class DemoPresentation extends Accessor {
 		slide.append(3, "Stoppen: q or Q");
 		presentation.append(slide);
 
-		slide = new Slide();
+		slide = new SlideOld();
 		slide.setTitle("Demonstratie van levels en stijlen");
 		slide.append(1, "Level 1");
 		slide.append(2, "Level 2");
@@ -40,7 +40,7 @@ class DemoPresentation extends Accessor {
 		slide.append(4, "En dit is level 4");
 		presentation.append(slide);
 
-		slide = new Slide();
+		slide = new SlideOld();
 		slide.setTitle("De derde slide");
 		slide.append(1, "Om een nieuwe presentatie te openen,");
 		slide.append(2, "gebruik File->Open uit het menu.");
@@ -50,7 +50,7 @@ class DemoPresentation extends Accessor {
 		presentation.append(slide);
 	}
 
-	public void saveFile(Presentation presentation, String unusedFilename) {
+	public void saveFile(PresentationOld presentation, String unusedFilename) {
 		throw new IllegalStateException("Save As->Demo! aangeroepen");
 	}
 }

@@ -17,18 +17,18 @@ import java.util.ArrayList;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class Presentation {
+public class PresentationOld {
 	private String showTitle; // de titel van de presentatie
-	private ArrayList<Slide> showList = null; // een ArrayList met de Slides
+	private ArrayList<SlideOld> showList = null; // een ArrayList met de Slides
 	private int currentSlideNumber = 0; // het slidenummer van de huidige Slide
 	private SlideViewerComponent slideViewComponent = null; // de viewcomponent voor de Slides
 
-	public Presentation() {
+	public PresentationOld() {
 		slideViewComponent = null;
 		clear();
 	}
 
-	public Presentation(SlideViewerComponent slideViewerComponent) {
+	public PresentationOld(SlideViewerComponent slideViewerComponent) {
 		this.slideViewComponent = slideViewerComponent;
 		clear();
 	}
@@ -78,25 +78,25 @@ public class Presentation {
 
 	// Verwijder de presentatie, om klaar te zijn voor de volgende
 	public void clear() {
-		showList = new ArrayList<Slide>();
+		showList = new ArrayList<SlideOld>();
 		setSlideNumber(-1);
 	}
 
 	// Voeg een slide toe aan de presentatie
-	public void append(Slide slide) {
+	public void append(SlideOld slide) {
 		showList.add(slide);
 	}
 
 	// Geef een slide met een bepaald slidenummer
-	public Slide getSlide(int number) {
+	public SlideOld getSlide(int number) {
 		if (number < 0 || number >= getSize()){
 			return null;
 	    }
-			return (Slide)showList.get(number);
+			return (SlideOld)showList.get(number);
 	}
 
 	// Geef de huidige Slide
-	public Slide getCurrentSlide() {
+	public SlideOld getCurrentSlide() {
 		return getSlide(currentSlideNumber);
 	}
 
