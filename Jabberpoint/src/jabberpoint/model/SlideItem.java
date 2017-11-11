@@ -33,9 +33,9 @@ public abstract class SlideItem {
 
 // Geef de bounding box
 	public abstract Rectangle getBoundingBox(Graphics g, 
-			ImageObserver observer, float scale, Style style);
+			ImageObserver observer, float scale, StyleOld style);
 
 // teken het item
 	public abstract void draw(int x, int y, float scale, 
-			Graphics g, Style style, ImageObserver observer);
+			Graphics g, StyleOld style, ImageObserver observer);
 }

@@ -5,6 +5,9 @@ package jabberpoint.model.style;
  * @version 1.0
  * Abstract class for extending concrete implementations of different of style for
  * different type of drawable objects, like bitmaps, text, etc...
+ *
+ * Setter are not implemented for this class, as after creating the styles, there won't
+ * be a need to change them.
  */
 public abstract class Style {
 
@@ -13,11 +16,11 @@ public abstract class Style {
 
     /**
      * Constructor that creates a style. Accessor visibility should be package because only
-     * the {@link}
-     * @param indent
-     * @param leading
+     * the {@link StyleFactory} should create Styles.
+     * @param indent number of units that should be reserved as space X-wise.
+     * @param leading number of units that should be reserved as space Y-wise.
      */
-    Style(int indent, int leading) {
+    Style(final int indent, final int leading) {
         this.indent = indent;
         this.leading = leading;
     }
@@ -26,16 +29,8 @@ public abstract class Style {
         return indent;
     }
 
-    public void setIndent(final int indent) {
-        this.indent = indent;
-    }
-
     public int getLeading() {
         return leading;
-    }
-
-    public void setLeading(final int leading) {
-        this.leading = leading;
     }
 
 }
