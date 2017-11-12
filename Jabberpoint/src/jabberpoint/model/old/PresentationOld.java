@@ -1,4 +1,4 @@
-package jabberpoint.model;
+package jabberpoint.model.old;
 
 import jabberpoint.view.SlideViewerComponent;
 

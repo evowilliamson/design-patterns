@@ -1,5 +1,7 @@
 package jabberpoint.model;
 
+import jabberpoint.model.old.PresentationOld;
+
 import java.io.IOException;
 
 /**

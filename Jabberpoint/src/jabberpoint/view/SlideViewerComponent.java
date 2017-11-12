@@ -1,7 +1,7 @@
 package jabberpoint.view;
 
-import jabberpoint.model.PresentationOld;
-import jabberpoint.model.SlideOld;
+import jabberpoint.model.old.PresentationOld;
+import jabberpoint.model.old.SlideOld;
 
 import java.awt.Color;
 import java.awt.Font;

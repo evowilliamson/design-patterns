@@ -10,6 +10,11 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import jabberpoint.model.old.BitmapItemOld;
+import jabberpoint.model.old.PresentationOld;
+import jabberpoint.model.old.SlideItemOld;
+import jabberpoint.model.old.SlideOld;
+import jabberpoint.model.old.TextItemOld;
 import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

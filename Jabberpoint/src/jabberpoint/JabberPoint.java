@@ -1,8 +1,8 @@
 package jabberpoint;
 
 import jabberpoint.model.Accessor;
-import jabberpoint.model.PresentationOld;
-import jabberpoint.model.StyleOld;
+import jabberpoint.model.old.PresentationOld;
+import jabberpoint.model.old.StyleOld;
 import jabberpoint.model.XMLAccessor;
 import jabberpoint.view.SlideViewerFrame;
 

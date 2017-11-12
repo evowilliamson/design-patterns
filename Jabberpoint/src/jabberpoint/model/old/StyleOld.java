@@ -1,4 +1,4 @@
-package jabberpoint.model;
+package jabberpoint.model.old;
 
 import java.awt.Color;
 import java.awt.Font;

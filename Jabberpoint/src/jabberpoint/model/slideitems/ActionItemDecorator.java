@@ -12,12 +12,23 @@ public abstract class ActionItemDecorator extends SlideItem {
     private Action action;
 
     /**
-     * Constructor that creates a SlideItem with a certain level
+     * Constructor that creates a action decorated SlideItem with a certain level
+     *
+     * Example:
+     * new ActionItemDecorator(
+     *      1,
+     *      new AbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.FIRST),
+     *      new ActionItemDecorator(
+     *          2,
+     *          new AuxilaryAction(AuxilaryAction.BEEP),
+     *          new TextItem(3, "Go to first slide")));
      *
      * @param level the level that is associated with the slide item
      */
-    public ActionItemDecorator(final int level) {
+    public ActionItemDecorator(final int level, Action action, SlideItem slideItem) {
         super(level);
+        this.action = action;
+        this.slideItem = slideItem;
     }
 
     @Override
@@ -28,8 +39,10 @@ public abstract class ActionItemDecorator extends SlideItem {
     public void draw() {
 
         if (action == null) {
-            /* Leaf level: No more other actions. So slideItem will be a concrete implementation.
-            This means that now the slide item should be decorated. */
+            /*
+             * Leaf level: No more other actions. So slideItem will be a concrete implementation.
+             * This means that now the slide item should be decorated.
+             */
             drawActionIndicator();
         }
         slideItem.draw();

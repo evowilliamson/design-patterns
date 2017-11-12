@@ -1,11 +1,14 @@
 package jabberpoint.model.accessor;
 
-import jabberpoint.model.BitmapItemOld;
 import jabberpoint.model.Slide;
-import jabberpoint.model.SlideOld;
 import jabberpoint.model.SlideShow;
+import jabberpoint.model.action.AbsoluteNavigationAction;
+import jabberpoint.model.action.AuxilaryAction;
 import jabberpoint.model.exception.NotImplementedExcpeption;
+import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
+import jabberpoint.model.slideitems.BorderActionIndicator;
+import jabberpoint.model.slideitems.NoActionIndicator;
 import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.model.util.Parameters;
 
@@ -26,7 +29,7 @@ public class DemoAccessor implements Accessor {
     public SlideShow load(final Parameters parameters) {
 
         // SlideShow is a singleton, so get the instance to work with
-        SlideShow slideShow = SlideShow.getInstance();
+        SlideShow slideShow = SlideShow.createInstance();
         slideShow.setName(parameters.getString(Parameters.Parameter.SLIDESHOW_NAME));
         slideShow.setTitle(DEMO_TITLE);
         Slide slide = new Slide("JabberPoint");
@@ -60,7 +63,31 @@ public class DemoAccessor implements Accessor {
         slide.addSlideItem(new BitmapItem(1, "JabberPoint.jpg"));
         slideShow.addSlide(slide);
 
+        slide = new Slide("De vierde slide");
+        slide.addSlideItem(new TextItem(1, "Deze slide bevat een Action"));
+        slide.addSlideItem(
+                new NoActionIndicator(1,
+                    new AbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.FIRST),
+                        new BorderActionIndicator(2,
+                                new AuxilaryAction(AuxilaryAction.Action.BEEP),
+                                    new TextItem(3, "Go to first slide"))));
+
+        slideShow.addSlide(slide);
+
         return slideShow;
 
     }
+
+    /**
+     * Testing
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        Parameters parameters = new Parameters();
+        parameters.setValue(Parameters.Parameter.SLIDESHOW_NAME, "Test");
+        SlideShow slideShow = new DemoAccessor().load(parameters);
+
+    }
+
 }

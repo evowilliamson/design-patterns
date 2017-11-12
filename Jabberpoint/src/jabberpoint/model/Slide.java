@@ -4,6 +4,7 @@ import jabberpoint.model.drawingdriver.DrawingDriver;
 import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  */
 public class Slide {
 
-    private List<SlideItem> slideItems;
+    private List<SlideItem> slideItems = new ArrayList<SlideItem>();
 
     private String title;
 

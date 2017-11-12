@@ -1,5 +1,6 @@
 package jabberpoint.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,21 @@ public class SlideShow {
     private int currentSlideNumber;
     private String title;
 
+    /**
+     * returns the static instance.
+     * @return
+     */
     public static SlideShow getInstance() {
+        return instance;
+    }
+
+    /**
+     * This method is used in case a new SlideShow is created. So the static instance
+     * should be refreshed.
+     * @return
+     */
+    public static SlideShow createInstance() {
+        instance = new SlideShow();
         return instance;
     }
 
@@ -24,6 +39,7 @@ public class SlideShow {
      * To prevent instantiation from outside the class, make the constructor private
      */
     private SlideShow() {
+        slides = new ArrayList<Slide>();
     }
 
     /**

@@ -2,7 +2,7 @@ package jabberpoint.view;
 
 import jabberpoint.controller.KeyController;
 import jabberpoint.controller.MenuController;
-import jabberpoint.model.PresentationOld;
+import jabberpoint.model.old.PresentationOld;
 
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
