@@ -11,6 +11,15 @@ public abstract class ActionItemDecorator extends SlideItem {
     private SlideItem slideItem;
     private Action action;
 
+    /**
+     * Constructor that creates a SlideItem with a certain level
+     *
+     * @param level the level that is associated with the slide item
+     */
+    public ActionItemDecorator(final int level) {
+        super(level);
+    }
+
     @Override
     /**
      * Decorator Pattern. It will first apply the decoration if this a leave decorator

@@ -42,7 +42,7 @@ public class SlideOld {
 
 	// Maak een TextItem van String, en voeg het TextItem toe
 	public void append(int level, String message) {
-		append(new TextItem(level, message));
+		append(new TextItemOld(level, message));
 	}
 
 	// geef het betreffende SlideItem
@@ -65,7 +65,7 @@ public class SlideOld {
 		float scale = getScale(area);
 	    int y = area.y;
 	// De titel wordt apart behandeld
-	    SlideItemOld slideItem = new TextItem(0, getTitle());
+	    SlideItemOld slideItem = new TextItemOld(0, getTitle());
 	    StyleOld style = StyleOld.getStyle(slideItem.getLevel());
 	    slideItem.draw(area.x, y, scale, g, style, view);
 	    y += slideItem.getBoundingBox(g, view, scale, style).height;

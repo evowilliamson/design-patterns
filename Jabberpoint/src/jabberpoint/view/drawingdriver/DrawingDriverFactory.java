@@ -15,13 +15,13 @@ public class DrawingDriverFactory {
     /**
      * Returns an instance of a {@link DrawingDriver}
      * 
-     * @return the instance
+     * @return the {@link DrawingDriver} instance
      */
     public static DrawingDriver getInstance() {
 
-        if (Configuration.getDrawingDriver().equals(Configuration.DrawingDriverConfig.SWING)) {
+        if (Configuration.getDrawingDriverConfig().equals(Configuration.DrawingDriverConfig.SWING)) {
             return SWING_DRAWING_DRIVER;
-        } else if (Configuration.getDrawingDriver().equals(Configuration.DrawingDriverConfig.JAVAFX)) {
+        } else if (Configuration.getDrawingDriverConfig().equals(Configuration.DrawingDriverConfig.JAVAFX)) {
             return JAVAFX_DRAWING_DRIVER;
         } else {
             throw new ConfigurationException("Incorrect DrawingDriver configuration");

@@ -35,7 +35,7 @@ public abstract class BaseStyleFactory {
     private int adjustLevel(int level) {
 
         if (level >= styles.size()) {
-            return styles.size() - 1;
+            return styles.size();
         }
         else if (level < 0) {
             return 0;

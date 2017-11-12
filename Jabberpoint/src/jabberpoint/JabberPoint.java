@@ -48,4 +48,5 @@ public class JabberPoint {
 					JOptionPane.ERROR_MESSAGE);
 		}
 	}
+
 }

@@ -22,7 +22,7 @@ import java.io.IOException;
  * @version 1.6 2014/05/16 Sylvia Stuurman
 */
 
-public class BitmapItem extends SlideItemOld {
+public class BitmapItemOld extends SlideItemOld {
   private BufferedImage bufferedImage;
   private String imageName;
   
@@ -30,7 +30,7 @@ public class BitmapItem extends SlideItemOld {
   protected static final String NOTFOUND = " niet gevonden";
 
 // level staat voor het item-level; name voor de naam van het bestand met de afbeelding
-	public BitmapItem(int level, String name) {
+	public BitmapItemOld(int level, String name) {
 		super(level);
 		imageName = name;
 		try {
@@ -42,7 +42,7 @@ public class BitmapItem extends SlideItemOld {
 	}
 
 // Een leeg bitmap-item
-	public BitmapItem() {
+	public BitmapItemOld() {
 		this(0, null);
 	}
 

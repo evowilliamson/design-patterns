@@ -103,11 +103,11 @@ public class XMLAccessor extends Accessor {
 		}
 		String type = attributes.getNamedItem(KIND).getTextContent();
 		if (TEXT.equals(type)) {
-			slide.append(new TextItem(level, item.getTextContent()));
+			slide.append(new TextItemOld(level, item.getTextContent()));
 		}
 		else {
 			if (IMAGE.equals(type)) {
-				slide.append(new BitmapItem(level, item.getTextContent()));
+				slide.append(new BitmapItemOld(level, item.getTextContent()));
 			}
 			else {
 				System.err.println(UNKNOWNTYPE);
@@ -131,14 +131,14 @@ public class XMLAccessor extends Accessor {
 			for (int itemNumber = 0; itemNumber<slideItems.size(); itemNumber++) {
 				SlideItemOld slideItem = (SlideItemOld) slideItems.elementAt(itemNumber);
 				out.print("<item kind="); 
-				if (slideItem instanceof TextItem) {
+				if (slideItem instanceof TextItemOld) {
 					out.print("\"text\" level=\"" + slideItem.getLevel() + "\">");
-					out.print( ( (TextItem) slideItem).getText());
+					out.print( ( (TextItemOld) slideItem).getText());
 				}
 				else {
-					if (slideItem instanceof BitmapItem) {
+					if (slideItem instanceof BitmapItemOld) {
 						out.print("\"image\" level=\"" + slideItem.getLevel() + "\">");
-						out.print( ( (BitmapItem) slideItem).getName());
+						out.print( ( (BitmapItemOld) slideItem).getName());
 					}
 					else {
 						System.out.println("Ignoring " + slideItem);

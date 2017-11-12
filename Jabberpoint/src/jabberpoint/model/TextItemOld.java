@@ -26,19 +26,19 @@ import java.util.ArrayList;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class TextItem extends SlideItemOld {
+public class TextItemOld extends SlideItemOld {
 	private String text;
 	
 	private static final String EMPTYTEXT = "No Text Given";
 
 // een textitem van level level, met als tekst string
-	public TextItem(int level, String string) {
+	public TextItemOld(int level, String string) {
 		super(level);
 		text = string;
 	}
 
 // een leeg textitem
-	public TextItem() {
+	public TextItemOld() {
 		this(0, EMPTYTEXT);
 	}
 

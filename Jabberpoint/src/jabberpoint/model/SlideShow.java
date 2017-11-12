@@ -12,7 +12,9 @@ public class SlideShow {
 
     private List<Slide> slides;
 
+    private String name;
     private int currentSlideNumber;
+    private String title;
 
     public static SlideShow getInstance() {
         return instance;
@@ -30,6 +32,14 @@ public class SlideShow {
      */
     public void drawSlide(int slideNumber) {
         this.getSlides().get(slideNumber).draw();
+    }
+
+    /**
+     * Adds a {@link Slide} to the slideshow
+     * @param slide the slide that will be added
+     */
+    public void addSlide(Slide slide) {
+        this.slides.add(slide);
     }
 
     /**
@@ -54,6 +64,22 @@ public class SlideShow {
 
     public void setCurrentSlideNumber(final int currentSlideNumber) {
         this.currentSlideNumber = currentSlideNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(final String name) {
+        this.name = name;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(final String title) {
+        this.title = title;
     }
 
 }

@@ -14,6 +14,12 @@ public class Slide {
 
     private List<SlideItem> slideItems;
 
+    private String title;
+
+    public Slide(String title) {
+        this.title = title;
+    }
+
     /**
      * Draws the slide via de {@link DrawingDriver}
      */
@@ -27,6 +33,14 @@ public class Slide {
 
     }
 
+    /**
+     * This method adds a slide item to the slide
+     * @param slideItem the item to be added
+     */
+    public void addSlideItem(SlideItem slideItem) {
+        slideItems.add(slideItem);
+    }
+
     public List<SlideItem> getSlideItems() {
         return slideItems;
     }
@@ -34,4 +48,13 @@ public class Slide {
     public void setSlideItems(final List<SlideItem> slideItems) {
         this.slideItems = slideItems;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(final String title) {
+        this.title = title;
+    }
+
 }
