@@ -18,7 +18,15 @@ public class SlideShow {
     private String title;
 
     /**
+     * To prevent instantiation from outside the class, make the constructor private
+     */
+    private SlideShow() {
+        slides = new ArrayList<Slide>();
+    }
+
+    /**
      * returns the static instance.
+     *
      * @return
      */
     public static SlideShow getInstance() {
@@ -28,6 +36,7 @@ public class SlideShow {
     /**
      * This method is used in case a new SlideShow is created. So the static instance
      * should be refreshed.
+     *
      * @return
      */
     public static SlideShow createInstance() {
@@ -36,15 +45,10 @@ public class SlideShow {
     }
 
     /**
-     * To prevent instantiation from outside the class, make the constructor private
-     */
-    private SlideShow() {
-        slides = new ArrayList<Slide>();
-    }
-
-    /**
      * This method draws indicated slide number
-     * @param slideNumber the slide number to which the slide show should advance
+     * 
+     * @param slideNumber
+     *            the slide number to which the slide show should advance
      */
     public void drawSlide(int slideNumber) {
         this.getSlides().get(slideNumber).draw();
@@ -52,7 +56,9 @@ public class SlideShow {
 
     /**
      * Adds a {@link Slide} to the slideshow
-     * @param slide the slide that will be added
+     * 
+     * @param slide
+     *            the slide that will be added
      */
     public void addSlide(Slide slide) {
         this.slides.add(slide);
@@ -60,6 +66,7 @@ public class SlideShow {
 
     /**
      * Return the number of slides in the slide show
+     * 
      * @return the number of slides in the slide show
      */
     public int getNumberOfSlides() {

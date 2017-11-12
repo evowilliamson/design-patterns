@@ -10,13 +10,23 @@ import jabberpoint.model.exception.NotImplementedExcpeption;
 public class JavaFXDrawingDriver implements DrawingDriver {
 
     @Override
-    public void drawSlide() {
+    public void prepareSlide() {
         throw new NotImplementedExcpeption("drawSlide() of " + this.getClass() + " not implemented");
     }
 
     @Override
     public void drawSlideItem() {
         throw new NotImplementedExcpeption("drawSlideItem() of " + this.getClass() + " not implemented");
+    }
+
+    @Override
+    public void initialize(String title) {
+        throw new NotImplementedExcpeption("initialize() of " + this.getClass() + " not implemented");
+    }
+
+    @Override
+    public void drawCurrentSlideNumber(final int slideNumber) {
+        throw new NotImplementedExcpeption("drawCurrentSlideNumber() of " + this.getClass() + " not implemented");
     }
 
 }

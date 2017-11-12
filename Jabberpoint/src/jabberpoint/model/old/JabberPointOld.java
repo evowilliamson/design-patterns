@@ -1,16 +1,11 @@
-package jabberpoint;
-
-import java.io.IOException;
-
-import javax.swing.*;
+package jabberpoint.model.old;
 
 import jabberpoint.model.Accessor;
 import jabberpoint.model.XMLAccessor;
-import jabberpoint.model.drawingdriver.DrawingDriver;
-import jabberpoint.model.old.PresentationOld;
-import jabberpoint.model.old.StyleOld;
-import jabberpoint.model.old.SlideViewerFrameOld;
-import jabberpoint.view.drawingdriver.DrawingDriverFactory;
+
+import javax.swing.JOptionPane;
+
+import java.io.IOException;
 
 /** JabberPoint Main Programma
  * <p>This program is distributed under the terms of the accompanying
@@ -24,21 +19,31 @@ import jabberpoint.view.drawingdriver.DrawingDriverFactory;
  * @version 1.4 2007/07/16 Sylvia Stuurman
  * @version 1.5 2010/03/03 Sylvia Stuurman
  * @version 1.6 2014/05/16 Sylvia Stuurman
- * @version 1.7 2017/11/12 Randy Pottgens, Ivo Willemsen
  */
 
-public class JabberPoint {
+public class JabberPointOld {
 	protected static final String IOERR = "IO Error: ";
 	protected static final String JABERR = "Jabberpoint Error ";
 	protected static final String JABVERSION = "Jabberpoint 1.6 - OU version";
 
-	private static final String TITLE = "Jabberpoint Slideshow";
-
+	/** Het Main Programma */
 	public static void main(String argv[]) {
-
-		DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
-		drawingDriver.initialize(TITLE);
-
+		
+		StyleOld.createStyles();
+		PresentationOld presentation = new PresentationOld();
+		new SlideViewerFrameOld(JABVERSION, presentation);
+		try {
+			if (argv.length == 0) { // een demo presentatie
+				Accessor.getDemoAccessor().loadFile(presentation, "");
+			} else {
+				new XMLAccessor().loadFile(presentation, argv[0]);
+			}
+			presentation.setSlideNumber(0);
+		} catch (IOException ex) {
+			JOptionPane.showMessageDialog(null,
+					IOERR + ex, JABERR,
+					JOptionPane.ERROR_MESSAGE);
+		}
 	}
 
 }

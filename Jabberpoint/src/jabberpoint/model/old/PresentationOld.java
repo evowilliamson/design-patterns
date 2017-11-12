@@ -1,7 +1,5 @@
 package jabberpoint.model.old;
 
-import jabberpoint.view.SlideViewerComponent;
-
 import java.util.ArrayList;
 
 
@@ -21,14 +19,14 @@ public class PresentationOld {
 	private String showTitle; // de titel van de presentatie
 	private ArrayList<SlideOld> showList = null; // een ArrayList met de Slides
 	private int currentSlideNumber = 0; // het slidenummer van de huidige Slide
-	private SlideViewerComponent slideViewComponent = null; // de viewcomponent voor de Slides
+	private SlideViewerComponentOld slideViewComponent = null; // de viewcomponent voor de Slides
 
 	public PresentationOld() {
 		slideViewComponent = null;
 		clear();
 	}
 
-	public PresentationOld(SlideViewerComponent slideViewerComponent) {
+	public PresentationOld(SlideViewerComponentOld slideViewerComponent) {
 		this.slideViewComponent = slideViewerComponent;
 		clear();
 	}
@@ -45,7 +43,7 @@ public class PresentationOld {
 		showTitle = nt;
 	}
 
-	public void setShowView(SlideViewerComponent slideViewerComponent) {
+	public void setShowView(SlideViewerComponentOld slideViewerComponent) {
 		this.slideViewComponent = slideViewerComponent;
 	}
 

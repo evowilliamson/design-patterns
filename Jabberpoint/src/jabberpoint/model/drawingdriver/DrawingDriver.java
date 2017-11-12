@@ -13,13 +13,25 @@ import jabberpoint.model.slideitems.SlideItem;
 public interface DrawingDriver {
 
     /**
-     * Contract that defines the draswing of a {@link Slide} onto a DrawingDriver implementation
+     * Contract that prepares the drawing of a {@link Slide}
      */
-    void drawSlide();
+    void prepareSlide();
 
     /**
      * Contract that defines the drawing of a {@link SlideItem} onto a DrawingDriver implementation
      */
     void drawSlideItem();
 
+    /**
+     * Initializes the drawing driver
+     *
+     * @param title the title to which the window should be set
+     */
+    void initialize(String title);
+
+    /**
+     * Method that draws the current slide number
+     * @param slideNumber
+     */
+    void drawCurrentSlideNumber(int slideNumber);
 }

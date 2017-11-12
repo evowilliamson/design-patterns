@@ -74,6 +74,8 @@ public class DemoAccessor implements Accessor {
 
         slideShow.addSlide(slide);
 
+        slideShow.setCurrentSlideNumber(1);
+
         return slideShow;
 
     }

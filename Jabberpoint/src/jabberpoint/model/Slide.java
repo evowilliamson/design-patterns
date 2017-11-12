@@ -27,7 +27,7 @@ public class Slide {
     public void draw() {
 
         DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
-        drawingDriver.drawSlide();
+        //drawingDriver.drawSlide();
         for (SlideItem slideItem : this.slideItems) {
             slideItem.draw();
         }

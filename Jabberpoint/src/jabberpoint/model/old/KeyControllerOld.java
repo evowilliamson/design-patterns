@@ -1,10 +1,9 @@
-package jabberpoint.controller;
+package jabberpoint.model.old;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
-import jabberpoint.model.SlideShow;
 import jabberpoint.model.old.PresentationOld;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
 
 /** <p>This is the KeyController (KeyListener)</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -16,11 +15,11 @@ import jabberpoint.model.old.PresentationOld;
  * @version 1.6 2014/05/16 Sylvia Stuurman
 */
 
-public class KeyController extends KeyAdapter {
-	private SlideShow slideShow = SlideShow.getInstance();
+public class KeyControllerOld extends KeyAdapter {
+	private PresentationOld presentation; // Er worden commando's gegeven aan de presentatie
 
-	public KeyController() {
-
+	public KeyControllerOld(PresentationOld p) {
+		presentation = p;
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
@@ -29,12 +28,12 @@ public class KeyController extends KeyAdapter {
 			case KeyEvent.VK_DOWN:
 			case KeyEvent.VK_ENTER:
 			case '+':
-				//presentation.nextSlide();
+				presentation.nextSlide();
 				break;
 			case KeyEvent.VK_PAGE_UP:
 			case KeyEvent.VK_UP:
 			case '-':
-				//presentation.prevSlide();
+				presentation.prevSlide();
 				break;
 			case 'q':
 			case 'Q':

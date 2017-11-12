@@ -1,13 +1,13 @@
 package jabberpoint.view;
 
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.*;
+
 import jabberpoint.controller.KeyController;
 import jabberpoint.controller.MenuController;
-import jabberpoint.model.old.PresentationOld;
-
-import java.awt.Dimension;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowAdapter;
-import javax.swing.JFrame;
 
 /**
  * <p>Het applicatiewindow voor een slideviewcomponent</p>
@@ -18,35 +18,33 @@ import javax.swing.JFrame;
  * @version 1.4 2007/07/16 Sylvia Stuurman
  * @version 1.5 2010/03/03 Sylvia Stuurman
  * @version 1.6 2014/05/16 Sylvia Stuurman
+ * @version 1.7 2017/11/12 Randy Pottgens, Ivo Willemsen
 */
 
 public class SlideViewerFrame extends JFrame {
 	private static final long serialVersionUID = 3227L;
 	
-	private static final String JABTITLE = "Jabberpoint 1.6 - OU";
-	public final static int WIDTH = 1200;
-	public final static int HEIGHT = 800;
-	
-	public SlideViewerFrame(String title, PresentationOld presentation) {
+	public final static int WIDTH_SCREEN = 1200;
+	public final static int HEIGHT_SCREEN = 800;
+
+	public SlideViewerFrame(String title) {
 		super(title);
-		SlideViewerComponent slideViewerComponent = new SlideViewerComponent(presentation, this);
-		presentation.setShowView(slideViewerComponent);
-		setupWindow(slideViewerComponent, presentation);
 	}
 
-// De GUI opzetten
-	public void setupWindow(SlideViewerComponent 
-			slideViewerComponent, PresentationOld presentation) {
-		setTitle(JABTITLE);
+	/**
+	 * Method that initializes the frame
+	 */
+	public void initialize(SlideViewerComponent slideViewerComponent) {
 		addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent e) {
 					System.exit(0);
 				}
 			});
 		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController(presentation)); // een controller toevoegen
-		setMenuBar(new MenuController(this, presentation));	// nog een controller toevoegen
-		setSize(new Dimension(WIDTH, HEIGHT)); // Dezelfde maten als Slide hanteert.
+		addKeyListener(new KeyController());
+		setMenuBar(new MenuController(this));
+		setSize(new Dimension(WIDTH_SCREEN, HEIGHT_SCREEN));
 		setVisible(true);
 	}
+
 }

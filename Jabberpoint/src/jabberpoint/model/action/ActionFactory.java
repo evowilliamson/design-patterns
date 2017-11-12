@@ -16,4 +16,8 @@ public class ActionFactory {
         return new AbsoluteNavigationAction(position);
     }
 
+    public static Action createOpenDemoSlideshowAction() {
+        return new OpenDemoSlideshowAction();
+    }
+
 }
