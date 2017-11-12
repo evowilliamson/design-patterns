@@ -8,11 +8,9 @@ import java.io.IOException;
 import javax.swing.*;
 
 import jabberpoint.model.Accessor;
-import jabberpoint.model.SlideShow;
+import jabberpoint.model.Slideshow;
 import jabberpoint.model.XMLAccessor;
-import jabberpoint.model.accessor.AccessorFactory;
 import jabberpoint.model.action.ActionFactory;
-import jabberpoint.model.util.Parameters;
 import jabberpoint.view.AboutBox;
 
 /** <p>De controller voor het menu</p>
@@ -27,7 +25,7 @@ import jabberpoint.view.AboutBox;
 public class MenuController extends MenuBar {
 
 	private Frame parent; // het frame, alleen gebruikt als ouder voor de Dialogs
-	private SlideShow slideShow; // Er worden commando's gegeven aan de presentatie
+	private Slideshow slideShow; // Er worden commando's gegeven aan de presentatie
 
 	private static final long serialVersionUID = 227L;
 
@@ -54,7 +52,7 @@ public class MenuController extends MenuBar {
 
 	public MenuController(Frame frame) {
 		parent = frame;
-		slideShow = SlideShow.getInstance();
+		slideShow = Slideshow.getInstance();
 		MenuItem menuItem;
 		Menu fileMenu = new Menu(FILE);
 		fileMenu.add(menuItem = mkMenuItem(OPEN_SOURCE));

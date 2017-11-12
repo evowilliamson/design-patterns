@@ -1,6 +1,6 @@
 package jabberpoint.model.action;
 
-import jabberpoint.model.SlideShow;
+import jabberpoint.model.Slideshow;
 import jabberpoint.model.accessor.AccessorFactory;
 import jabberpoint.model.util.Parameters;
 
@@ -13,7 +13,7 @@ public class OpenDemoSlideshowAction extends SlideshowAction {
     public void execute() {
         Parameters parameters = new Parameters();
         parameters.setValue(Parameters.Parameter.SLIDESHOW_NAME, "Demo Slideshow");
-        SlideShow slideShow = AccessorFactory.getInstance().load(parameters);
+        Slideshow slideShow = AccessorFactory.getInstance().load(parameters);
         slideShow.drawSlide(slideShow.getCurrentSlideNumber());
     }
 }

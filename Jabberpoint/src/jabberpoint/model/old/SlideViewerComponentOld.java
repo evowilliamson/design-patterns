@@ -28,7 +28,7 @@ public class SlideViewerComponentOld extends JComponent {
 	private Font labelFont = null; // het font voor labels
 	private PresentationOld presentation = null; // de presentatie
 	private JFrame frame = null;
-	
+
 	private static final long serialVersionUID = 227L;
 	
 	private static final Color BGCOLOR = Color.white;

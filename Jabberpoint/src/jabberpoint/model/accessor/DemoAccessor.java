@@ -1,11 +1,10 @@
 package jabberpoint.model.accessor;
 
 import jabberpoint.model.Slide;
-import jabberpoint.model.SlideShow;
+import jabberpoint.model.Slideshow;
 import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.AuxilaryAction;
 import jabberpoint.model.exception.NotImplementedExcpeption;
-import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.BorderActionIndicator;
 import jabberpoint.model.slideitems.NoActionIndicator;
@@ -13,7 +12,7 @@ import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.model.util.Parameters;
 
 /**
- * Demo accessor knows how to load and save a {@link SlideShow} to and from an in-memory structure.
+ * Demo accessor knows how to load and save a {@link Slideshow} to and from an in-memory structure.
  * the in-memory structure is a fixed, predefined structure
  */
 public class DemoAccessor implements Accessor {
@@ -21,15 +20,15 @@ public class DemoAccessor implements Accessor {
     private static final String DEMO_TITLE = "Demo Presentation";
 
     @Override
-    public void save(final Parameters parameters, final SlideShow slideShow) {
+    public void save(final Parameters parameters, final Slideshow slideShow) {
         throw new NotImplementedExcpeption("Saving a Demo slideshow is not implemented");
     }
 
     @Override
-    public SlideShow load(final Parameters parameters) {
+    public Slideshow load(final Parameters parameters) {
 
-        // SlideShow is a singleton, so get the instance to work with
-        SlideShow slideShow = SlideShow.createInstance();
+        // Create a new instance and store it in the Singleton Slideshow
+        Slideshow slideShow = Slideshow.createInstance();
         slideShow.setName(parameters.getString(Parameters.Parameter.SLIDESHOW_NAME));
         slideShow.setTitle(DEMO_TITLE);
         Slide slide = new Slide("JabberPoint");
@@ -88,7 +87,7 @@ public class DemoAccessor implements Accessor {
 
         Parameters parameters = new Parameters();
         parameters.setValue(Parameters.Parameter.SLIDESHOW_NAME, "Test");
-        SlideShow slideShow = new DemoAccessor().load(parameters);
+        Slideshow slideShow = new DemoAccessor().load(parameters);
 
     }
 

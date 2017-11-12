@@ -1,6 +1,6 @@
 package jabberpoint.model.action;
 
-import jabberpoint.model.SlideShow;
+import jabberpoint.model.Slideshow;
 
 /**
  * This class represents the action that has an absolute character, going to the
@@ -34,7 +34,7 @@ public class AbsoluteNavigationAction extends NavigationAction {
     @Override
     public void execute() {
 
-        SlideShow slideShow = SlideShow.getInstance();
+        Slideshow slideShow = Slideshow.getInstance();
         if (this.position == NavigationPosition.FIRST) {
             slideShow.drawSlide(0);
         }

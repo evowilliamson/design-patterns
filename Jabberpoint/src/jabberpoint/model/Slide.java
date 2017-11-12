@@ -27,7 +27,10 @@ public class Slide {
     public void draw() {
 
         DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
-        //drawingDriver.drawSlide();
+        drawingDriver.initializeSlide();
+        drawingDriver.drawCurrentSlideNumber(
+                Slideshow.getInstance().getCurrentSlideNumber());
+        drawingDriver.drawTitle(this.getTitle());
         for (SlideItem slideItem : this.slideItems) {
             slideItem.draw();
         }
@@ -44,10 +47,6 @@ public class Slide {
 
     public List<SlideItem> getSlideItems() {
         return slideItems;
-    }
-
-    public void setSlideItems(final List<SlideItem> slideItems) {
-        this.slideItems = slideItems;
     }
 
     public String getTitle() {

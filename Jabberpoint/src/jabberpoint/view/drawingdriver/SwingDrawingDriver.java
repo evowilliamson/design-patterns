@@ -16,20 +16,25 @@ public class SwingDrawingDriver implements DrawingDriver {
     }
 
     @Override
-    public void initialize(String title) {
+    public void initialize(final String title) {
         this.slideViewerFrame = new SlideViewerFrame(title);
         this.slideViewerComponent = new SlideViewerComponent(this.slideViewerFrame);
         this.slideViewerFrame.initialize(this.slideViewerComponent);
     }
 
     @Override
-    public void drawCurrentSlideNumber(final int slideNumber) {
-        this.slideViewerComponent.drawCurrentSlideNumber(slideNumber);
+    public void initializeSlide() {
+        this.slideViewerComponent.initializeSlideGraphics();
     }
 
     @Override
-    public void prepareSlide() {
-        this.slideViewerComponent.initializeSlideGraphics();
+    public void drawCurrentSlideNumber(final int currentSlideNumber) {
+        this.slideViewerComponent.drawCurrentSlideNumber(currentSlideNumber);
+    }
+
+    @Override
+    public void drawTitle(final String title) {
+        this.slideViewerComponent.drawTitle(title);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package jabberpoint.model.drawingdriver;
 
-import jabberpoint.model.Slide;
 import jabberpoint.model.slideitems.SlideItem;
 
 /**
@@ -13,25 +12,37 @@ import jabberpoint.model.slideitems.SlideItem;
 public interface DrawingDriver {
 
     /**
-     * Contract that prepares the drawing of a {@link Slide}
+     * Initializes the drawing driver
+     *
+     * @param title
+     *            the title to which the window should be set
      */
-    void prepareSlide();
+    void initialize(final String title);
+
+    /**
+     * Initializes the slide
+     */
+    void initializeSlide();
+
+    /**
+     * Draw the current slide number on the screen
+     * 
+     * @param currentSlideNumber
+     *            the current slide number
+     */
+    void drawCurrentSlideNumber(final int currentSlideNumber);
+
+    /**
+     * Draws the title on the screen
+     * 
+     * @param title
+     *            the title
+     */
+    void drawTitle(final String title);
 
     /**
      * Contract that defines the drawing of a {@link SlideItem} onto a DrawingDriver implementation
      */
     void drawSlideItem();
 
-    /**
-     * Initializes the drawing driver
-     *
-     * @param title the title to which the window should be set
-     */
-    void initialize(String title);
-
-    /**
-     * Method that draws the current slide number
-     * @param slideNumber
-     */
-    void drawCurrentSlideNumber(int slideNumber);
 }

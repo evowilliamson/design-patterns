@@ -3,8 +3,7 @@ package jabberpoint.controller;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import jabberpoint.model.SlideShow;
-import jabberpoint.model.old.PresentationOld;
+import jabberpoint.model.Slideshow;
 
 /** <p>This is the KeyController (KeyListener)</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -17,7 +16,7 @@ import jabberpoint.model.old.PresentationOld;
 */
 
 public class KeyController extends KeyAdapter {
-	private SlideShow slideShow = SlideShow.getInstance();
+	private Slideshow slideShow = Slideshow.getInstance();
 
 	public KeyController() {
 

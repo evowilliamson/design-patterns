@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * SlideShow is the main class of the Model part of the MVC. It implements the
+ * Slideshow is the main class of the Model part of the MVC. It implements the
  * Singleton Pattern. It will make sure that only one instance is ever present.
  * This class delegates the drawing of the slide to the Slide class.
  */
-public class SlideShow {
-    private static SlideShow instance = new SlideShow();
+public class Slideshow {
+    private static Slideshow instance = new Slideshow();
 
     private List<Slide> slides;
 
@@ -20,7 +20,7 @@ public class SlideShow {
     /**
      * To prevent instantiation from outside the class, make the constructor private
      */
-    private SlideShow() {
+    private Slideshow() {
         slides = new ArrayList<Slide>();
     }
 
@@ -29,7 +29,7 @@ public class SlideShow {
      *
      * @return
      */
-    public static SlideShow getInstance() {
+    public static Slideshow getInstance() {
         return instance;
     }
 
@@ -39,8 +39,8 @@ public class SlideShow {
      *
      * @return
      */
-    public static SlideShow createInstance() {
-        instance = new SlideShow();
+    public static Slideshow createInstance() {
+        instance = new Slideshow();
         return instance;
     }
 
