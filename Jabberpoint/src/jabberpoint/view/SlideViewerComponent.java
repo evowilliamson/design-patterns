@@ -5,6 +5,8 @@ import java.awt.font.FontRenderContext;
 import java.awt.font.LineBreakMeasurer;
 import java.awt.font.TextAttribute;
 import java.awt.font.TextLayout;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.ImageObserver;
 import java.text.AttributedString;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,10 +16,15 @@ import javax.swing.*;
 
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.old.PresentationOld;
-import jabberpoint.model.old.SlideItemOld;
 import jabberpoint.model.old.SlideOld;
 import jabberpoint.model.old.StyleOld;
-import jabberpoint.model.old.TextItemOld;
+import jabberpoint.model.slideitems.BitmapItem;
+import jabberpoint.model.slideitems.SlideItem;
+import jabberpoint.model.slideitems.TextItem;
+import jabberpoint.model.style.BitmapStyle;
+import jabberpoint.model.style.Style;
+import jabberpoint.model.style.StyleFactory;
+import jabberpoint.model.style.TextStyle;
 
 /**
  * <p>
@@ -43,9 +50,11 @@ public class SlideViewerComponent extends JComponent {
     private static final int FONTHEIGHT = 10;
     private static final int XPOS = 1100;
     private static final int YPOS = 20;
+    private static final int TITLE_LEVEL = 1;
+
     private Graphics graphics;
     private Rectangle area;
-    private int y;
+    private int adjustableY;
     private float scale;
     private SlideOld slide; // de huidige slide
     private Font labelFont = null; // het font voor labels
@@ -81,11 +90,12 @@ public class SlideViewerComponent extends JComponent {
     /**
      * Update the graphics object. This object will be used later when the text items and
      * bitmaps are printed on the screen.
-     * 
+     *
      * @param graphics
      */
     public void paintComponent(Graphics graphics) {
 
+        System.out.println("paintCommand");
         // Store refreshed graphics object as an attribute in "this" object
         this.graphics = graphics;
 
@@ -96,7 +106,9 @@ public class SlideViewerComponent extends JComponent {
         this.graphics.setColor(COLOR);
         this.area = new Rectangle(0, YPOS, getWidth(), (getHeight() - YPOS));
         this.scale = getScale(area);
-        this.y = area.y;
+        this.adjustableY = area.y;
+        Slideshow slideshow = Slideshow.getInstance();
+        slideshow.drawSlide(slideshow.getCurrentSlideNumber());
 
     }
 
@@ -106,48 +118,69 @@ public class SlideViewerComponent extends JComponent {
      */
     public void initializeSlideGraphics() {
 
+        System.out.println("repainting in component");
         repaint();
 
     }
 
     /**
      * This method draws the slide number on the screen
-     * 
-     * @param slideNumber
-     *            the slide number
+     *
+     * @param slideNumber the slide number
      */
     public void drawCurrentSlideNumber(int slideNumber) {
 
-        this.graphics.drawString("Slide " + (1 + slideNumber) + " of " +
-                slideShow.getNumberOfSlides(), XPOS, YPOS);
+        this.graphics.drawString("Slide " + (1 + slideNumber) + " of " + slideShow.getNumberOfSlides(),
+                XPOS, YPOS);
 
     }
 
     /**
      * Draws the title on the screen
-     * 
-     * @param title
-     *            the title
+     *
+     * @param title the title
      */
     public void drawTitle(String title) {
 
-        SlideItemOld slideItem = new TextItemOld(1, title);
-        StyleOld style = StyleOld.getStyle(slideItem.getLevel());
-        slideItem.draw(area.x, y, scale, this.graphics, style, this);
+        // Title is a text item with level 0
+        TextItem textItem = new TextItem(TITLE_LEVEL, title);
+        drawTextItem(textItem);
 
     }
 
-    /*
-    private void drawText(String text, int x, int y) {
+    public void drawTextItem(TextItem textItem) {
 
-        if (text == null || text.length() == 0) {
+        TextStyle style = StyleFactory.getTextStyle(textItem.getLevel());
+        this.drawText(textItem, style, this.area.x, adjustableY);
+        this.adjustableY += this.getBoundingBox(textItem, scale, style).height;
+
+    }
+
+    public void drawBitmapItem(BitmapItem bitmapItem) {
+
+        BitmapStyle style = StyleFactory.getBitmapStyle(bitmapItem.getLevel());
+        this.drawBitmap(bitmapItem, style, this.area.x, adjustableY);
+        this.adjustableY += this.getBoundingBox(bitmapItem, scale, style).height;
+
+    }
+
+    /**
+     * This method draws the text on the screen
+     *
+     * @param textItem the text item to be drawn
+     * @param style the style to be used
+     * @param x the X-coordinate
+     * @param y the Y-coordinate
+     */
+    private void drawText(TextItem textItem, TextStyle style, int x, int y) {
+
+        if (textItem.getText() == null || textItem.getText().length() == 0) {
             return;
         }
-        List<TextLayout> layouts = getLayouts(g, myStyle, scale);
-        Point pen = new Point(x + (int) (myStyle.indent * scale),
-                y + (int) (myStyle.leading * scale));
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(myStyle.color);
+        List<TextLayout> layouts = getLayouts(textItem.getText(), style, scale);
+        Point pen = new Point(x + (int) (style.getIndent() * scale), y + (int) (style.getLeading() * scale));
+        Graphics2D g2d = (Graphics2D) graphics;
+        g2d.setColor(style.getColor());
         Iterator<TextLayout> it = layouts.iterator();
         while (it.hasNext()) {
             TextLayout layout = it.next();
@@ -156,41 +189,91 @@ public class SlideViewerComponent extends JComponent {
             pen.y += layout.getDescent();
         }
 
-    }*/
+    }
 
-	private List<TextLayout> getLayouts(Graphics g, StyleOld s, float scale) {
-		List<TextLayout> layouts = new ArrayList<TextLayout>();
-		AttributedString attrStr = getAttributedString(s, scale);
-		Graphics2D g2d = (Graphics2D) g;
-		FontRenderContext frc = g2d.getFontRenderContext();
-		LineBreakMeasurer measurer = new LineBreakMeasurer(attrStr.getIterator(), frc);
+    private void drawBitmap(final BitmapItem bitmapItem, final BitmapStyle style,
+            final int x, final int y) {
 
-		int indent = 0;
+        int width = x + (int) (style.getIndent() * scale);
+        int height = y + (int) (style.getLeading() * scale);
+        this.graphics.drawImage(bitmapItem.getBufferedImage(), width, height,
+                (int) (bitmapItem.getBufferedImage().getWidth(this)*scale),
+                (int) (bitmapItem.getBufferedImage().getHeight(this)*scale), this);
 
-		//float wrappingWidth = (SlideOld.WIDTH - s.indent) * scale;
-		while (measurer.getPosition() < getText("vul text in").length()) {
-			//TextLayout layout = measurer.nextLayout(wrappingWidth);
-			//layouts.add(layout);
-		}
-		return layouts;
-	}
+    }
 
-	public AttributedString getAttributedString(StyleOld style, float scale) {
-		AttributedString attrStr = new AttributedString(getText("vul text in"));
-		attrStr.addAttribute(TextAttribute.FONT, style.getFont(scale), 0,
-				"vul text in".length());
-		return attrStr;
-	}
+    private List<TextLayout> getLayouts(final String text, final TextStyle style, final float scale) {
 
-	public String getText(String text) {
-		return text == null ? "" : text;
-	}
+        List<TextLayout> layouts = new ArrayList<TextLayout>();
+        AttributedString attrStr = getAttributedString(text, style, scale);
+        Graphics2D g2d = (Graphics2D) graphics;
+        FontRenderContext frc = g2d.getFontRenderContext();
+        LineBreakMeasurer measurer = new LineBreakMeasurer(attrStr.getIterator(), frc);
+        float wrappingWidth = (SlideOld.WIDTH - style.getIndent()) * scale;
+        while (measurer.getPosition() < getText(text).length()) {
+            TextLayout layout = measurer.nextLayout(wrappingWidth);
+            layouts.add(layout);
+        }
+        return layouts;
 
+    }
+
+    public AttributedString getAttributedString(final String text, final TextStyle style, final float scale) {
+
+        AttributedString attrStr = new AttributedString(getText(text));
+        attrStr.addAttribute(TextAttribute.FONT, style.getFont(scale), 0, text.length());
+        return attrStr;
+
+    }
+
+    /**
+     * Null-safe method to format text
+     *
+     * @param text the text
+     * @return the text or an empty string in case null
+     */
+    public String getText(String text) {
+
+        return text == null ? "" : text;
+
+    }
+
+    /**
+     * Calculates the scale of the rectangle
+     *
+     * @param area the area of the rectangle
+     * @return the calculated scale
+     */
     private float getScale(Rectangle area) {
 
-        return Math.min(
-                ((float) area.width) / ((float) WIDTH),
-                ((float) area.height) / ((float) HEIGHT));
+        return Math.min(((float) area.width) /
+                ((float) SlideViewerFrame.WIDTH_SCREEN), ((float) area.height) / ((float) SlideViewerFrame.HEIGHT_SCREEN));
+
+    }
+
+    private Rectangle getBoundingBox(TextItem textItem, float scale, TextStyle style) {
+        List<TextLayout> layouts = getLayouts(textItem.getText(), style, scale);
+        int xsize = 0, ysize = (int) (style.getLeading() * scale);
+        Iterator<TextLayout> iterator = layouts.iterator();
+        while (iterator.hasNext()) {
+            TextLayout layout = iterator.next();
+            Rectangle2D bounds = layout.getBounds();
+            // fsdfklkdf ldkf d
+            int a = 0;
+            if (bounds.getWidth() > xsize) {
+                xsize = (int) bounds.getWidth();
+            }
+            if (bounds.getHeight() > 0) {
+                ysize += bounds.getHeight();
+            }
+            ysize += layout.getLeading() + layout.getDescent();
+        }
+        return new Rectangle((int) (style.getIndent() * scale), 0, xsize, ysize);
+    }
+
+    public Rectangle getBoundingBox(BitmapItem bitmapItem, float scale, BitmapStyle style) {
+        return new Rectangle((int) (style.getIndent() * scale), 0, (int) (bitmapItem.getBufferedImage().getWidth(this) * scale),
+                ((int) (style.getLeading() * scale)) + (int) (bitmapItem.getBufferedImage().getHeight(this) * scale));
 
     }
 

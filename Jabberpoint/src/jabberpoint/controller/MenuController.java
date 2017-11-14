@@ -10,8 +10,11 @@ import javax.swing.*;
 import jabberpoint.model.Accessor;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.XMLAccessor;
+import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.ActionFactory;
+import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.view.AboutBox;
+import jabberpoint.view.SlideViewerComponent;
 
 /** <p>De controller voor het menu</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -38,7 +41,7 @@ public class MenuController extends MenuBar {
 	protected static final String NEXT = "Next";
 	protected static final String OPEN_SOURCE = "Open...";
 	protected static final String OPEN_DEMO = "Open configured demo";
-	protected static final String PAGENR = "Page number?";
+	protected static final String SLIDE_NUMBER = "Enter the slide number to navigate to";
 	protected static final String PREV = "Prev";
 	protected static final String SAVE = "Save";
 	protected static final String VIEW = "View";
@@ -50,7 +53,12 @@ public class MenuController extends MenuBar {
 	protected static final String LOADERR = "Load Error";
 	protected static final String SAVEERR = "Save Error";
 
-	public MenuController(Frame frame) {
+	/**
+	 * Constructor that builds the menu controller
+	 * @param frame the frame that owns the composite drawing component
+	 * @param component the composite drawing component
+	 */
+	public MenuController(Frame frame, final SlideViewerComponent component) {
 		parent = frame;
 		slideShow = Slideshow.getInstance();
 		MenuItem menuItem;
@@ -75,6 +83,7 @@ public class MenuController extends MenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createOpenDemoSlideshowAction().execute();
+				System.out.println("repainting in MenuController");
 				parent.repaint();
 			}
 		} );
@@ -110,21 +119,25 @@ public class MenuController extends MenuBar {
 		viewMenu.add(menuItem = mkMenuItem(NEXT));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				//presentation.nextSlide();
+				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
+				parent.repaint();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(PREV));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				//presentation.prevSlide();
+				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
+				parent.repaint();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(GOTO));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				String pageNumberStr = JOptionPane.showInputDialog((Object)PAGENR);
-				int pageNumber = Integer.parseInt(pageNumberStr);
-				//presentation.setSlideNumber(pageNumber - 1);
+				int slideNumber = Integer.parseInt(JOptionPane.showInputDialog((Object) SLIDE_NUMBER)) - 1;
+				if (Slideshow.getInstance().isCorrectSlideNumber(slideNumber)) {
+					ActionFactory.createAbsoluteNavigationAction(slideNumber ).execute();
+				}
+				parent.repaint();
 			}
 		});
 		add(viewMenu);

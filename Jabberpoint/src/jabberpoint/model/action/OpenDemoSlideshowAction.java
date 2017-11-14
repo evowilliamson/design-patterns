@@ -13,7 +13,8 @@ public class OpenDemoSlideshowAction extends SlideshowAction {
     public void execute() {
         Parameters parameters = new Parameters();
         parameters.setValue(Parameters.Parameter.SLIDESHOW_NAME, "Demo Slideshow");
-        Slideshow slideShow = AccessorFactory.getInstance().load(parameters);
-        slideShow.drawSlide(slideShow.getCurrentSlideNumber());
+        AccessorFactory.getDemoAccessor().load(parameters);
+        Slideshow slideShow = Slideshow.getInstance();
+        slideShow.setCurrentSlideNumber(Slideshow.FIRST_SLIDE);
     }
 }

@@ -9,13 +9,33 @@ public class ActionFactory {
     /**
      * This method creates a new {@link AbsoluteNavigationAction}.
      * @param position indicates the type of the {@link AbsoluteNavigationAction}, which can be
-     *                 FIRST, LAST or INDEX
+     *                 FIRST or LAST
      * @return the created action
      */
     public static Action createAbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition position) {
         return new AbsoluteNavigationAction(position);
     }
 
+    /**
+     * This method creates a new {@link AbsoluteNavigationAction} and specifies the slide number to move to
+     * @param slideNumber the number of the slide to navigate to
+     * @return the created action
+     */
+    public static Action createAbsoluteNavigationAction(
+            final int slideNumber) {
+        AbsoluteNavigationAction action = new AbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.INDEX);
+        action.setSlideNumber(slideNumber);
+        return action;
+    }
+
+    public static Action createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection direction) {
+        return new RelativeNavigationAction(direction);
+    }
+
+    /**
+     * This factory method creates a new {@link OpenDemoSlideshowAction}.
+     * @return the created action
+     */
     public static Action createOpenDemoSlideshowAction() {
         return new OpenDemoSlideshowAction();
     }

@@ -22,17 +22,12 @@ public abstract class SlideItem {
     /**
      * This method draws the slide item through the {@link DrawingDriver}
      */
-    public void draw() {
+    public abstract void draw();
 
-        DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
-        drawingDriver.drawSlideItem();
-
-    }
-
+    // Getters/Setters:
     public int getLevel() {
         return level;
     }
-
     public void setLevel(final int level) {
         this.level = level;
     }

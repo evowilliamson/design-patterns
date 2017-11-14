@@ -1,6 +1,10 @@
 package jabberpoint.model.drawingdriver;
 
+import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
+import jabberpoint.model.slideitems.TextItem;
+
+import javax.xml.soap.Text;
 
 /**
  * DrawingDriver is the abstraction of different type of drawing interfaces that
@@ -41,8 +45,16 @@ public interface DrawingDriver {
     void drawTitle(final String title);
 
     /**
-     * Contract that defines the drawing of a {@link SlideItem} onto a DrawingDriver implementation
+     * Contract that defines the drawing of a {@link jabberpoint.model.slideitems.TextItem}
+     * onto a DrawingDriver implementation
+     * @param textItem the text item
      */
-    void drawSlideItem();
+    void drawTextItem(final TextItem textItem);
+
+    /**
+     * Contract that defines the drawing of a {@link jabberpoint.model.slideitems.BitmapItem}
+     * @param bitmapItem the bitmap item
+     */
+    void drawBitmapItem(final BitmapItem bitmapItem);
 
 }

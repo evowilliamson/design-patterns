@@ -1,5 +1,8 @@
 package jabberpoint.model.slideitems;
 
+import jabberpoint.model.drawingdriver.DrawingDriver;
+import jabberpoint.view.drawingdriver.DrawingDriverFactory;
+
 public class TextItem extends SlideItem {
 
     private String text;
@@ -17,7 +20,12 @@ public class TextItem extends SlideItem {
 
     @Override
     public void draw() {
-        super.draw();
-
+        DrawingDriverFactory.getInstance().drawTextItem(this);
     }
+
+    // Getters/Setters:
+    public String getText() {
+        return text;
+    }
+
 }

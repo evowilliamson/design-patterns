@@ -11,8 +11,8 @@ import jabberpoint.view.drawingdriver.SwingDrawingDriver;
  */
 public class AccessorFactory {
 
-    private static final Accessor DEMO_ACCESSOR = new DemoAccessor();
-    private static final Accessor XML_ACCESSOR = new XMLAccessor();
+    private static final DemoAccessor DEMO_ACCESSOR = new DemoAccessor();
+    private static final XMLAccessor XML_ACCESSOR = new XMLAccessor();
 
     /**
      * Returns an instance of a {@link Accessor}
@@ -21,14 +21,16 @@ public class AccessorFactory {
      */
     public static Accessor getInstance() {
 
-        if (Configuration.getAccessorConfig().equals(Configuration.AccessorConfig.DEMO)) {
-            return DEMO_ACCESSOR;
-        } else if (Configuration.getAccessorConfig().equals(Configuration.AccessorConfig.XML)) {
+        if (Configuration.getAccessorConfig().equals(Configuration.AccessorConfig.XML)) {
             return XML_ACCESSOR;
         } else {
             throw new ConfigurationException("Incorrect Accessor configuration");
         }
 
+    }
+
+    public static DemoAccessor getDemoAccessor() {
+        return DEMO_ACCESSOR;
     }
 
 }

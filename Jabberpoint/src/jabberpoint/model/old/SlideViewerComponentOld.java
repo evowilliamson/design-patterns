@@ -52,17 +52,20 @@ public class SlideViewerComponentOld extends JComponent {
 
 	public void update(PresentationOld presentation, SlideOld data) {
 		if (data == null) {
+			System.out.println("repainting in component");
 			repaint();
 			return;
 		}
 		this.presentation = presentation;
 		this.slide = data;
+		System.out.println("repainting in component");
 		repaint();
 		frame.setTitle(presentation.getTitle());
 	}
 
 // teken de slide
 	public void paintComponent(Graphics g) {
+		System.out.println("paintCommand");
 		g.setColor(BGCOLOR);
 		g.fillRect(0, 0, getSize().width, getSize().height);
 		if (presentation.getSlideNumber() < 0 || slide == null) {

@@ -26,14 +26,15 @@ public class Slide {
      */
     public void draw() {
 
+        System.out.println("drawing slide");
         DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
-        drawingDriver.initializeSlide();
         drawingDriver.drawCurrentSlideNumber(
                 Slideshow.getInstance().getCurrentSlideNumber());
         drawingDriver.drawTitle(this.getTitle());
         for (SlideItem slideItem : this.slideItems) {
             slideItem.draw();
         }
+        System.out.println("drawing finished");
 
     }
 

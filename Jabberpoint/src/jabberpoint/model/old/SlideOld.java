@@ -62,6 +62,7 @@ public class SlideOld {
 
 	// teken de slide
 	public void draw(Graphics g, Rectangle area, ImageObserver view) {
+		System.out.println("drawing slide");
 		float scale = getScale(area);
 	    int y = area.y;
 	// De titel wordt apart behandeld
@@ -75,6 +76,7 @@ public class SlideOld {
 	      slideItem.draw(area.x, y, scale, g, style, view);
 	      y += slideItem.getBoundingBox(g, view, scale, style).height;
 	    }
+		System.out.println("drawing finished");
 	  }
 
 	// geef de schaal om de slide te kunnen tekenen

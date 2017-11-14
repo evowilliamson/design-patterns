@@ -50,4 +50,29 @@ public class TextStyle extends Style {
     public String toString() {
         return "TextStyle{" + super.toString() + "color=" + color + ", fontSize=" + fontSize + '}';
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(final Color color) {
+        this.color = color;
+    }
+
+    public int getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(final int fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    public Font getFont() {
+        return font;
+    }
+
+    public void setFont(final Font font) {
+        this.font = font;
+    }
+
 }

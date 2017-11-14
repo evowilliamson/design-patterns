@@ -1,5 +1,6 @@
 package jabberpoint.model.action;
 
+import jabberpoint.model.Slide;
 import jabberpoint.model.Slideshow;
 
 /**
@@ -36,13 +37,14 @@ public class AbsoluteNavigationAction extends NavigationAction {
 
         Slideshow slideShow = Slideshow.getInstance();
         if (this.position == NavigationPosition.FIRST) {
-            slideShow.drawSlide(0);
+            slideShow.setCurrentSlideNumber(Slideshow.FIRST_SLIDE);
         }
         else if (this.position == NavigationPosition.LAST) {
-            slideShow.drawSlide(slideShow.getNumberOfSlides() - 1);
+            slideShow.setCurrentSlideNumber(slideShow.getNumberOfSlides() - 1);
         }
         else if (this.position == NavigationPosition.INDEX) {
-            slideShow.drawSlide(this.slideNumber);
+
+            slideShow.setCurrentSlideNumber(this.slideNumber);
         }
 
     }

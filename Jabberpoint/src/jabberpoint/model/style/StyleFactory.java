@@ -1,5 +1,6 @@
 package jabberpoint.model.style;
 
+import javax.xml.soap.Text;
 import java.util.Map;
 
 /**
@@ -17,8 +18,8 @@ public abstract class StyleFactory {
      * @param level
      * @return The BitmapStyle associated with the level
      */
-    public static Style getBitmapStyle(int level) {
-        return bitmapStyleFactory.getInstance(level);
+    public static BitmapStyle getBitmapStyle(int level) {
+        return (BitmapStyle) bitmapStyleFactory.getInstance(level);
     }
 
     /**
@@ -26,8 +27,8 @@ public abstract class StyleFactory {
      * @param level
      * @return The TextStyle associated with the level
      */
-    public static Style getTextStyle(int level) {
-        return textStyleFactory.getInstance(level);
+    public static TextStyle getTextStyle(int level) {
+        return (TextStyle) textStyleFactory.getInstance(level);
     }
 
 }

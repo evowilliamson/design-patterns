@@ -11,6 +11,8 @@ import java.util.List;
 public class Slideshow {
     private static Slideshow instance = new Slideshow();
 
+    public static final int FIRST_SLIDE = 0;
+
     private List<Slide> slides;
 
     private String name;
@@ -62,6 +64,45 @@ public class Slideshow {
      */
     public void addSlide(Slide slide) {
         this.slides.add(slide);
+    }
+
+
+    /**
+     * Checks to see if the current slide is the last slide in the {@link Slideshow}.
+     * @return true if it is the last slide, otherwise no
+     */
+    public boolean isCurrentSlideLastSlide() {
+
+        if (this.getNumberOfSlides() - 1 == this.getCurrentSlideNumber()) {
+            return true;
+        }
+        return false;
+
+    }
+
+    /**
+     * Checks to see if the current slide is the first slide in the {@link Slideshow}.
+     * @return true if it is the last slide, otherwise no
+     */
+    public boolean isCurrentSlideFirstSlide() {
+
+        if (this.getCurrentSlideNumber() == Slideshow.FIRST_SLIDE) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Checks to see if the indicated index slide number can be navigated to
+     * not available
+     * @param slideNumber the slide number
+     * @return true if a move to the next slide is OK, otherwise, false
+     */
+    public boolean isCorrectSlideNumber(int slideNumber) {
+        if (slideNumber >= FIRST_SLIDE && slideNumber <= this.getNumberOfSlides() - 1) {
+            return true;
+        }
+        return false;
     }
 
     /**

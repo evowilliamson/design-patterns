@@ -1,6 +1,8 @@
 package jabberpoint.view.drawingdriver;
 
 import jabberpoint.model.drawingdriver.DrawingDriver;
+import jabberpoint.model.slideitems.BitmapItem;
+import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.view.SlideViewerComponent;
 import jabberpoint.view.SlideViewerFrame;
 
@@ -38,8 +40,13 @@ public class SwingDrawingDriver implements DrawingDriver {
     }
 
     @Override
-    public void drawSlideItem() {
+    public void drawTextItem(final TextItem textItem) {
+        this.slideViewerComponent.drawTextItem(textItem);
+    }
 
+    @Override
+    public void drawBitmapItem(final BitmapItem bitmapItem) {
+        this.slideViewerComponent.drawBitmapItem(bitmapItem);
     }
 
 }
