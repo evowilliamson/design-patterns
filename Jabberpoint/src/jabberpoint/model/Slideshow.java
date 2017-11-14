@@ -26,6 +26,28 @@ public class Slideshow extends CompositeSlideShowComponent {
         slides = new ArrayList<CompositeSlideShowComponent>();
     }
 
+    // Composite Design Pattern implementations
+
+    @Override
+    public void draw() {
+        this.getComponent(this.getCurrentSlideNumber()).draw();
+    }
+
+    @Override
+    public CompositeSlideShowComponent getComponent(final int i) {
+        return slides.get(i);
+    }
+
+    @Override
+    public int getComponentCount() {
+        return slides.size();
+    }
+
+    @Override
+    public void addComponent(final CompositeSlideShowComponent component) {
+        this.slides.add(component);
+    }
+
     /**
      * returns the static instance.
      *
@@ -120,26 +142,6 @@ public class Slideshow extends CompositeSlideShowComponent {
 
     public void setTitle(final String title) {
         this.title = title;
-    }
-
-    @Override
-    public void draw() {
-        this.getComponent(this.getCurrentSlideNumber()).draw();
-    }
-
-    @Override
-    public CompositeSlideShowComponent getComponent(final int i) {
-        return slides.get(i);
-    }
-
-    @Override
-    public int getComponentCount() {
-        return slides.size();
-    }
-
-    @Override
-    public void addComponent(final CompositeSlideShowComponent component) {
-        this.slides.add(component);
     }
 
 }

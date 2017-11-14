@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48153e5b-6bde-457e-b791-991d173f967c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jabberpoint/model/CompositeSlideShowComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../VerslagWord/eindeopdracht.eap" afterPath="$PROJECT_DIR$/../VerslagWord/eindeopdracht.eap" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/BorderActionIndicator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/NoActionIndicator.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/controller/KeyController.java" afterPath="$PROJECT_DIR$/src/jabberpoint/controller/KeyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/controller/MenuController.java" afterPath="$PROJECT_DIR$/src/jabberpoint/controller/MenuController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/DemoPresentation.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/DemoPresentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/Slide.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/Slide.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/view/SlideViewerComponent.java" afterPath="$PROJECT_DIR$/src/jabberpoint/view/SlideViewerComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/view/SlideViewerFrame.java" afterPath="$PROJECT_DIR$/src/jabberpoint/view/SlideViewerFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,34 +60,38 @@
       <file leaf-file-name="Slideshow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="136" column="28" lean-forward="false" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
+            <state relative-caret-position="588">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="e#1453#1454#0" expanded="true" />
-                <element signature="e#1509#1510#0" expanded="true" />
-                <element signature="e#2702#2703#0" expanded="true" />
-                <element signature="e#2731#2732#0" expanded="true" />
-                <element signature="e#2773#2774#0" expanded="true" />
-                <element signature="e#2814#2815#0" expanded="true" />
-                <element signature="e#3263#3264#0" expanded="true" />
-                <element signature="e#3333#3334#0" expanded="true" />
-                <element signature="e#3415#3416#0" expanded="true" />
-                <element signature="e#3451#3452#0" expanded="true" />
-                <element signature="e#3503#3504#0" expanded="true" />
-                <element signature="e#3539#3540#0" expanded="true" />
-                <element signature="e#3630#3631#0" expanded="true" />
-                <element signature="e#3672#3673#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#977#978#0" expanded="true" />
+                <element signature="e#1059#1060#0" expanded="true" />
+                <element signature="e#1095#1096#0" expanded="true" />
+                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="e#1183#1184#0" expanded="true" />
+                <element signature="e#1274#1275#0" expanded="true" />
+                <element signature="e#1316#1317#0" expanded="true" />
+                <element signature="e#1951#1952#0" expanded="true" />
+                <element signature="e#2007#2008#0" expanded="true" />
+                <element signature="e#3200#3201#0" expanded="true" />
+                <element signature="e#3229#3230#0" expanded="true" />
+                <element signature="e#3271#3272#0" expanded="true" />
+                <element signature="e#3312#3313#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompositeSlideShowComponent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/CompositeSlideShowComponent.java">
+      <file leaf-file-name="ActionItemDecorator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="215">
+              <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slide.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="e#483#512#0" expanded="true" />
                 <element signature="e#759#760#0" expanded="true" />
@@ -132,42 +130,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SlideItem.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SlideItem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="22" column="51" lean-forward="false" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+            <state relative-caret-position="457">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#663#664#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1091#1092#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1235#1236#0" expanded="true" />
+                <element signature="e#527#535#0" expanded="true" />
+                <element signature="e#748#749#0" expanded="true" />
+                <element signature="e#782#783#0" expanded="true" />
+                <element signature="e#1209#1210#0" expanded="true" />
+                <element signature="e#1236#1237#0" expanded="true" />
+                <element signature="e#1364#1365#0" expanded="true" />
+                <element signature="e#1388#1389#0" expanded="true" />
+                <element signature="e#1805#1806#0" expanded="true" />
+                <element signature="e#1833#1834#0" expanded="true" />
+                <element signature="e#1878#1879#0" expanded="true" />
+                <element signature="e#1912#1913#0" expanded="true" />
+                <element signature="e#1952#1953#0" expanded="true" />
+                <element signature="e#1982#1983#0" expanded="true" />
+                <element signature="e#2078#2079#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BitmapItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/BitmapItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#616#617#0" expanded="true" />
-                <element signature="e#687#688#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoAccessor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DemoAccessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="77" column="41" lean-forward="false" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+            <state relative-caret-position="252">
+              <caret line="71" column="32" lean-forward="false" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -248,7 +240,6 @@
         <option value="$PROJECT_DIR$/src/jabberpoint/model/style/BitmapStyleFactory.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/style/BaseStyleFactory.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/old/BitmapItemOld.java" />
-        <option value="$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/action/AuxilaryAction.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/slideitems/NoActionIndicator.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/old/JabberPointOld.java" />
@@ -284,10 +275,11 @@
         <option value="$PROJECT_DIR$/src/jabberpoint/model/CompositeSlideShowComponent.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/view/SlideViewerComponent.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java" />
-        <option value="$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java" />
-        <option value="$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/Slide.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java" />
       </list>
     </option>
   </component>
@@ -730,7 +722,7 @@
       <workItem from="1510585699835" duration="2758000" />
       <workItem from="1510597012362" duration="6319000" />
       <workItem from="1510647497384" duration="9409000" />
-      <workItem from="1510669994697" duration="5096000" />
+      <workItem from="1510669994697" duration="5922000" />
     </task>
     <task id="LOCAL-00001" summary="Make MVC structure">
       <created>1510390038714</created>
@@ -802,11 +794,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510652879816</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Composite Design Pattern">
+      <created>1510679002532</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1510679002532</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92026000" />
+    <option name="totallyTimeSpent" value="92852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -814,7 +813,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Enso" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2257721" sideWeight="0.510661" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470714" sideWeight="0.52558637" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470714" sideWeight="0.52771854" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -826,12 +825,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44847113" sideWeight="0.4691358" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.4936034" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.4914712" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.45628998" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470714" sideWeight="0.47441363" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.45415777" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470714" sideWeight="0.47228146" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -921,7 +920,8 @@
     <MESSAGE value="Starting with View" />
     <MESSAGE value="Continued with View" />
     <MESSAGE value="MenuController and actions, view" />
-    <option name="LAST_COMMIT_MESSAGE" value="MenuController and actions, view" />
+    <MESSAGE value="Composite Design Pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Composite Design Pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1403,14 +1403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1631,24 +1623,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/BorderActionIndicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#291#292#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/NoActionIndicator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="91" lean-forward="false" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="91" />
-          <folding>
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1710,16 +1689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="77" column="41" lean-forward="false" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/OpenDemoSlideshowAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1738,33 +1707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="136" column="28" lean-forward="false" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
-          <folding>
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
-            <element signature="e#2702#2703#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-            <element signature="e#2773#2774#0" expanded="true" />
-            <element signature="e#2814#2815#0" expanded="true" />
-            <element signature="e#3263#3264#0" expanded="true" />
-            <element signature="e#3333#3334#0" expanded="true" />
-            <element signature="e#3415#3416#0" expanded="true" />
-            <element signature="e#3451#3452#0" expanded="true" />
-            <element signature="e#3503#3504#0" expanded="true" />
-            <element signature="e#3539#3540#0" expanded="true" />
-            <element signature="e#3630#3631#0" expanded="true" />
-            <element signature="e#3672#3673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slide.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="e#483#512#0" expanded="true" />
             <element signature="e#759#760#0" expanded="true" />
@@ -1781,17 +1727,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1316#1317#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#2007#2008#0" expanded="true" />
+            <element signature="e#3200#3201#0" expanded="true" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#3271#3272#0" expanded="true" />
+            <element signature="e#3312#3313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/BorderActionIndicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="22" column="51" lean-forward="false" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        <state relative-caret-position="457">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#527#535#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1236#1237#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1388#1389#0" expanded="true" />
+            <element signature="e#1805#1806#0" expanded="true" />
+            <element signature="e#1833#1834#0" expanded="true" />
+            <element signature="e#1878#1879#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+            <element signature="e#1952#1953#0" expanded="true" />
+            <element signature="e#1982#1983#0" expanded="true" />
+            <element signature="e#2078#2079#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="71" column="32" lean-forward="false" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,8 +1,11 @@
 package jabberpoint.model.slideitems;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jabberpoint.model.CompositeSlideShowComponent;
+import jabberpoint.model.action.Action;
 import jabberpoint.model.drawingdriver.DrawingDriver;
-import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
 /**
  * Abstract class to represent a generic slide item. A slide item has
@@ -12,9 +15,13 @@ public abstract class SlideItem extends CompositeSlideShowComponent {
 
     private int level;
 
+    private List<Action> actions = new ArrayList<Action>();
+
     /**
      * Constructor that creates a SlideItem with a certain level
-     * @param level the level that is associated with the slide item
+     * 
+     * @param level
+     *            the level that is associated with the slide item
      */
     public SlideItem(int level) {
         this.level = level;
@@ -29,7 +36,9 @@ public abstract class SlideItem extends CompositeSlideShowComponent {
 
     /**
      * Is a child, so useless empty implementation
-     * @param i integer to identify the component in the list of children
+     * 
+     * @param i
+     *            integer to identify the component in the list of children
      * @return
      */
     public CompositeSlideShowComponent getComponent(final int i) {
@@ -38,6 +47,7 @@ public abstract class SlideItem extends CompositeSlideShowComponent {
 
     /**
      * Is a child, so useless empty implementation
+     * 
      * @return
      */
     public int getComponentCount() {
@@ -46,12 +56,16 @@ public abstract class SlideItem extends CompositeSlideShowComponent {
 
     /**
      * Is a child, so useless empty implementation
-     * @param component the component to be added
+     * 
+     * @param component
+     *            the component to be added
      */
 
     /**
      * Is a child, so useless empty implementation
-     * @param component the component to be added
+     * 
+     * @param component
+     *            the component to be added
      */
     public void addComponent(CompositeSlideShowComponent component) {
     }
@@ -60,8 +74,17 @@ public abstract class SlideItem extends CompositeSlideShowComponent {
     public int getLevel() {
         return level;
     }
+
     public void setLevel(final int level) {
         this.level = level;
+    }
+
+    public List<Action> getActions() {
+        return actions;
+    }
+
+    public void setActions(final List<Action> actions) {
+        this.actions = actions;
     }
 
 }

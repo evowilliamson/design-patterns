@@ -5,11 +5,12 @@ import jabberpoint.model.Slideshow;
 import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.AuxilaryAction;
 import jabberpoint.model.exception.NotImplementedExcpeption;
+import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
-import jabberpoint.model.slideitems.BorderActionIndicator;
-import jabberpoint.model.slideitems.NoActionIndicator;
 import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.model.util.Parameters;
+
+import java.util.Arrays;
 
 /**
  * Demo accessor knows how to load and save a {@link Slideshow} to and from an in-memory structure.
@@ -66,12 +67,10 @@ public class DemoAccessor implements Accessor {
 
         slide = new Slide("De vierde slide");
         slide.addComponent(new TextItem(1, "Deze slide bevat een Action"));
-        slide.addComponent(
-                new NoActionIndicator(1,
-                    new AbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.FIRST),
-                        new BorderActionIndicator(2,
-                                new AuxilaryAction(AuxilaryAction.Action.BEEP),
-                                    new TextItem(3, "Go to first slide"))));
+        slide.addComponent(new ActionItemDecorator(new TextItem(3, "Go to first slide"),
+                        Arrays.asList(
+                                new AbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.FIRST),
+                                new AuxilaryAction(AuxilaryAction.Action.BEEP))));
 
         slideShow.addComponent(slide);
 
