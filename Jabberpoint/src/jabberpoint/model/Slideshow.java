@@ -8,12 +8,12 @@ import java.util.List;
  * Singleton Pattern. It will make sure that only one instance is ever present.
  * This class delegates the drawing of the slide to the Slide class.
  */
-public class Slideshow {
+public class Slideshow extends CompositeSlideShowComponent {
     private static Slideshow instance = new Slideshow();
 
     public static final int FIRST_SLIDE = 0;
 
-    private List<Slide> slides;
+    private List<CompositeSlideShowComponent> slides;
 
     private String name;
     private int currentSlideNumber;
@@ -23,7 +23,7 @@ public class Slideshow {
      * To prevent instantiation from outside the class, make the constructor private
      */
     private Slideshow() {
-        slides = new ArrayList<Slide>();
+        slides = new ArrayList<CompositeSlideShowComponent>();
     }
 
     /**
@@ -57,23 +57,12 @@ public class Slideshow {
     }
 
     /**
-     * Adds a {@link Slide} to the slideshow
-     * 
-     * @param slide
-     *            the slide that will be added
-     */
-    public void addSlide(Slide slide) {
-        this.slides.add(slide);
-    }
-
-
-    /**
      * Checks to see if the current slide is the last slide in the {@link Slideshow}.
      * @return true if it is the last slide, otherwise no
      */
     public boolean isCurrentSlideLastSlide() {
 
-        if (this.getNumberOfSlides() - 1 == this.getCurrentSlideNumber()) {
+        if (this.getComponentCount() - 1 == this.getCurrentSlideNumber()) {
             return true;
         }
         return false;
@@ -99,27 +88,14 @@ public class Slideshow {
      * @return true if a move to the next slide is OK, otherwise, false
      */
     public boolean isCorrectSlideNumber(int slideNumber) {
-        if (slideNumber >= FIRST_SLIDE && slideNumber <= this.getNumberOfSlides() - 1) {
+        if (slideNumber >= FIRST_SLIDE && slideNumber <= this.getComponentCount() - 1) {
             return true;
         }
         return false;
     }
 
-    /**
-     * Return the number of slides in the slide show
-     * 
-     * @return the number of slides in the slide show
-     */
-    public int getNumberOfSlides() {
-        return this.getSlides().size();
-    }
-
-    public List<Slide> getSlides() {
+    public List<CompositeSlideShowComponent> getSlides() {
         return slides;
-    }
-
-    public void setSlides(final List<Slide> slides) {
-        this.slides = slides;
     }
 
     public int getCurrentSlideNumber() {
@@ -144,6 +120,26 @@ public class Slideshow {
 
     public void setTitle(final String title) {
         this.title = title;
+    }
+
+    @Override
+    public void draw() {
+        this.getComponent(this.getCurrentSlideNumber()).draw();
+    }
+
+    @Override
+    public CompositeSlideShowComponent getComponent(final int i) {
+        return slides.get(i);
+    }
+
+    @Override
+    public int getComponentCount() {
+        return slides.size();
+    }
+
+    @Override
+    public void addComponent(final CompositeSlideShowComponent component) {
+        this.slides.add(component);
     }
 
 }

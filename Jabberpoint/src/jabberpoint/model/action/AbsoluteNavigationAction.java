@@ -40,10 +40,9 @@ public class AbsoluteNavigationAction extends NavigationAction {
             slideShow.setCurrentSlideNumber(Slideshow.FIRST_SLIDE);
         }
         else if (this.position == NavigationPosition.LAST) {
-            slideShow.setCurrentSlideNumber(slideShow.getNumberOfSlides() - 1);
+            slideShow.setCurrentSlideNumber(slideShow.getComponentCount() - 1);
         }
         else if (this.position == NavigationPosition.INDEX) {
-
             slideShow.setCurrentSlideNumber(this.slideNumber);
         }
 

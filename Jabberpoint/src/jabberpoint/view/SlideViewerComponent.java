@@ -108,7 +108,7 @@ public class SlideViewerComponent extends JComponent {
         this.scale = getScale(area);
         this.adjustableY = area.y;
         Slideshow slideshow = Slideshow.getInstance();
-        slideshow.drawSlide(slideshow.getCurrentSlideNumber());
+        slideshow.draw();
 
     }
 
@@ -130,7 +130,7 @@ public class SlideViewerComponent extends JComponent {
      */
     public void drawCurrentSlideNumber(int slideNumber) {
 
-        this.graphics.drawString("Slide " + (1 + slideNumber) + " of " + slideShow.getNumberOfSlides(),
+        this.graphics.drawString("Slide " + (1 + slideNumber) + " of " + slideShow.getComponentCount(),
                 XPOS, YPOS);
 
     }

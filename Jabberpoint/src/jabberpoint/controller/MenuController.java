@@ -15,6 +15,7 @@ import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.view.AboutBox;
 import jabberpoint.view.SlideViewerComponent;
+import jabberpoint.view.SlideViewerFrame;
 
 /** <p>De controller voor het menu</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -24,10 +25,11 @@ import jabberpoint.view.SlideViewerComponent;
  * @version 1.4 2007/07/16 Sylvia Stuurman
  * @version 1.5 2010/03/03 Sylvia Stuurman
  * @version 1.6 2014/05/16 Sylvia Stuurman
+ * @version 1.7 2017/11/13 Randy Pottgens, Ivo Willemsen
  */
 public class MenuController extends MenuBar {
 
-	private Frame parent; // het frame, alleen gebruikt als ouder voor de Dialogs
+	private SlideViewerFrame frame; // het frame, alleen gebruikt als ouder voor de Dialogs
 	private Slideshow slideShow; // Er worden commando's gegeven aan de presentatie
 
 	private static final long serialVersionUID = 227L;
@@ -56,10 +58,9 @@ public class MenuController extends MenuBar {
 	/**
 	 * Constructor that builds the menu controller
 	 * @param frame the frame that owns the composite drawing component
-	 * @param component the composite drawing component
 	 */
-	public MenuController(Frame frame, final SlideViewerComponent component) {
-		parent = frame;
+	public MenuController(final SlideViewerFrame frame) {
+		this.frame = frame;
 		slideShow = Slideshow.getInstance();
 		MenuItem menuItem;
 		Menu fileMenu = new Menu(FILE);
@@ -73,10 +74,10 @@ public class MenuController extends MenuBar {
 					//presentation.setSlideNumber(0);
 					throw new IOException("fdfd");
 				} catch (IOException exc) {
-					JOptionPane.showMessageDialog(parent, IOEX + exc, 
+					JOptionPane.showMessageDialog(frame, IOEX + exc,
          			LOADERR, JOptionPane.ERROR_MESSAGE);
 				}
-				parent.repaint();
+				frame.repaint();
 			}
 		} );
 		fileMenu.add(menuItem = mkMenuItem(OPEN_DEMO));
@@ -84,14 +85,14 @@ public class MenuController extends MenuBar {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createOpenDemoSlideshowAction().execute();
 				System.out.println("repainting in MenuController");
-				parent.repaint();
+				frame.repaint();
 			}
 		} );
 		fileMenu.add(menuItem = mkMenuItem(NEW));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				//presentation.clear();
-				parent.repaint();
+				frame.repaint();
 			}
 		});
 		fileMenu.add(menuItem = mkMenuItem(SAVE));
@@ -102,7 +103,7 @@ public class MenuController extends MenuBar {
 					//xmlAccessor.saveFile(presentation, SAVEFILE);
 					throw new IOException("fdfd");
 				} catch (IOException exc) {
-					JOptionPane.showMessageDialog(parent, IOEX + exc, 
+					JOptionPane.showMessageDialog(frame, IOEX + exc,
 							SAVEERR, JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -120,14 +121,14 @@ public class MenuController extends MenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
-				parent.repaint();
+				frame.repaint();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(PREV));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
-				parent.repaint();
+				frame.repaint();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(GOTO));
@@ -137,7 +138,7 @@ public class MenuController extends MenuBar {
 				if (Slideshow.getInstance().isCorrectSlideNumber(slideNumber)) {
 					ActionFactory.createAbsoluteNavigationAction(slideNumber ).execute();
 				}
-				parent.repaint();
+				frame.repaint();
 			}
 		});
 		add(viewMenu);
@@ -145,7 +146,7 @@ public class MenuController extends MenuBar {
 		helpMenu.add(menuItem = mkMenuItem(ABOUT));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				AboutBox.show(parent);
+				AboutBox.show(frame);
 			}
 		});
 		setHelpMenu(helpMenu);		// nodig for portability (Motif, etc.).

@@ -28,9 +28,9 @@ class DemoPresentation extends Accessor {
 		slide.append(4, "JabberPoint aanroepen zonder bestandsnaam");
 		slide.append(4, "laat deze presentatie zien");
 		slide.append(1, "Navigeren:");
-		slide.append(3, "Volgende slide: PgDn of Enter");
-		slide.append(3, "Vorige slide: PgUp of up-arrow");
-		slide.append(3, "Stoppen: q or Q");
+		slide.append(4, "Volgende slide: PgDn of Enter");
+		slide.append(4, "Vorige slide: PgUp of up-arrow");
+		slide.append(4, "Stoppen: q or Q");
 		presentation.append(slide);
 
 		slide = new SlideOld();

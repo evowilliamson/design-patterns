@@ -41,10 +41,17 @@ public class SlideViewerFrame extends JFrame {
 				}
 			});
 		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController());
-		setMenuBar(new MenuController(this, slideViewerComponent));
+		addKeyListener(new KeyController(this));
+		setMenuBar(new MenuController(this));
 		setSize(new Dimension(WIDTH_SCREEN, HEIGHT_SCREEN));
 		setVisible(true);
+	}
+
+	/**
+	 * Refreshes the screen: It will cause the {@link SlideViewerComponent#paintComponent(Graphics)} to be fired.
+	 */
+	public void update() {
+		repaint();
 	}
 
 }

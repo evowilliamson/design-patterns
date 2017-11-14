@@ -11,9 +11,9 @@ import java.util.List;
  * This class represents a Slide in a SlideShow. A Slide maintains and
  * manages a list of SlideItems
  */
-public class Slide {
+public class Slide extends CompositeSlideShowComponent {
 
-    private List<SlideItem> slideItems = new ArrayList<SlideItem>();
+    private List<CompositeSlideShowComponent> slideItems = new ArrayList<CompositeSlideShowComponent>();
 
     private String title;
 
@@ -21,33 +21,38 @@ public class Slide {
         this.title = title;
     }
 
+    // Methods that implement the Composite Pattern for this class
+
+    @Override
+    public CompositeSlideShowComponent getComponent(final int i) {
+        return slideItems.get(i);
+    }
+
+    @Override
+    public int getComponentCount() {
+        return slideItems.size();
+    }
+
+    @Override
+    public void addComponent(final CompositeSlideShowComponent component) {
+        slideItems.add(component);
+    }
+
     /**
      * Draws the slide via de {@link DrawingDriver}
      */
-    public void draw() {
+    @Override public void draw() {
 
         System.out.println("drawing slide");
         DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
         drawingDriver.drawCurrentSlideNumber(
                 Slideshow.getInstance().getCurrentSlideNumber());
         drawingDriver.drawTitle(this.getTitle());
-        for (SlideItem slideItem : this.slideItems) {
+        for (CompositeSlideShowComponent slideItem : this.slideItems) {
             slideItem.draw();
         }
         System.out.println("drawing finished");
 
-    }
-
-    /**
-     * This method adds a slide item to the slide
-     * @param slideItem the item to be added
-     */
-    public void addSlideItem(SlideItem slideItem) {
-        slideItems.add(slideItem);
-    }
-
-    public List<SlideItem> getSlideItems() {
-        return slideItems;
     }
 
     public String getTitle() {

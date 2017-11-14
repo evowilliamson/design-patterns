@@ -1,9 +1,14 @@
 package jabberpoint.controller;
 
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import jabberpoint.model.Slideshow;
+import jabberpoint.model.action.AbsoluteNavigationAction;
+import jabberpoint.model.action.ActionFactory;
+import jabberpoint.model.action.RelativeNavigationAction;
+import jabberpoint.view.SlideViewerFrame;
 
 /** <p>This is the KeyController (KeyListener)</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -13,12 +18,14 @@ import jabberpoint.model.Slideshow;
  * @version 1.4 2007/07/16 Sylvia Stuurman
  * @version 1.5 2010/03/03 Sylvia Stuurman
  * @version 1.6 2014/05/16 Sylvia Stuurman
+ * @version 1.7 2017/11/13 Randy Pottgens, Ivo Willemsen
 */
 
 public class KeyController extends KeyAdapter {
-	private Slideshow slideShow = Slideshow.getInstance();
+	private SlideViewerFrame frame;
 
-	public KeyController() {
+	public KeyController(SlideViewerFrame frame) {
+		this.frame = frame;
 
 	}
 
@@ -28,14 +35,24 @@ public class KeyController extends KeyAdapter {
 			case KeyEvent.VK_DOWN:
 			case KeyEvent.VK_ENTER:
 			case '+':
-				//presentation.nextSlide();
+				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
+				frame.repaint();
 				break;
 			case KeyEvent.VK_PAGE_UP:
 			case KeyEvent.VK_UP:
 			case '-':
-				//presentation.prevSlide();
+				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
+				frame.repaint();
 				break;
-			case 'q':
+			case KeyEvent.VK_END:
+				ActionFactory.createAbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.LAST).execute();
+				frame.repaint();
+				break;
+			case KeyEvent.VK_HOME:
+				ActionFactory.createAbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.FIRST).execute();
+				frame.repaint();
+				break;
+		case 'q':
 			case 'Q':
 				System.exit(0);
 				break; // wordt nooit bereikt als het goed is
