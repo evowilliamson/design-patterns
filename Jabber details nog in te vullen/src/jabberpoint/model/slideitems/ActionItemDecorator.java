@@ -18,8 +18,9 @@ public class ActionItemDecorator extends SlideItem {
      */
     public ActionItemDecorator(SlideItem slideItem, final List<Action> actions) {
         super(slideItem.getLevel()); // Not too happy about this... no time to refactor :-(
-        this.setActions(actions);
         this.slideItem = slideItem;
+        slideItem.setActions(actions);
+        
     }
 
     @Override

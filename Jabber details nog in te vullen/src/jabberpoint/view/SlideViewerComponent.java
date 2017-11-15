@@ -16,6 +16,7 @@ import javax.swing.*;
 
 import jabberpoint.controller.MouseController;
 import jabberpoint.model.Slideshow;
+import jabberpoint.model.action.Action;
 import jabberpoint.model.old.PresentationOld;
 import jabberpoint.model.old.SlideOld;
 import jabberpoint.model.old.StyleOld;
@@ -55,12 +56,7 @@ public class SlideViewerComponent extends JComponent {
     
     
     private MouseController mc = new MouseController();
-    private int sy = 0;
-    private int sx = 0;
-    private int sh = 0;
-    private int sw = 0;
-    
-    
+        
     private Graphics graphics;
     private Rectangle area;
     private int adjustableY;
@@ -75,6 +71,8 @@ public class SlideViewerComponent extends JComponent {
         slideShow = Slideshow.getInstance();
         labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
         this.frame = frame;
+    	this.addMouseListener(mc); // add mouse listener to the newly created Component
+    	this.addMouseMotionListener(mc);
     }
 
     public Dimension getPreferredSize() {
@@ -82,7 +80,7 @@ public class SlideViewerComponent extends JComponent {
     }
 
     public void update(PresentationOld presentation, SlideOld data) {
-        if (data == null) {
+    	if (data == null) {
             repaint();
             return;
         }
@@ -117,6 +115,8 @@ public class SlideViewerComponent extends JComponent {
         this.scale = getScale(area);
         this.adjustableY = area.y;
         Slideshow slideshow = Slideshow.getInstance();
+        //this.removeAll();
+        //this.revalidate();
         slideshow.draw();
 
     }
@@ -128,6 +128,8 @@ public class SlideViewerComponent extends JComponent {
     public void initializeSlideGraphics() {
 
         System.out.println("repainting in component");
+        //this.removeAll();
+        //this.revalidate();
         repaint();
 
     }
@@ -154,23 +156,45 @@ public class SlideViewerComponent extends JComponent {
         // Title is a text item with level 0
         TextItem textItem = new TextItem(TITLE_LEVEL, title);
         drawTextItem(textItem);
-
+        
+        this.removeAll();
+        //this.revalidate();
+        //this.repaint();
     }
 
+    private void registerEventHandling(SlideItem s, Rectangle r){
+    	System.out.println("Registering event handling if one or more actions exist in SlideItem");
+    	if (s.getActions().size() > 0){ // textItem has actions
+    		System.out.println("SlideItem has actions, registering event handling.");
+        	ActionItemComponent c = new ActionItemComponent(s);
+        	this.add(c);
+        	r.setLocation(r.x, adjustableY);
+        	c.setBounds(r); // Set the boundary to the delivered bounding box
+        	c.setBorder(BorderFactory.createLineBorder(Color.BLACK)); // set border
+        	c.setOpaque(false); // Now only the border is visible
+        	c.setEnabled(true); // enable end set visible
+        	c.setVisible(true);
+        	//c.addMouseListener(mc); // add mouse listener to the newly created Component
+        	//c.addMouseMotionListener(mc);
+        }
+    }
+    
     public void drawTextItem(TextItem textItem) {
-
+    	System.out.println("Drawing TextItem");
         TextStyle style = StyleFactory.getTextStyle(textItem.getLevel());
         this.drawText(textItem, style, this.area.x, adjustableY);
-        this.adjustableY += this.getBoundingBox(textItem, scale, style).height;
-
+        Rectangle r = this.getBoundingBox(textItem, scale, style);
+        this.adjustableY += r.height;
+        registerEventHandling(textItem, r);
     }
 
     public void drawBitmapItem(BitmapItem bitmapItem) {
-
+    	System.out.println("Drawing BitmapItem");
         BitmapStyle style = StyleFactory.getBitmapStyle(bitmapItem.getLevel());
         this.drawBitmap(bitmapItem, style, this.area.x, adjustableY);
-        this.adjustableY += this.getBoundingBox(bitmapItem, scale, style).height;
-
+        Rectangle r = this.getBoundingBox(bitmapItem, scale, style);
+        this.adjustableY += r.height;
+        registerEventHandling(bitmapItem, r);
     }
 
     /**
@@ -268,7 +292,7 @@ public class SlideViewerComponent extends JComponent {
             TextLayout layout = iterator.next();
             Rectangle2D bounds = layout.getBounds();
             // fsdfklkdf ldkf d
-            int a = 0;
+            //int a = 0;
             if (bounds.getWidth() > xsize) {
                 xsize = (int) bounds.getWidth();
             }
