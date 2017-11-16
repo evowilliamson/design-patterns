@@ -36,21 +36,21 @@ public class KeyController extends KeyAdapter {
 			case KeyEvent.VK_ENTER:
 			case '+':
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
-				frame.repaint();
+				frame.update();
 				break;
 			case KeyEvent.VK_PAGE_UP:
 			case KeyEvent.VK_UP:
 			case '-':
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
-				frame.repaint();
+				frame.update();
 				break;
 			case KeyEvent.VK_END:
 				ActionFactory.createAbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.LAST).execute();
-				frame.repaint();
+				frame.update();
 				break;
 			case KeyEvent.VK_HOME:
 				ActionFactory.createAbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.FIRST).execute();
-				frame.repaint();
+				frame.update();
 				break;
 		case 'q':
 			case 'Q':

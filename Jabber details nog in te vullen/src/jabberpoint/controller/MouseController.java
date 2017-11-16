@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jabberpoint.model.action.Action;
+import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.SlideItem;
 
 /**
@@ -27,8 +28,8 @@ public class MouseController extends MouseInputAdapter {
 		clearList();
 	}
 	
-	public void addBoundingBox(Rectangle r, SlideItem s){
-		boxes.add(new BoundingBox(r, s));
+	public void addBoundingBox(Rectangle r, ActionItemDecorator a){
+		boxes.add(new BoundingBox(r, a));
 	}
 	
 	public void clearList(){
@@ -39,10 +40,10 @@ public class MouseController extends MouseInputAdapter {
 	 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 	 */
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent event) {
 		System.out.println("Mouse Click Detected.");
-		JComponent c = (JComponent) e.getComponent();
-		Point p = e.getPoint();
+		JComponent component = (JComponent) event.getComponent();
+		Point point = event.getPoint();
 		int s = boxes.size();
 		for (int i = 0; i < s; i++)
 		{
@@ -52,13 +53,14 @@ public class MouseController extends MouseInputAdapter {
 			System.out.print(s);
 			System.out.println(" contains the clicked point.");
 			
-			BoundingBox b = boxes.get(i);
-			if(b.contains(p))
+			BoundingBox box = boxes.get(i);
+			if(box.contains(point))
 			{
 				System.out.println("Cliked point found, doing actions");
-				
-				SlideItem slideItem = b.getItem();
-				List<Action> actions = slideItem.getActions();
+				ActionItemDecorator decorator = box.getItem();
+				//SlideItem slideItem = decorator.getSlideItem();
+				//List<Action> actions = slideItem.getActions();
+				List<Action> actions = decorator.getActions();
 				for (int j = 0; j < actions.size();j++) {
 					Action action = actions.get(j);
 					action.execute();	
@@ -67,6 +69,6 @@ public class MouseController extends MouseInputAdapter {
 			}
 		}
 		//clearList();
-		c.repaint();
+		component.repaint();
 	}
 }

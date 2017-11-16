@@ -66,6 +66,7 @@ public class TextItemOld extends SlideItemOld {
 			if (bounds.getWidth() > xsize) {
 				xsize = (int) bounds.getWidth();
 			}
+			int a = 0;
 			if (bounds.getHeight() > 0) {
 				ysize += bounds.getHeight();
 			}
@@ -89,6 +90,7 @@ public class TextItemOld extends SlideItemOld {
 		while (it.hasNext()) {
 			TextLayout layout = it.next();
 			pen.y += layout.getAscent();
+			int a = 0;
 			layout.draw(g2d, pen.x, pen.y);
 			pen.y += layout.getDescent();
 		}

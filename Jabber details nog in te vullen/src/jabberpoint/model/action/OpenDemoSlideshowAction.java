@@ -11,8 +11,7 @@ public class OpenDemoSlideshowAction extends SlideshowAction {
 
     @Override
     public void execute() {
-    	System.out.println("OpenDemoSlideshownAction triggered.");
-    	Parameters parameters = new Parameters();
+        Parameters parameters = new Parameters();
         parameters.setValue(Parameters.Parameter.SLIDESHOW_NAME, "Demo Slideshow");
         AccessorFactory.getDemoAccessor().load(parameters);
         Slideshow slideShow = Slideshow.getInstance();

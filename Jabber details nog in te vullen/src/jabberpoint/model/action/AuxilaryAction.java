@@ -13,8 +13,7 @@ public class AuxilaryAction implements Action {
     @Override
     public void execute() {
 
-    	System.out.println("AuxilaryAction triggered.");
-    	if (this.action == Action.BEEP) {
+        if (this.action == Action.BEEP) {
             Toolkit.getDefaultToolkit().beep();
         } else if (this.action == Action.FLASH) {
             // flash

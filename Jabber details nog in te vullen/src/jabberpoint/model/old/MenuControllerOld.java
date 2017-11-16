@@ -69,7 +69,6 @@ public class MenuControllerOld extends MenuBar {
 					JOptionPane.showMessageDialog(parent, IOEX + exc, 
          			LOADERR, JOptionPane.ERROR_MESSAGE);
 				}
-				System.out.println("repainting in MenuController");
 				parent.repaint();
 			}
 		} );

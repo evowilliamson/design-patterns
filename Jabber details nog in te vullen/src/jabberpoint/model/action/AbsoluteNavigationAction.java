@@ -35,8 +35,7 @@ public class AbsoluteNavigationAction extends NavigationAction {
     @Override
     public void execute() {
 
-    	System.out.println("AbsoluteNavigationAction triggered.");
-    	Slideshow slideShow = Slideshow.getInstance();
+        Slideshow slideShow = Slideshow.getInstance();
         if (this.position == NavigationPosition.FIRST) {
             slideShow.setCurrentSlideNumber(Slideshow.FIRST_SLIDE);
         }

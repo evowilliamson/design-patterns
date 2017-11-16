@@ -3,20 +3,21 @@ package jabberpoint.controller;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.SlideItem;
 
 public class BoundingBox {
 
 	Rectangle r;
-	SlideItem s;
+	ActionItemDecorator a;
 	
 	// Blocking construction with no arguments.
 	private BoundingBox() {
 	}
 	
-	public BoundingBox(Rectangle r, SlideItem s){
+	public BoundingBox(Rectangle r, ActionItemDecorator a){
 		this.r = r;
-		this.s = s;
+		this.a = a;
 		
 	}
 	
@@ -24,8 +25,8 @@ public class BoundingBox {
 		return r.contains(p);
 	}
 	
-	protected SlideItem getItem(){
-		return s;
+	protected ActionItemDecorator getItem(){
+		return a;
 	}
 
 }

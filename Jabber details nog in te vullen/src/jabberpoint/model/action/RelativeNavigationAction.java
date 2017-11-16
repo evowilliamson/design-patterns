@@ -23,8 +23,7 @@ public class RelativeNavigationAction extends NavigationAction {
 
     @Override
     public void execute() {
-    	System.out.println("RelativeNavigationAction triggered.");
-    	Slideshow slideShow = Slideshow.getInstance();
+        Slideshow slideShow = Slideshow.getInstance();
         if (this.direction == NavigationDirection.NEXT && canGoToNext(slideShow)) {
             slideShow.setCurrentSlideNumber(slideShow.getCurrentSlideNumber() + 1);
         }
