@@ -1,5 +1,7 @@
 package jabberpoint.model;
 
+import jabberpoint.view.drawingdriver.DrawingDriverFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,7 @@ import java.util.List;
  * This class delegates the drawing of the slide to the Slide class.
  */
 public class Slideshow extends CompositeSlideShowComponent {
-    private static Slideshow instance = new Slideshow();
+    private static Slideshow instance;
 
     public static final int FIRST_SLIDE = 0;
 
@@ -19,10 +21,14 @@ public class Slideshow extends CompositeSlideShowComponent {
     private int currentSlideNumber;
     private String title;
 
+    private Theme theme;
+
     /**
      * To prevent instantiation from outside the class, make the constructor private
      */
-    private Slideshow() {
+    private Slideshow(final Theme theme) {
+        this.theme = theme;
+        DrawingDriverFactory.getInstance().applyTheme(theme);
         slides = new ArrayList<CompositeSlideShowComponent>();
     }
 
@@ -30,7 +36,9 @@ public class Slideshow extends CompositeSlideShowComponent {
 
     @Override
     public void draw() {
-        this.getComponent(this.getCurrentSlideNumber()).draw();
+        if (this.getComponentCount() != 0) {
+            this.getComponent(this.getCurrentSlideNumber()).draw();
+        }
     }
 
     @Override
@@ -63,19 +71,9 @@ public class Slideshow extends CompositeSlideShowComponent {
      *
      * @return
      */
-    public static Slideshow createInstance() {
-        instance = new Slideshow();
+    public static Slideshow createInstance(final Theme theme) {
+        instance = new Slideshow(theme);
         return instance;
-    }
-
-    /**
-     * This method draws indicated slide number
-     * 
-     * @param slideNumber
-     *            the slide number to which the slide show should advance
-     */
-    public void drawSlide(int slideNumber) {
-        this.getSlides().get(slideNumber).draw();
     }
 
     /**
@@ -116,6 +114,8 @@ public class Slideshow extends CompositeSlideShowComponent {
         return false;
     }
 
+    // Setters and getters:
+
     public List<CompositeSlideShowComponent> getSlides() {
         return slides;
     }
@@ -142,6 +142,14 @@ public class Slideshow extends CompositeSlideShowComponent {
 
     public void setTitle(final String title) {
         this.title = title;
+    }
+
+    public Theme getTheme() {
+        return theme;
+    }
+
+    public void setTheme(final Theme theme) {
+        this.theme = theme;
     }
 
 }

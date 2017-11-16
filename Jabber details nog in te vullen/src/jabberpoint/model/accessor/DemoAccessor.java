@@ -2,6 +2,7 @@ package jabberpoint.model.accessor;
 
 import jabberpoint.model.Slide;
 import jabberpoint.model.Slideshow;
+import jabberpoint.model.Theme;
 import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.AuxilaryAction;
 import jabberpoint.model.exception.NotImplementedExcpeption;
@@ -29,7 +30,7 @@ public class DemoAccessor implements Accessor {
     public Slideshow load(final Parameters parameters) {
 
         // Create a new instance and store it in the Singleton Slideshow
-        Slideshow slideShow = Slideshow.createInstance();
+        Slideshow slideShow = Slideshow.createInstance(Theme.MODERN);
         slideShow.setName(parameters.getString(Parameters.Parameter.SLIDESHOW_NAME));
         slideShow.setTitle(DEMO_TITLE);
         Slide slide = new Slide("JabberPoint");
@@ -48,6 +49,7 @@ public class DemoAccessor implements Accessor {
         slideShow.addComponent(slide);
 
         slide = new Slide("Demonstratie van levels en stijlen");
+        slide.addComponent(new TextItem(1, "Theme van deze presentatie: " + slideShow.getTheme().toString()));
         slide.addComponent(new TextItem(1, "Level 1"));
         slide.addComponent(new TextItem(2, "Level 2"));
         slide.addComponent(new TextItem(1, "Nogmaals level 1"));

@@ -15,7 +15,6 @@ import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.model.util.Parameters;
-import jabberpoint.model.util.Parameters.Parameter;
 import jabberpoint.view.AboutBox;
 import jabberpoint.view.SlideViewerComponent;
 import jabberpoint.view.SlideViewerFrame;
@@ -57,7 +56,7 @@ public class MenuController extends MenuBar {
 	protected static final String IOEX = "IO Exception: ";
 	protected static final String LOADERR = "Load Error";
 	protected static final String SAVEERR = "Save Error";
-	
+
 	private void loadFile(){
 		System.out.println("loadFile chosen.");
         JFileChooser fc = new JFileChooser();
@@ -114,7 +113,7 @@ public class MenuController extends MenuBar {
         }
         //log.setCaretPosition(log.getDocument().getLength());
 	}
-
+	
 	/**
 	 * Constructor that builds the menu controller
 	 * @param frame the frame that owns the composite drawing component
@@ -123,34 +122,37 @@ public class MenuController extends MenuBar {
 		this.frame = frame;
 		slideShow = Slideshow.getInstance();
 		MenuItem menuItem;
+		
+		
+		
 		Menu fileMenu = new Menu(FILE);
 		fileMenu.add(menuItem = mkMenuItem(OPEN_SOURCE));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				//presentation.clear();
 				loadFile();
-				frame.repaint();
+				frame.update();
 			}
 		} );
 		fileMenu.add(menuItem = mkMenuItem(OPEN_DEMO));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createOpenDemoSlideshowAction().execute();
-				System.out.println("repainting in MenuController");
-				frame.repaint();
+				frame.update();
 			}
 		} );
 		fileMenu.add(menuItem = mkMenuItem(NEW));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				//presentation.clear();
-				frame.repaint();
+				frame.update();
 			}
 		});
 		fileMenu.add(menuItem = mkMenuItem(SAVE));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				saveFile();
+				frame.update();
 			}
 		});
 		fileMenu.addSeparator();
@@ -166,14 +168,14 @@ public class MenuController extends MenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
-				frame.repaint();
+				frame.update();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(PREV));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
-				frame.repaint();
+				frame.update();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(GOTO));
@@ -183,7 +185,7 @@ public class MenuController extends MenuBar {
 				if (Slideshow.getInstance().isCorrectSlideNumber(slideNumber)) {
 					ActionFactory.createAbsoluteNavigationAction(slideNumber ).execute();
 				}
-				frame.repaint();
+				frame.update();
 			}
 		});
 		add(viewMenu);
