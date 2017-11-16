@@ -1,4 +1,4 @@
-package jabberpoint.model;
+package jabberpoint.model.old;
 
 import java.util.Vector;
 import java.io.File;
@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import jabberpoint.model.Accessor;
 import jabberpoint.model.old.BitmapItemOld;
 import jabberpoint.model.old.PresentationOld;
 import jabberpoint.model.old.SlideItemOld;

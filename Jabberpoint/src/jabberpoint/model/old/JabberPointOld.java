@@ -1,7 +1,6 @@
 package jabberpoint.model.old;
 
 import jabberpoint.model.Accessor;
-import jabberpoint.model.XMLAccessor;
 
 import javax.swing.JOptionPane;
 

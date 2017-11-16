@@ -5,6 +5,8 @@ import java.util.HashMap;
 
 /**
  * Factory that, on initialization, constructs the available {@link BitmapStyle} objects
+ * 
+ * @author Ivo Willemsen
  */
 public class TextStyleFactory extends BaseStyleFactory {
 

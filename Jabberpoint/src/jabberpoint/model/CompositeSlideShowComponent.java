@@ -2,6 +2,8 @@ package jabberpoint.model;
 
 /**
  * Interface that defines a contract for a composite slideshow component.
+ * 
+ * @author Ivo Willemsen
  */
 public interface CompositeSlideShowComponent {
 

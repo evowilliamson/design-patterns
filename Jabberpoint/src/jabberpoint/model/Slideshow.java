@@ -9,6 +9,8 @@ import jabberpoint.view.drawingdriver.DrawingDriverFactory;
  * Slideshow is the main class of the Model part of the MVC. It implements the
  * Singleton Pattern. It will make sure that only one instance is ever present.
  * This class delegates the drawing of the slide to the Slide class.
+ * 
+ * @author Ivo Willemsen
  */
 public class Slideshow implements CompositeSlideShowComponent {
     public static final int FIRST_SLIDE = 0;

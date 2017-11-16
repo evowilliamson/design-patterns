@@ -2,8 +2,9 @@ package jabberpoint.model.style;
 
 /**
  * Class that represents the style for a bitmap formatted object.
- *
  * No extra behavior for the moment
+ * 
+ * @author Ivo Willemsen
  */
 public class BitmapStyle extends Style {
 

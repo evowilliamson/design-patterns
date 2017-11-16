@@ -9,12 +9,10 @@ import javax.swing.*;
 
 import jabberpoint.model.Accessor;
 import jabberpoint.model.Slideshow;
-import jabberpoint.model.XMLAccessor;
-import jabberpoint.model.action.AbsoluteNavigationAction;
+import jabberpoint.model.old.XMLAccessor;
 import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.view.AboutBox;
-import jabberpoint.view.SlideViewerComponent;
 import jabberpoint.view.SlideViewerFrame;
 
 /** <p>De controller voor het menu</p>

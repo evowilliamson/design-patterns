@@ -4,6 +4,8 @@ package jabberpoint.model.style;
  * Class that contains static methods to retrieve styles for text items and bitmap items
  * This class encapsulates the two concrete factories which are maintained in two
  * static attributes.
+ * 
+ * @author Ivo Willemsen
  */
 public abstract class StyleFactory {
 

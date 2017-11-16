@@ -4,6 +4,8 @@ package jabberpoint.model;
  * Class that represents the configuration of the system. In a real application, configuration will probably
  * be performed with property files or database configuration. But this attempt here shows how configuration can
  * be extracted
+ * 
+ * @author Ivo Willemsen
  */
 public class Configuration {
 
@@ -11,6 +13,7 @@ public class Configuration {
 
     /**
      * Returns the configured {@link jabberpoint.model.drawingdriver.DrawingDriver}.
+     * 
      * @return
      */
     public static DrawingDriverConfig getDrawingDriverConfig() {
@@ -18,16 +21,16 @@ public class Configuration {
         return DrawingDriverConfig.SWING;
     }
 
-    public enum DrawingDriverConfig {
-        SWING, JAVAFX
+    public static AccessorConfig getAccessorConfig() {
+        return accessorConfig;
     }
 
     public static void setAccessorConfig(AccessorConfig accessorConfig) {
         accessorConfig = accessorConfig;
     }
 
-    public static AccessorConfig getAccessorConfig() {
-        return accessorConfig;
+    public enum DrawingDriverConfig {
+        SWING, JAVAFX
     }
 
     public enum AccessorConfig {

@@ -1,8 +1,6 @@
 package jabberpoint.model.old;
 
 import jabberpoint.model.Accessor;
-import jabberpoint.model.old.PresentationOld;
-import jabberpoint.model.XMLAccessor;
 import jabberpoint.view.AboutBox;
 
 import java.awt.MenuBar;

@@ -9,6 +9,8 @@ import com.sun.istack.internal.NotNull;
  *
  * Setter are not implemented for this class, as after creating the styles, there won't
  * be a need to change them.
+ * 
+ * @author Ivo Willemsen
  */
 public class TextStyle extends Style {
 

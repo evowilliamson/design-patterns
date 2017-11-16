@@ -5,6 +5,8 @@ import java.util.Map;
 
 /**
  * Class to encapsulate a Map that clarifies the usage of parameters in the application
+ * 
+ * @author Ivo Willemsen
  */
 public class Parameters {
 

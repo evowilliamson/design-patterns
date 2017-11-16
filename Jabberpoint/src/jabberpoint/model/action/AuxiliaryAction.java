@@ -4,6 +4,7 @@ import java.awt.*;
 
 /**
  * Class that implements auxiliary actions
+ * @author Ivo Willemsen
  */
 public class AuxiliaryAction implements Action {
 

@@ -6,6 +6,8 @@ package jabberpoint.model.style;
  *
  * Setter are not implemented for this class, as after creating the styles, there won't
  * be a need to change them.
+ * 
+ * @author Ivo Willemsen
  */
 public abstract class Style {
 

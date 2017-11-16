@@ -6,6 +6,8 @@ import jabberpoint.model.exception.ConfigurationException;
 
 /**
  * This abstract class is extended by concrete implementations that create the styles
+ * 
+ * @author Ivo Willemsen
  */
 public abstract class BaseStyleFactory {
 
@@ -32,7 +34,8 @@ public abstract class BaseStyleFactory {
     /**
      * This method adjusts the level if not within boundaries
      * 
-     * @param level the level to be adjusted
+     * @param level
+     *            the level to be adjusted
      * @return
      */
     private int adjustLevel(final int level) {
