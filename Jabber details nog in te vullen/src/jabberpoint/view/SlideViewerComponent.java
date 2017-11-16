@@ -55,7 +55,7 @@ public class SlideViewerComponent extends JComponent {
     private static final int TITLE_LEVEL = 1;
     
     
-    private MouseController mc = new MouseController();
+    private MouseController mouseController = new MouseController();
         
     private Graphics graphics;
     private Rectangle area;
@@ -71,8 +71,8 @@ public class SlideViewerComponent extends JComponent {
         slideShow = Slideshow.getInstance();
         labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
         this.frame = frame;
-    	this.addMouseListener(mc); // add mouse listener to the newly created Component
-    	this.addMouseMotionListener(mc);
+    	this.addMouseListener(mouseController); // add mouse listener to the newly created Component
+    	//this.addMouseMotionListener(mouseController);
     }
 
     public Dimension getPreferredSize() {
@@ -103,6 +103,7 @@ public class SlideViewerComponent extends JComponent {
     public void paintComponent(Graphics graphics) {
 
         System.out.println("paintCommand");
+        mouseController.clearList();
         // Store refreshed graphics object as an attribute in "this" object
         this.graphics = graphics;
 
@@ -157,26 +158,19 @@ public class SlideViewerComponent extends JComponent {
         TextItem textItem = new TextItem(TITLE_LEVEL, title);
         drawTextItem(textItem);
         
-        this.removeAll();
+        //this.removeAll();
         //this.revalidate();
         //this.repaint();
     }
 
     private void registerEventHandling(SlideItem s, Rectangle r){
-    	System.out.println("Registering event handling if one or more actions exist in SlideItem");
-    	if (s.getActions().size() > 0){ // textItem has actions
-    		System.out.println("SlideItem has actions, registering event handling.");
-        	ActionItemComponent c = new ActionItemComponent(s);
-        	this.add(c);
-        	r.setLocation(r.x, adjustableY);
-        	c.setBounds(r); // Set the boundary to the delivered bounding box
-        	c.setBorder(BorderFactory.createLineBorder(Color.BLACK)); // set border
-        	c.setOpaque(false); // Now only the border is visible
-        	c.setEnabled(true); // enable end set visible
-        	c.setVisible(true);
-        	//c.addMouseListener(mc); // add mouse listener to the newly created Component
-        	//c.addMouseMotionListener(mc);
-        }
+    	System.out.println("Registering event handling for SlideItem");
+    	mouseController.addBoundingBox(r, s);
+    	if (s.getActions().size() > 0){
+    		System.out.println("SlideItem has actions, drawing Rectangle");
+    		graphics.setColor(COLOR);
+        	graphics.drawRect(r.x, r.y, r.width, r.height);
+    	}
     }
     
     public void drawTextItem(TextItem textItem) {
@@ -301,11 +295,11 @@ public class SlideViewerComponent extends JComponent {
             }
             ysize += layout.getLeading() + layout.getDescent();
         }
-        return new Rectangle((int) (style.getIndent() * scale), 0, xsize, ysize);
+        return new Rectangle((int) (style.getIndent() * scale), adjustableY, xsize, ysize);
     }
 
     public Rectangle getBoundingBox(BitmapItem bitmapItem, float scale, BitmapStyle style) {
-        return new Rectangle((int) (style.getIndent() * scale), 0, (int) (bitmapItem.getBufferedImage().getWidth(this) * scale),
+        return new Rectangle((int) (style.getIndent() * scale), adjustableY, (int) (bitmapItem.getBufferedImage().getWidth(this) * scale),
                 ((int) (style.getLeading() * scale)) + (int) (bitmapItem.getBufferedImage().getHeight(this) * scale));
 
     }
