@@ -1,8 +1,8 @@
 package jabberpoint.model.style;
 
-import jabberpoint.model.exception.ConfigurationException;
-
 import java.util.Map;
+
+import jabberpoint.model.exception.ConfigurationException;
 
 /**
  * This abstract class is extended by concrete implementations that create the styles
@@ -13,10 +13,12 @@ public abstract class BaseStyleFactory {
 
     /**
      * This method returns the style instance that is associated with the style
-     * @param level the level that is associated with a certain style
+     * 
+     * @param level
+     *            the level that is associated with a certain style
      * @return instance of type Style
      */
-    protected Style getInstance(int level) {
+    protected Style getInstance(final int level) {
 
         Style style = styles.get(adjustLevel(level));
         if (style == null) {
@@ -29,10 +31,11 @@ public abstract class BaseStyleFactory {
 
     /**
      * This method adjusts the level if not within boundaries
-     * @param level
+     * 
+     * @param level the level to be adjusted
      * @return
      */
-    private int adjustLevel(int level) {
+    private int adjustLevel(final int level) {
 
         if (level >= styles.size()) {
             return styles.size();
@@ -45,6 +48,5 @@ public abstract class BaseStyleFactory {
         }
 
     }
-
 
 }

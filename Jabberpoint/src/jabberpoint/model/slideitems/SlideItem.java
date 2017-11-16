@@ -1,13 +1,11 @@
 package jabberpoint.model.slideitems;
 
-import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.List;
 
 import jabberpoint.model.CompositeSlideShowComponent;
 import jabberpoint.model.action.Action;
 import jabberpoint.model.drawingdriver.DrawingDriver;
-import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
 /**
  * Abstract class to represent a generic slide item. A slide item has
@@ -26,7 +24,9 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
      *            the level that is associated with the slide item
      */
     public SlideItem(int level) {
+
         this.level = level;
+
     }
 
     // Implementations for Composite Design Pattern
@@ -44,7 +44,9 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
      * @return
      */
     public CompositeSlideShowComponent getComponent(final int i) {
+
         return null;
+
     }
 
     /**
@@ -53,7 +55,9 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
      * @return
      */
     public int getComponentCount() {
+
         return 0;
+
     }
 
     /**
@@ -79,10 +83,6 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
 
     public void setLevel(final int level) {
         this.level = level;
-    }
-
-    public List<Action> getActions() {
-        return actions;
     }
 
     public void setActions(final List<Action> actions) {

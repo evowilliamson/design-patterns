@@ -18,7 +18,9 @@ public abstract class StyleFactory {
      * @return The BitmapStyle associated with the level
      */
     public static BitmapStyle getBitmapStyle(int level) {
+
         return (BitmapStyle) bitmapStyleFactory.getInstance(level);
+
     }
 
     /**
@@ -29,7 +31,9 @@ public abstract class StyleFactory {
      * @return The TextStyle associated with the level
      */
     public static TextStyle getTextStyle(int level) {
+
         return (TextStyle) textStyleFactory.getInstance(level);
+
     }
 
 }

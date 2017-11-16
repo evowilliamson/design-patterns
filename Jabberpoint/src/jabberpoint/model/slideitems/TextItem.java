@@ -1,6 +1,5 @@
 package jabberpoint.model.slideitems;
 
-import jabberpoint.model.drawingdriver.DrawingDriver;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
 public class TextItem extends SlideItem {
@@ -10,12 +9,16 @@ public class TextItem extends SlideItem {
     /**
      * Constructor that creates a SlideItem with a certain level
      *
-     * @param level the level that is associated with the slide item
-     * @param text the text that is the essential part of the text item
+     * @param level
+     *            the level that is associated with the slide item
+     * @param text
+     *            the text that is the essential part of the text item
      */
     public TextItem(final int level, String text) {
+
         super(level);
         this.text = text;
+
     }
 
     @Override
@@ -25,7 +28,9 @@ public class TextItem extends SlideItem {
 
     // Getters/Setters:
     public String getText() {
+
         return text;
+
     }
 
 }
