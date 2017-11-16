@@ -38,8 +38,10 @@ public class SwingDrawingDriver implements DrawingDriver {
     }
 
     @Override
-    public void drawCurrentSlideNumber(final int currentSlideNumber) {
-        this.slideViewerComponent.drawCurrentSlideNumber(currentSlideNumber);
+    public void drawSlideNumberInfo(
+            final int currentSlideNumber,
+            final int totalSlides) {
+        this.slideViewerComponent.drawCurrentSlideNumber(currentSlideNumber, totalSlides);
     }
 
     @Override

@@ -24,8 +24,8 @@ public class JavaFXDrawingDriver implements DrawingDriver {
     }
 
     @Override
-    public void drawCurrentSlideNumber(final int currentSlideNumber) {
-        throw new NotImplementedExcpeption("drawCurrentSlideNumber(int) of " + this.getClass() + " not implemented");
+    public void drawSlideNumberInfo(final int currentSlideNumber, final int totalSlides) {
+        throw new NotImplementedExcpeption("drawSlideNumberInfo(int, int) of " + this.getClass() + " not implemented");
     }
 
     @Override

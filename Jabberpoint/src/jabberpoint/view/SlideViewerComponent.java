@@ -98,13 +98,13 @@ public class SlideViewerComponent extends JComponent {
     /**
      * This method draws the slide number on the screen
      *
-     * @param slideNumber
-     *            the slide number
+     * @param currentSlideNumber the current slide number
+     * @param totalSlides the total number of slides
      */
-    public void drawCurrentSlideNumber(int slideNumber) {
+    public void drawCurrentSlideNumber(int currentSlideNumber, int totalSlides) {
 
         this.graphics.setColor(COLOR_BLACK);
-        this.graphics.drawString("Slide " + (1 + slideNumber) + " of " + Slideshow.getInstance().getComponentCount(),
+        this.graphics.drawString("Slide " + (1 + currentSlideNumber) + " of " + totalSlides,
                 XPOS, YPOS);
 
     }

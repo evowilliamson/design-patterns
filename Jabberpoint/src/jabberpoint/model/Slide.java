@@ -1,7 +1,6 @@
 package jabberpoint.model;
 
 import jabberpoint.model.drawingdriver.DrawingDriver;
-import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
 import java.util.ArrayList;
@@ -43,9 +42,9 @@ public class Slide implements CompositeSlideShowComponent {
      */
     @Override public void draw() {
 
+        Slideshow slideshow = Slideshow.getInstance();
         DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
-        drawingDriver.drawCurrentSlideNumber(
-                Slideshow.getInstance().getCurrentSlideNumber());
+        drawingDriver.drawSlideNumberInfo(slideshow.getCurrentSlideNumber(), slideshow.getComponentCount());
         drawingDriver.drawTitle(this.getTitle());
         for (CompositeSlideShowComponent slideItem : this.slideItems) {
             slideItem.draw();

@@ -3,10 +3,7 @@ package jabberpoint.model.drawingdriver;
 import jabberpoint.model.Theme;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
-import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.model.slideitems.TextItem;
-
-import javax.xml.soap.Text;
 
 /**
  * DrawingDriver is the abstraction of different type of drawing interfaces that
@@ -25,6 +22,12 @@ public interface DrawingDriver {
      */
     void initialize(final String title);
 
+    /**
+     * This method applies the theme to the slideshow implementation
+     * 
+     * @param theme
+     *            the theme that translates in a certain visual representation
+     */
     void applyTheme(final Theme theme);
 
     /**
@@ -32,8 +35,10 @@ public interface DrawingDriver {
      * 
      * @param currentSlideNumber
      *            the current slide number
+     * @param totalSlides
+     *            the total number of slides
      */
-    void drawCurrentSlideNumber(final int currentSlideNumber);
+    void drawSlideNumberInfo(final int currentSlideNumber, final int totalSlides);
 
     /**
      * Draws the title on the screen
@@ -44,15 +49,18 @@ public interface DrawingDriver {
     void drawTitle(final String title);
 
     /**
-     * Contract that defines the drawing of a {@link jabberpoint.model.slideitems.TextItem}
-     * onto a DrawingDriver implementation
-     * @param textItem the text item
+     * Contract that defines the drawing of a {@link jabberpoint.model.slideitems.TextItem} onto a DrawingDriver implementation
+     * 
+     * @param textItem
+     *            the text item
      */
     void drawTextItem(final TextItem textItem);
 
     /**
      * Contract that defines the drawing of a {@link jabberpoint.model.slideitems.BitmapItem}
-     * @param bitmapItem the bitmap item
+     * 
+     * @param bitmapItem
+     *            the bitmap item
      */
     void drawBitmapItem(final BitmapItem bitmapItem);
 

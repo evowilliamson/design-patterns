@@ -1,9 +1,9 @@
 package jabberpoint.model;
 
-import jabberpoint.view.drawingdriver.DrawingDriverFactory;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
 /**
  * Slideshow is the main class of the Model part of the MVC. It implements the
@@ -11,10 +11,8 @@ import java.util.List;
  * This class delegates the drawing of the slide to the Slide class.
  */
 public class Slideshow implements CompositeSlideShowComponent {
-    private static Slideshow instance;
-
     public static final int FIRST_SLIDE = 0;
-
+    private static Slideshow instance;
     private List<CompositeSlideShowComponent> slides;
 
     private String name;
@@ -33,6 +31,26 @@ public class Slideshow implements CompositeSlideShowComponent {
     }
 
     // Composite Design Pattern implementations
+
+    /**
+     * returns the static instance.
+     *
+     * @return
+     */
+    public static Slideshow getInstance() {
+        return instance;
+    }
+
+    /**
+     * This method is used in case a new SlideShow is created. So the static instance
+     * should be refreshed.
+     *
+     * @return
+     */
+    public static Slideshow createInstance(final Theme theme) {
+        instance = new Slideshow(theme);
+        return instance;
+    }
 
     @Override
     public void draw() {
@@ -57,27 +75,8 @@ public class Slideshow implements CompositeSlideShowComponent {
     }
 
     /**
-     * returns the static instance.
-     *
-     * @return
-     */
-    public static Slideshow getInstance() {
-        return instance;
-    }
-
-    /**
-     * This method is used in case a new SlideShow is created. So the static instance
-     * should be refreshed.
-     *
-     * @return
-     */
-    public static Slideshow createInstance(final Theme theme) {
-        instance = new Slideshow(theme);
-        return instance;
-    }
-
-    /**
      * Checks to see if the current slide is the last slide in the {@link Slideshow}.
+     * 
      * @return true if it is the last slide, otherwise no
      */
     public boolean isCurrentSlideLastSlide() {
@@ -91,6 +90,7 @@ public class Slideshow implements CompositeSlideShowComponent {
 
     /**
      * Checks to see if the current slide is the first slide in the {@link Slideshow}.
+     * 
      * @return true if it is the last slide, otherwise no
      */
     public boolean isCurrentSlideFirstSlide() {
@@ -104,7 +104,9 @@ public class Slideshow implements CompositeSlideShowComponent {
     /**
      * Checks to see if the indicated index slide number can be navigated to
      * not available
-     * @param slideNumber the slide number
+     * 
+     * @param slideNumber
+     *            the slide number
      * @return true if a move to the next slide is OK, otherwise, false
      */
     public boolean isCorrectSlideNumber(int slideNumber) {
@@ -116,20 +118,12 @@ public class Slideshow implements CompositeSlideShowComponent {
 
     // Setters and getters:
 
-    public List<CompositeSlideShowComponent> getSlides() {
-        return slides;
-    }
-
     public int getCurrentSlideNumber() {
         return currentSlideNumber;
     }
 
     public void setCurrentSlideNumber(final int currentSlideNumber) {
         this.currentSlideNumber = currentSlideNumber;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(final String name) {

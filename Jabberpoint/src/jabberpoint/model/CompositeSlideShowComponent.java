@@ -12,7 +12,8 @@ public interface CompositeSlideShowComponent {
 
     /**
      *
-     * @param i integer to identify the component in the list of children
+     * @param i
+     *            integer to identify the component in the list of children
      * @return an object of type {@link CompositeSlideShowComponent}
      */
     CompositeSlideShowComponent getComponent(int i);
@@ -25,7 +26,9 @@ public interface CompositeSlideShowComponent {
 
     /**
      * Adds a component
-     * @param component the component to be added
+     * 
+     * @param component
+     *            the component to be added
      */
     void addComponent(CompositeSlideShowComponent component);
 
