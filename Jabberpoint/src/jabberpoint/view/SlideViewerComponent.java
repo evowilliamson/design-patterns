@@ -271,14 +271,8 @@ public class SlideViewerComponent extends JComponent {
 
     // Getters/Setters:
 
-    public Theme getTheme() {
-        return theme;
-    }
-
     public void setTheme(final Theme theme) {
         this.theme = theme;
     }
-
-
 
 }

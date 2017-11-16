@@ -82,16 +82,4 @@ public class DemoAccessor implements Accessor {
 
     }
 
-    /**
-     * Testing
-     * @param args
-     */
-    public static void main(String[] args) {
-
-        Parameters parameters = new Parameters();
-        parameters.setValue(Parameters.Parameter.SLIDESHOW_NAME, "Test");
-        Slideshow slideShow = new DemoAccessor().load(parameters);
-
-    }
-
 }

@@ -11,7 +11,7 @@ import jabberpoint.model.drawingdriver.DrawingDriver;
  * Abstract class to represent a generic slide item. A slide item has
  * a level which leads to a certain way of styling the slide item
  */
-public abstract class SlideItem extends CompositeSlideShowComponent {
+public abstract class SlideItem implements CompositeSlideShowComponent {
 
     private int level;
 

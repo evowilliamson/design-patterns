@@ -11,7 +11,7 @@ import java.util.List;
  * This class represents a Slide in a SlideShow. A Slide maintains and
  * manages a list of SlideItems
  */
-public class Slide extends CompositeSlideShowComponent {
+public class Slide implements CompositeSlideShowComponent {
 
     private List<CompositeSlideShowComponent> slideItems = new ArrayList<CompositeSlideShowComponent>();
 

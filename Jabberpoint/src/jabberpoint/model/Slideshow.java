@@ -10,7 +10,7 @@ import java.util.List;
  * Singleton Pattern. It will make sure that only one instance is ever present.
  * This class delegates the drawing of the slide to the Slide class.
  */
-public class Slideshow extends CompositeSlideShowComponent {
+public class Slideshow implements CompositeSlideShowComponent {
     private static Slideshow instance;
 
     public static final int FIRST_SLIDE = 0;
@@ -146,10 +146,6 @@ public class Slideshow extends CompositeSlideShowComponent {
 
     public Theme getTheme() {
         return theme;
-    }
-
-    public void setTheme(final Theme theme) {
-        this.theme = theme;
     }
 
 }
