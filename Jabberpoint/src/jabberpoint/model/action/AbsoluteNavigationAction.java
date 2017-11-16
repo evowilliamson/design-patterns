@@ -1,11 +1,11 @@
 package jabberpoint.model.action;
 
-import jabberpoint.model.Slide;
 import jabberpoint.model.Slideshow;
 
 /**
  * This class represents the action that has an absolute character, going to the
  * first, last or indexed slide
+ * @author Ivo Willemsen
  */
 public class AbsoluteNavigationAction extends NavigationAction {
 
@@ -14,7 +14,9 @@ public class AbsoluteNavigationAction extends NavigationAction {
 
     /**
      * Constructor that creates an action to move to the indicated {@link NavigationPosition}
-     * @param position the position to move to
+     * 
+     * @param position
+     *            the position to move to
      */
     public AbsoluteNavigationAction(NavigationPosition position) {
 
@@ -24,6 +26,7 @@ public class AbsoluteNavigationAction extends NavigationAction {
 
     /**
      * Constructor to create an action to move to the indicated slide number
+     * 
      * @param position
      * @param slideNumber
      */
@@ -50,7 +53,9 @@ public class AbsoluteNavigationAction extends NavigationAction {
 
     /**
      * Sets the indicated slide number
-     * @param slideNumber the slide number
+     * 
+     * @param slideNumber
+     *            the slide number
      */
     public void setSlideNumber(int slideNumber) {
 

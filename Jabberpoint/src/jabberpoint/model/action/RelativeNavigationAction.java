@@ -5,6 +5,8 @@ import jabberpoint.model.Slideshow;
 /**
  * This class represents the action that has an absolute character, going to the
  * first, last or indexed slide
+ * 
+ * @author Ivo Willemsen
  */
 public class RelativeNavigationAction extends NavigationAction {
 

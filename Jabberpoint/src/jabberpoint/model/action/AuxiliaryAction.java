@@ -2,11 +2,14 @@ package jabberpoint.model.action;
 
 import java.awt.*;
 
-public class AuxilaryAction implements Action {
+/**
+ * Class that implements auxiliary actions
+ */
+public class AuxiliaryAction implements Action {
 
-    private AuxilaryAction.Action action;
+    private AuxiliaryAction.Action action;
 
-    public AuxilaryAction(AuxilaryAction.Action action) {
+    public AuxiliaryAction(AuxiliaryAction.Action action) {
         this.action = action;
     }
 
@@ -18,7 +21,6 @@ public class AuxilaryAction implements Action {
         } else if (this.action == Action.FLASH) {
             // flash
         }
-
 
     }
 

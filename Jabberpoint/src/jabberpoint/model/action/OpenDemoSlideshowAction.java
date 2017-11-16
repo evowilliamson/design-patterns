@@ -6,6 +6,8 @@ import jabberpoint.model.util.Parameters;
 
 /**
  * Definition of an action that opens the Demo Slideshow
+ * 
+ * @author Ivo Willemsen
  */
 public class OpenDemoSlideshowAction extends SlideshowAction {
 

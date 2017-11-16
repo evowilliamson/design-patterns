@@ -3,6 +3,7 @@ package jabberpoint.model.action;
 /**
  * This factory creates actions. Every invocation of a createXXX() method creates
  * a new Action, as this is not a configurable setting, but is done on a per-user request basis
+ * @author Ivo Willemsen
  */
 public class ActionFactory {
 

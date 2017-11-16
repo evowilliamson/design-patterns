@@ -11,6 +11,7 @@ import jabberpoint.model.slideitems.TextItem;
  * on implementation specifics, like Swing components, or JavaFx components.
  * The Model entities will communicate with implementations of DrawingDrivers through
  * this interface
+ * @author Ivo Willemsen
  */
 public interface DrawingDriver {
 

@@ -1,5 +1,10 @@
 package jabberpoint.model.exception;
 
+/**
+ * Exception class that can be used to tag not implemented exceptions
+ * 
+ * @author Ivo Willemsen
+ */
 public class NotImplementedExcpeption extends RuntimeException {
 
     /**
@@ -13,7 +18,9 @@ public class NotImplementedExcpeption extends RuntimeException {
 
     /**
      * Constructor that takes a messages as a parameter
-     * @param message the message that should be included in the stacktrace
+     * 
+     * @param message
+     *            the message that should be included in the stacktrace
      */
     public NotImplementedExcpeption(String message) {
 

@@ -8,6 +8,7 @@ import jabberpoint.model.slideitems.SlideItem;
  * 1. The user can use the keyboard to move through the slides
  * 2. The user can click from a menu a certain action
  * 3. On clicking a certain {@link SlideItem} on the slide
+ * @author Ivo Willemsen
  * *  */
 public interface Action {
 

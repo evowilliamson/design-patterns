@@ -3,11 +3,11 @@ package jabberpoint.model.accessor;
 import jabberpoint.model.Configuration;
 import jabberpoint.model.drawingdriver.DrawingDriver;
 import jabberpoint.model.exception.ConfigurationException;
-import jabberpoint.view.drawingdriver.JavaFXDrawingDriver;
-import jabberpoint.view.drawingdriver.SwingDrawingDriver;
 
 /**
  * Factory for the creation of implementations of {@link DrawingDriver}
+ * 
+ * @author Ivo Willemsen
  */
 public class AccessorFactory {
 

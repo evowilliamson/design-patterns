@@ -13,6 +13,8 @@ import jabberpoint.view.drawingdriver.DrawingDriverFactory;
  * a {@link ActionItemDecorator} doesn't provide any added behavior. It "decorates" an underlying {@link SlideItem} in such a way that the
  * {@link jabberpoint.model.drawingdriver.DrawingDriver} implementation can access it to draw it, plus
  * indicate to the user in a graphical manner that 1 or more actions are "under" the slide item.
+ * 
+ * @author Ivo Willemsen
  *
  */
 public class ActionItemDecorator extends SlideItem {

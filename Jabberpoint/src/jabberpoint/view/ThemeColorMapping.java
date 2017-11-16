@@ -8,6 +8,7 @@ import java.util.Map;
 
 /**
  * Class that maps from abstraction to implementations regarding themes
+ * @author Ivo Willemsen
  */
 public class ThemeColorMapping {
 

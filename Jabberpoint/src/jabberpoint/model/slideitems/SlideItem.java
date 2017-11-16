@@ -89,4 +89,8 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
         this.actions = actions;
     }
 
+    public List<Action> getActions() {
+        return actions;
+    }
+
 }

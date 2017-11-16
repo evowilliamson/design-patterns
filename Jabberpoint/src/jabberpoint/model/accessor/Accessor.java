@@ -5,6 +5,7 @@ import jabberpoint.model.util.Parameters;
 
 /**
  * Interface that defines the contract of loading and saving {@link Slideshow} to a source
+ * @author Ivo Willemsen
  */
 public interface Accessor {
 
