@@ -43,7 +43,6 @@ public class Slide extends CompositeSlideShowComponent {
      */
     @Override public void draw() {
 
-        System.out.println("drawing slide");
         DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
         drawingDriver.drawCurrentSlideNumber(
                 Slideshow.getInstance().getCurrentSlideNumber());
@@ -51,7 +50,6 @@ public class Slide extends CompositeSlideShowComponent {
         for (CompositeSlideShowComponent slideItem : this.slideItems) {
             slideItem.draw();
         }
-        System.out.println("drawing finished");
 
     }
 

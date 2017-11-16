@@ -77,22 +77,21 @@ public class MenuController extends MenuBar {
 					JOptionPane.showMessageDialog(frame, IOEX + exc,
          			LOADERR, JOptionPane.ERROR_MESSAGE);
 				}
-				frame.repaint();
+				frame.update();
 			}
 		} );
 		fileMenu.add(menuItem = mkMenuItem(OPEN_DEMO));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createOpenDemoSlideshowAction().execute();
-				System.out.println("repainting in MenuController");
-				frame.repaint();
+				frame.update();
 			}
 		} );
 		fileMenu.add(menuItem = mkMenuItem(NEW));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				//presentation.clear();
-				frame.repaint();
+				frame.update();
 			}
 		});
 		fileMenu.add(menuItem = mkMenuItem(SAVE));
@@ -121,14 +120,14 @@ public class MenuController extends MenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
-				frame.repaint();
+				frame.update();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(PREV));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
-				frame.repaint();
+				frame.update();
 			}
 		});
 		viewMenu.add(menuItem = mkMenuItem(GOTO));
@@ -138,7 +137,7 @@ public class MenuController extends MenuBar {
 				if (Slideshow.getInstance().isCorrectSlideNumber(slideNumber)) {
 					ActionFactory.createAbsoluteNavigationAction(slideNumber ).execute();
 				}
-				frame.repaint();
+				frame.update();
 			}
 		});
 		add(viewMenu);

@@ -1,5 +1,7 @@
 package jabberpoint.model.drawingdriver;
 
+import jabberpoint.model.Theme;
+import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.model.slideitems.TextItem;
@@ -23,10 +25,7 @@ public interface DrawingDriver {
      */
     void initialize(final String title);
 
-    /**
-     * Initializes the slide
-     */
-    void initializeSlide();
+    void applyTheme(final Theme theme);
 
     /**
      * Draw the current slide number on the screen
@@ -56,5 +55,10 @@ public interface DrawingDriver {
      * @param bitmapItem the bitmap item
      */
     void drawBitmapItem(final BitmapItem bitmapItem);
+
+    /**
+     * Contract that defines the drawing of a {@link jabberpoint.model.action.Action}
+     */
+    void drawActionItemDecorator(final ActionItemDecorator actionItemDecorator);
 
 }
