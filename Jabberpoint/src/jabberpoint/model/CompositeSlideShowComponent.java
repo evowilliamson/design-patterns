@@ -6,7 +6,7 @@ package jabberpoint.model;
 public interface CompositeSlideShowComponent {
 
     /**
-     * Specifies the contract for drawing
+     * Specifies the contract for drawing from a specification point of perspective
      */
     void draw();
 
