@@ -1,11 +1,13 @@
 package jabberpoint.model.slideitems;
 
+import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.List;
 
 import jabberpoint.model.CompositeSlideShowComponent;
 import jabberpoint.model.action.Action;
 import jabberpoint.model.drawingdriver.DrawingDriver;
+import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
 /**
  * Abstract class to represent a generic slide item. A slide item has

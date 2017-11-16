@@ -66,6 +66,10 @@ public interface DrawingDriver {
 
     /**
      * Contract that defines the drawing of a {@link jabberpoint.model.action.Action}
+     * 
+     * @param actionItemDecorator
+     *            the actionItemDecorator
+     *
      */
     void drawActionItemDecorator(final ActionItemDecorator actionItemDecorator);
 
