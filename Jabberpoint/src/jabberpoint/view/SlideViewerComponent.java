@@ -40,7 +40,7 @@ import jabberpoint.model.style.TextStyle;
 public class SlideViewerComponent extends JComponent {
 
     private static final long serialVersionUID = 227L;
-    private static final Color COLOR = Color.black;
+    private static final Color COLOR_BLACK = Color.black;
     private static final String FONTNAME = "Dialog";
     private static final int FONTSTYLE = Font.BOLD;
     private static final int FONTHEIGHT = 10;
@@ -103,6 +103,7 @@ public class SlideViewerComponent extends JComponent {
      */
     public void drawCurrentSlideNumber(int slideNumber) {
 
+        this.graphics.setColor(COLOR_BLACK);
         this.graphics.drawString("Slide " + (1 + slideNumber) + " of " + Slideshow.getInstance().getComponentCount(),
                 XPOS, YPOS);
 

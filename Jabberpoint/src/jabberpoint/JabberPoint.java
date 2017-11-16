@@ -1,22 +1,15 @@
 package jabberpoint;
 
-import java.io.IOException;
-
-import javax.swing.*;
-
-import jabberpoint.model.Accessor;
-import jabberpoint.model.XMLAccessor;
 import jabberpoint.model.drawingdriver.DrawingDriver;
-import jabberpoint.model.old.PresentationOld;
-import jabberpoint.model.old.StyleOld;
-import jabberpoint.model.old.SlideViewerFrameOld;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
-/** JabberPoint Main Programma
- * <p>This program is distributed under the terms of the accompanying
- * COPYRIGHT.txt file (which is NOT the GNU General Public License).
- * Please read it. Your use of the software constitutes acceptance
- * of the terms in the COPYRIGHT.txt file.</p>
+/**
+ * JabberPoint Main Programma
+ * <p>
+ * This program is distributed under the terms of the accompanying COPYRIGHT.txt file (which is NOT the GNU General Public License). Please
+ * read it. Your use of the software constitutes acceptance of the terms in the COPYRIGHT.txt file.
+ * </p>
+ * 
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -28,17 +21,14 @@ import jabberpoint.view.drawingdriver.DrawingDriverFactory;
  */
 
 public class JabberPoint {
-	protected static final String IOERR = "IO Error: ";
-	protected static final String JABERR = "Jabberpoint Error ";
-	protected static final String JABVERSION = "Jabberpoint 1.6 - OU version";
 
-	private static final String TITLE = "Jabberpoint Slideshow";
+    private static final String TITLE = "Jabberpoint Slideshow";
 
-	public static void main(String argv[]) {
+    public static void main(String argv[]) {
 
-		DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
-		drawingDriver.initialize(TITLE);
+        DrawingDriver drawingDriver = DrawingDriverFactory.getInstance();
+        drawingDriver.initialize(TITLE);
 
-	}
+    }
 
 }

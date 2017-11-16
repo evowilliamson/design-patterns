@@ -30,7 +30,7 @@ public class DemoAccessor implements Accessor {
     public Slideshow load(final Parameters parameters) {
 
         // Create a new instance and store it in the Singleton Slideshow
-        Slideshow slideShow = Slideshow.createInstance(Theme.MODERN);
+        Slideshow slideShow = Slideshow.createInstance(Theme.CLASSIC);
         slideShow.setName(parameters.getString(Parameters.Parameter.SLIDESHOW_NAME));
         slideShow.setTitle(DEMO_TITLE);
         Slide slide = new Slide("JabberPoint");
