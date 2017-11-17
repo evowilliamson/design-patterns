@@ -6,9 +6,10 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import jabberpoint.model.style.StyleFactory;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
-public class BitmapItem extends SlideItem {
+public class BitmapItem extends DisplayableItem {
 
     private BufferedImage bufferedImage;
     private String fileName;
@@ -16,6 +17,7 @@ public class BitmapItem extends SlideItem {
     protected BitmapItem(final int level, String fileName) {
 
         super(level);
+        this.setStyle(StyleFactory.getBitmapStyle(this.getLevel()));
         this.fileName = fileName;
         try {
             bufferedImage = ImageIO.read(new File(fileName));

@@ -27,7 +27,7 @@ public class ActionItemDecorator extends SlideItem {
      */
     protected ActionItemDecorator(final SlideItem slideItem, final List<Action> actions) {
 
-        super(0);
+        super();
         this.setActions(actions);
         this.slideItem = slideItem;
 

@@ -1,8 +1,9 @@
 package jabberpoint.model.slideitems;
 
+import jabberpoint.model.style.StyleFactory;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
-public class TextItem extends SlideItem {
+public class TextItem extends DisplayableItem {
 
     private String text;
 
@@ -17,6 +18,7 @@ public class TextItem extends SlideItem {
     protected TextItem(final int level, String text) {
 
         super(level);
+        this.setStyle(StyleFactory.getTextStyle(this.getLevel()));
         this.text = text;
 
     }

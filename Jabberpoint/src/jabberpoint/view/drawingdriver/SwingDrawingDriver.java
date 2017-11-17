@@ -2,21 +2,15 @@ package jabberpoint.view.drawingdriver;
 
 import jabberpoint.controller.ControllerFactory;
 import jabberpoint.controller.MouseController;
-
 import jabberpoint.model.Theme;
-
 import jabberpoint.model.drawingdriver.DrawingDriver;
-
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.model.slideitems.SlideItemFactory;
 import jabberpoint.model.slideitems.TextItem;
-
 import jabberpoint.model.style.BitmapStyle;
-import jabberpoint.model.style.StyleFactory;
 import jabberpoint.model.style.TextStyle;
-
 import jabberpoint.view.SlideViewerComponent;
 import jabberpoint.view.SlideViewerFactory;
 import jabberpoint.view.SlideViewerFrame;
@@ -26,16 +20,16 @@ import jabberpoint.view.SlideViewerFrame;
  */
 public class SwingDrawingDriver implements DrawingDriver {
 
+    private static final int TITLE_LEVEL = 1;
     private SlideViewerFrame slideViewerFrame;
     private SlideViewerComponent slideViewerComponent;
 
-    private static final int TITLE_LEVEL = 1;
-
     public SwingDrawingDriver() {
     }
-    
+
+    //TODO remove!
     public void setMouseController(MouseController mouseController) {
-    	this.setMouseController(mouseController);
+        this.setMouseController(mouseController);
     }
 
     @Override
@@ -67,14 +61,16 @@ public class SwingDrawingDriver implements DrawingDriver {
 
     @Override
     public void drawTextItem(final TextItem textItem) {
-        TextStyle style = StyleFactory.getTextStyle(textItem.getLevel());
+        // TODO change to Style
+        TextStyle style = (TextStyle) textItem.getStyle();
         this.slideViewerComponent.drawText(textItem, style);
 
     }
 
     @Override
     public void drawBitmapItem(final BitmapItem bitmapItem) {
-        BitmapStyle style = StyleFactory.getBitmapStyle(bitmapItem.getLevel());
+        // TODO change to Style
+        BitmapStyle style = (BitmapStyle) bitmapItem.getStyle();
         this.slideViewerComponent.drawBitmap(bitmapItem, style);
 
     }
@@ -82,9 +78,9 @@ public class SwingDrawingDriver implements DrawingDriver {
     @Override
     public void drawActionItemDecorator(final ActionItemDecorator actionItemDecorator) {
         // TODO Code plaatsen voor de aansturing van printen van border in slideViewerComponent
-    	SlideItem decoratedItem = actionItemDecorator.getSlideItem();
-    	decoratedItem.draw(); // draw decorated item
-    	this.slideViewerComponent.registerEventHandling(actionItemDecorator);
+        SlideItem decoratedItem = actionItemDecorator.getSlideItem();
+        decoratedItem.draw(); // draw decorated item
+        this.slideViewerComponent.registerEventHandling(actionItemDecorator);
     }
 
 }

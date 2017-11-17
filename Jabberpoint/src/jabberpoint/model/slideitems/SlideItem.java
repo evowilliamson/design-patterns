@@ -13,24 +13,10 @@ import jabberpoint.model.drawingdriver.DrawingDriver;
  */
 public abstract class SlideItem implements CompositeSlideShowComponent {
 
-    private int level;
-
-    private SlideItem(){}
+    public SlideItem() {
+    }
     
     private List<Action> actions = new ArrayList<Action>();
-
-    /**
-     * Constructor that creates a SlideItem with a certain level
-     * 
-     * @param level
-     *            the level that is associated with the slide item
-     */
-    protected SlideItem(int level) {
-    	
-    	this();
-        this.level = level;
-
-    }
 
     // Implementations for Composite Design Pattern
 
@@ -80,13 +66,6 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
     }
 
     // Getters/Setters:
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(final int level) {
-        this.level = level;
-    }
 
     public void setActions(final List<Action> actions) {
         this.actions = actions;
