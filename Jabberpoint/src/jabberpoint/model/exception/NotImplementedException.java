@@ -5,12 +5,12 @@ package jabberpoint.model.exception;
  * 
  * @author Ivo Willemsen
  */
-public class NotImplementedExcpeption extends RuntimeException {
+public class NotImplementedException extends RuntimeException {
 
     /**
      * Default constructor
      */
-    public NotImplementedExcpeption() {
+    public NotImplementedException() {
 
         super();
         System.exit(1);
@@ -22,7 +22,7 @@ public class NotImplementedExcpeption extends RuntimeException {
      * @param message
      *            the message that should be included in the stacktrace
      */
-    public NotImplementedExcpeption(String message) {
+    public NotImplementedException(String message) {
 
         super(message);
         System.exit(1);
