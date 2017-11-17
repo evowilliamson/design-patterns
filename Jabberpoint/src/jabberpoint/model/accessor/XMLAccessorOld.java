@@ -131,12 +131,12 @@ public class XMLAccessorOld implements Accessor {
     				SlideItem slideItem = (SlideItem) slide.getComponent(itemNumber);
     				out.print("<" + ITEM + " " + KIND + "="); 
     				if (slideItem instanceof TextItem) {
-    					out.print("\"text\" level=\"" + slideItem.getLevel() + "\">");
+    					out.print("\""+TEXT+"\" "+LEVEL+"=\"" + slideItem.getLevel() + "\">");
     					out.print( ( (TextItem) slideItem).getText());
     				}
     				else {
     					if (slideItem instanceof BitmapItem) {
-    						out.print("\"image\" level=\"" + slideItem.getLevel() + "\">");
+    						out.print("\""+IMAGE+"\" "+LEVEL+"=\"" + slideItem.getLevel() + "\">");
     						out.print( ( (BitmapItem) slideItem).getFileName());
     					}
     					else {
