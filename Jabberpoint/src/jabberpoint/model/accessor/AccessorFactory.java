@@ -13,6 +13,7 @@ public class AccessorFactory {
 
     private static final DemoAccessor DEMO_ACCESSOR = new DemoAccessor();
     private static final XMLAccessor XML_ACCESSOR = new XMLAccessor();
+    private static final XMLAccessorOld XML_ACCESSOR_OLD = new XMLAccessorOld();
 
     /**
      * Returns an instance of a {@link Accessor}
@@ -28,6 +29,13 @@ public class AccessorFactory {
         		System.out.println("Returning XML accessor");
         	}
             return XML_ACCESSOR;
+        } else if (Configuration.getAccessorConfig().equals(Configuration.AccessorConfig.OLDXML)){
+        	if (XML_ACCESSOR == null){
+        		System.out.println("XML ACCESSOR FOR OLD VERSION IS NULL!!!");
+        	} else {
+        		System.out.println("Returning XML accessor FOR OLD VERSION");
+        	}
+            return XML_ACCESSOR_OLD;
         } else {
             throw new ConfigurationException("Incorrect Accessor configuration");
         }

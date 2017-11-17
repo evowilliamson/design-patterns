@@ -12,7 +12,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
@@ -23,14 +22,13 @@ import jabberpoint.model.Slide;
 import jabberpoint.model.SlideFactory;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
-import jabberpoint.model.exception.NotImplementedException;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.model.slideitems.SlideItemFactory;
 import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.model.util.Parameters;
 
-public class XMLAccessor implements Accessor {
+public class XMLAccessorOld implements Accessor {
     
 	/** Default API to use. */
     protected static final String DEFAULT_API_TO_USE = "dom";
@@ -38,13 +36,11 @@ public class XMLAccessor implements Accessor {
     /** namen van xml tags of attributen */
     
     protected static final String SLIDESHOW = "slideshow";
-    protected static final String HEAD = "head";
     protected static final String SHOWTITLE = "showtitle";
     protected static final String SLIDETITLE = "title";
     protected static final String TITLE = "title";
     protected static final String SLIDE = "slide";
     protected static final String ITEM = "item";
-    protected static final String ITEMS = "items";
     protected static final String LEVEL = "level";
     protected static final String KIND = "kind";
     protected static final String PRESENTATION = "presentation";
@@ -69,7 +65,6 @@ public class XMLAccessor implements Accessor {
     protected static final String AUXILIARYACTION = "auxiliaryAction";
     protected static final String BEEP = "beep";
     protected static final String FLASH = "flash";
-    protected static final String EXIT = "exit";
     
     protected static final String SLIDESHOWACTION = "slideShowAction";
     protected static final String OPENDEMOSLIDESHOWACTION = "openDemoSlideshowAction";
@@ -81,7 +76,7 @@ public class XMLAccessor implements Accessor {
     protected static final String UNKNOWNTYPE = "Unknown Element type";
     protected static final String NFE = "Number Format Exception";
     
-    protected XMLAccessor(){}
+    protected XMLAccessorOld(){}
     
     private String getTitle(Element element, String tagName) {
     	NodeList titles = element.getElementsByTagName(tagName);
@@ -117,18 +112,16 @@ public class XMLAccessor implements Accessor {
 
 	@Override
     public void save(final Parameters parameters, final Slideshow slideShow) {
-    	/*
     	try {
-    	
     		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
     		PrintWriter out = new PrintWriter(new FileWriter(filename));
     		int amountOfSlides = slideShow.getComponentCount();
     		out.println("<?xml version=\"1.0\"?>");
-    		out.println("<!DOCTYPE slideshow SYSTEM \"jabberpointNew.dtd\">");
-    		out.println("<" + SLIDESHOW + ">");
-    		out.print("<" + TITLE +">");
+    		out.println("<!DOCTYPE slideshow SYSTEM \"jabberpoint.dtd\">");
+    		out.println("<" + PRESENTATION + ">");
+    		out.print("<" + SHOWTITLE +">");
     		out.print(slideShow.getTitle());
-    		out.println("</"+ TITLE +">");
+    		out.println("</"+SHOWTITLE+">");
     		for (int slideNumber=0; slideNumber < amountOfSlides; slideNumber++) {
     			Slide slide = (Slide) slideShow.getComponent(slideNumber);
     			out.println("<" + SLIDE + ">");
@@ -160,28 +153,19 @@ public class XMLAccessor implements Accessor {
 		catch (Exception iox) {
 			System.err.println(iox.toString());
 		}
-		*/
-		throw new NotImplementedException("Saving a slideshow is not implemented");
     }
 
 	@Override
     public Slideshow load(final Parameters parameters) {
 		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
-		Slideshow slideShow = null;
+		Slideshow slideShow = Slideshow.createInstance(Theme.MODERN);
         
 		int slideNumber, itemNumber, max = 0, maxItems = 0;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
 			Document document = builder.parse(new File(filename)); // maak een JDOM document
 			Element doc = document.getDocumentElement();
-			/*
-			{
-				NodeList headers = doc.getElementsByTagName(HEAD);
-				Nodelist 
-			}
-			*/
-			
-			slideShow.setTitle(getTitle(doc, TITLE));
+			slideShow.setTitle(getTitle(doc, SHOWTITLE));
 
 			NodeList slides = doc.getElementsByTagName(SLIDE);
 			max = slides.getLength();

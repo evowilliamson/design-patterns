@@ -2,7 +2,7 @@ package jabberpoint.view.drawingdriver;
 
 import jabberpoint.model.Theme;
 import jabberpoint.model.drawingdriver.DrawingDriver;
-import jabberpoint.model.exception.NotImplementedExcpeption;
+import jabberpoint.model.exception.NotImplementedException;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.TextItem;
@@ -15,37 +15,37 @@ public class JavaFXDrawingDriver implements DrawingDriver {
 
     @Override
     public void initialize(final String title) {
-        throw new NotImplementedExcpeption("initialize(String) of " + this.getClass() + " not implemented");
+        throw new NotImplementedException("initialize(String) of " + this.getClass() + " not implemented");
     }
 
     @Override
     public void applyTheme(final Theme theme) {
-        throw new NotImplementedExcpeption("applyTheme(Theme) of " + this.getClass() + " not implemented");
+        throw new NotImplementedException("applyTheme(Theme) of " + this.getClass() + " not implemented");
     }
 
     @Override
     public void drawSlideNumberInfo(final int currentSlideNumber, final int totalSlides) {
-        throw new NotImplementedExcpeption("drawSlideNumberInfo(int, int) of " + this.getClass() + " not implemented");
+        throw new NotImplementedException("drawSlideNumberInfo(int, int) of " + this.getClass() + " not implemented");
     }
 
     @Override
     public void drawTitle(final String title) {
-        throw new NotImplementedExcpeption("drawTitle(String) of " + this.getClass() + " not implemented");
+        throw new NotImplementedException("drawTitle(String) of " + this.getClass() + " not implemented");
     }
 
     @Override
     public void drawTextItem(final TextItem textItem) {
-        throw new NotImplementedExcpeption("drawTextItem(TextItem) of " + this.getClass() + " not implemented");
+        throw new NotImplementedException("drawTextItem(TextItem) of " + this.getClass() + " not implemented");
     }
 
     @Override
     public void drawBitmapItem(final BitmapItem bitmapItem) {
-        throw new NotImplementedExcpeption("drawBitmapItem(BitmapItem) of " + this.getClass() + " not implemented");
+        throw new NotImplementedException("drawBitmapItem(BitmapItem) of " + this.getClass() + " not implemented");
     }
 
     @Override
     public void drawActionItemDecorator(final ActionItemDecorator actionItemDecorator) {
-        throw new NotImplementedExcpeption("drawActionItemDecorator(ActionItemDecorator) of " + this.getClass() + " not implemented");
+        throw new NotImplementedException("drawActionItemDecorator(ActionItemDecorator) of " + this.getClass() + " not implemented");
     }
 
 }

@@ -7,7 +7,7 @@ import jabberpoint.model.Theme;
 import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.AuxiliaryAction;
-import jabberpoint.model.exception.NotImplementedExcpeption;
+import jabberpoint.model.exception.NotImplementedException;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItemFactory;
@@ -27,7 +27,7 @@ public class DemoAccessor implements Accessor {
 
     @Override
     public void save(final Parameters parameters, final Slideshow slideShow) {
-        throw new NotImplementedExcpeption("Saving a Demo slideshow is not implemented");
+        throw new NotImplementedException("Saving a Demo slideshow is not implemented");
     }
 
     @Override

@@ -55,7 +55,7 @@ public class MouseController extends MouseInputAdapter {
 		for (int i = 0; i < s; i++)
 		{
 			System.out.print("Looking if box ");
-			System.out.print(i);
+			System.out.print(i+1);
 			System.out.print(" from ");
 			System.out.print(s);
 			System.out.println(" contains the clicked point.");
@@ -72,7 +72,6 @@ public class MouseController extends MouseInputAdapter {
 					Action action = actions.get(j);
 					action.execute();	
 				}
-				break;
 			}
 		}
 		//clearList();

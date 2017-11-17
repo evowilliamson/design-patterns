@@ -34,7 +34,7 @@ public class Configuration {
     }
 
     public enum AccessorConfig {
-        XML, DEMO
+        XML, DEMO, OLDXML
     }
 
 }

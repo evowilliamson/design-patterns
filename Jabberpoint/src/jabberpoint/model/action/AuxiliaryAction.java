@@ -22,12 +22,14 @@ public class AuxiliaryAction implements Action {
             Toolkit.getDefaultToolkit().beep();
         } else if (this.action == Action.FLASH) {
             // flash
+        } else if (this.action == Action.EXIT){
+        	System.exit(0);
         }
 
     }
 
     public enum Action {
-        BEEP, FLASH
+        BEEP, FLASH, EXIT
     }
 
 }
