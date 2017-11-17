@@ -167,7 +167,7 @@ public class XMLAccessor implements Accessor {
 	@Override
     public Slideshow load(final Parameters parameters) {
 		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
-		Slideshow slideShow = null;
+		Slideshow slideShow = Slideshow.getInstance();
         
 		int slideNumber, itemNumber, max = 0, maxItems = 0;
 		try {
