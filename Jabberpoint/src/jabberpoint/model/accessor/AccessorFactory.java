@@ -20,8 +20,13 @@ public class AccessorFactory {
      * @return the {@link Accessor} instance
      */
     public static Accessor getInstance() {
-
+    	System.out.println("Returning acessor depending on config");
         if (Configuration.getAccessorConfig().equals(Configuration.AccessorConfig.XML)) {
+        	if (XML_ACCESSOR == null){
+        		System.out.println("XML ACCESSOR IS NULL!!!");
+        	} else {
+        		System.out.println("Returning XML accessor");
+        	}
             return XML_ACCESSOR;
         } else {
             throw new ConfigurationException("Incorrect Accessor configuration");
@@ -30,6 +35,7 @@ public class AccessorFactory {
     }
 
     public static DemoAccessor getDemoAccessor() {
+    	System.out.println("Returning demo");
         return DEMO_ACCESSOR;
     }
 

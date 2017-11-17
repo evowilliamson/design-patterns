@@ -60,7 +60,7 @@ public class XMLAccessor implements Accessor {
     protected static final String NEXT = "next";
     protected static final String PREVIOUS = "previous";
     
-    protected static final String AUXILARYACTION = "auxilaryAction";
+    protected static final String AUXILIARYACTION = "auxiliaryAction";
     protected static final String BEEP = "beep";
     protected static final String FLASH = "flash";
     

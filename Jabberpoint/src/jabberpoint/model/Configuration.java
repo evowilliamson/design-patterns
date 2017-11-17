@@ -9,7 +9,7 @@ package jabberpoint.model;
  */
 public class Configuration {
 
-    private static AccessorConfig accessorConfig;
+    private static AccessorConfig accessorConfiguration = AccessorConfig.XML;
 
     /**
      * Returns the configured {@link jabberpoint.model.drawingdriver.DrawingDriver}.
@@ -22,11 +22,11 @@ public class Configuration {
     }
 
     public static AccessorConfig getAccessorConfig() {
-        return accessorConfig;
+        return accessorConfiguration;
     }
 
     public static void setAccessorConfig(AccessorConfig accessorConfig) {
-        accessorConfig = accessorConfig;
+        accessorConfiguration = accessorConfig;
     }
 
     public enum DrawingDriverConfig {
