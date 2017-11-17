@@ -40,7 +40,8 @@ public class Parameters {
     }
 
     public enum Parameter {
-        SLIDESHOW_NAME
+        SLIDESHOW_NAME,
+        FILE_NAME
     }
 
 }

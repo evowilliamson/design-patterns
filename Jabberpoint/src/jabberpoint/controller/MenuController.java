@@ -3,13 +3,16 @@ package jabberpoint.controller;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.*;
 
-import jabberpoint.model.Accessor;
+import jabberpoint.model.accessor.Accessor;
+import jabberpoint.model.accessor.AccessorFactory;
 import jabberpoint.model.Slideshow;
-import jabberpoint.model.old.XMLAccessor;
+import jabberpoint.model.accessor.XMLAccessor;
+import jabberpoint.model.util.Parameters;
 import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.view.AboutBox;
@@ -53,11 +56,75 @@ public class MenuController extends MenuBar {
 	protected static final String LOADERR = "Load Error";
 	protected static final String SAVEERR = "Save Error";
 
+	// blocking empty construction
+	private MenuController(){
+		
+	}
+	
+	private void loadFile(){
+		System.out.println("loadFile chosen.");
+        JFileChooser fc = new JFileChooser();
+		int r = fc.showOpenDialog(new Frame());
+		if (r == JFileChooser.APPROVE_OPTION) {
+			System.out.println("Opening file...");
+            File file = fc.getSelectedFile();
+            Accessor xmlAccessor = AccessorFactory.getInstance();
+			//try {
+				Parameters param = new Parameters();
+				System.out.println(file.getAbsolutePath());
+				param.setValue(Parameters.Parameter.FILE_NAME, file.getAbsolutePath());
+				Slideshow show = xmlAccessor.load(param);
+				//show.setSlideNumber(0);
+				//throw new IOException("fdfd");
+			//} catch (IOException exc) {
+				//JOptionPane.showMessageDialog(frame, IOEX + exc,
+     			//LOADERR, JOptionPane.ERROR_MESSAGE);
+			//}
+			
+            //This is where a real application would open the file.
+            //log.append("Opening: " + file.getName() + "." + newline);
+        } else {
+            //log.append("Open command cancelled by user." + newline);
+        }
+        //log.setCaretPosition(log.getDocument().getLength());
+	}
+	
+	private void saveFile(){
+		System.out.println("saveFile chosen.");
+        JFileChooser fc = new JFileChooser();
+		int r = fc.showSaveDialog(new Frame());
+		if (r == JFileChooser.APPROVE_OPTION) {
+			System.out.println("saving to file...");
+            File file = fc.getSelectedFile();
+            Accessor xmlAccessor = AccessorFactory.getInstance();
+			//try {
+				Parameters param = new Parameters();
+				System.out.println(file.getAbsolutePath());
+				param.setValue(Parameters.Parameter.FILE_NAME, file.getAbsolutePath());
+				Slideshow show = Slideshow.getInstance();
+				xmlAccessor.save(param, show);
+				//show.setSlideNumber(0);
+				//throw new IOException("fdfd");
+			//} catch (IOException exc) {
+				//JOptionPane.showMessageDialog(frame, IOEX + exc,
+     			//LOADERR, JOptionPane.ERROR_MESSAGE);
+			//}
+			
+            //This is where a real application would open the file.
+            //log.append("Opening: " + file.getName() + "." + newline);
+        } else {
+            //log.append("Open command cancelled by user." + newline);
+        }
+        //log.setCaretPosition(log.getDocument().getLength());
+	}
+	
+	
 	/**
 	 * Constructor that builds the menu controller
 	 * @param frame the frame that owns the composite drawing component
 	 */
-	public MenuController(final SlideViewerFrame frame) {
+	protected MenuController(final SlideViewerFrame frame) {
+		this();
 		this.frame = frame;
 		slideShow = Slideshow.getInstance();
 		MenuItem menuItem;
@@ -66,15 +133,7 @@ public class MenuController extends MenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				//presentation.clear();
-				Accessor xmlAccessor = new XMLAccessor();
-				try {
-					//xmlAccessor.loadFile(presentation, TESTFILE);
-					//presentation.setSlideNumber(0);
-					throw new IOException("fdfd");
-				} catch (IOException exc) {
-					JOptionPane.showMessageDialog(frame, IOEX + exc,
-         			LOADERR, JOptionPane.ERROR_MESSAGE);
-				}
+				loadFile();
 				frame.update();
 			}
 		} );
@@ -95,14 +154,8 @@ public class MenuController extends MenuBar {
 		fileMenu.add(menuItem = mkMenuItem(SAVE));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Accessor xmlAccessor = new XMLAccessor();
-				try {
-					//xmlAccessor.saveFile(presentation, SAVEFILE);
-					throw new IOException("fdfd");
-				} catch (IOException exc) {
-					JOptionPane.showMessageDialog(frame, IOEX + exc,
-							SAVEERR, JOptionPane.ERROR_MESSAGE);
-				}
+				saveFile();
+				frame.update();
 			}
 		});
 		fileMenu.addSeparator();

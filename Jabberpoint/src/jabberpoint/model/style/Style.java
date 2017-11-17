@@ -23,7 +23,7 @@ public abstract class Style {
      * @param leading
      *            number of units that should be reserved as space Y-wise.
      */
-    Style(final int indent, final int leading) {
+    protected Style(final int indent, final int leading) {
 
         this.indent = indent;
         this.leading = leading;

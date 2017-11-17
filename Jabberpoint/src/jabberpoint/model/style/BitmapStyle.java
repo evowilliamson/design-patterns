@@ -17,7 +17,7 @@ public class BitmapStyle extends Style {
      * @param leading
      *            number of units that should be reserved as space Y-wise.
      */
-    BitmapStyle(final int indent, final int leading) {
+    protected BitmapStyle(final int indent, final int leading) {
 
         super(indent, leading);
 

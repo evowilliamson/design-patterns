@@ -11,6 +11,8 @@ import jabberpoint.model.util.Parameters;
  */
 public class OpenDemoSlideshowAction extends SlideshowAction {
 
+	protected OpenDemoSlideshowAction(){}
+	
     @Override
     public void execute() {
         Parameters parameters = new Parameters();

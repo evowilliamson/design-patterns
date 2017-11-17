@@ -6,6 +6,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.*;
 
+import jabberpoint.controller.ControllerFactory;
 import jabberpoint.controller.KeyController;
 import jabberpoint.controller.MenuController;
 
@@ -41,8 +42,8 @@ public class SlideViewerFrame extends JFrame {
 				}
 			});
 		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController(this));
-		setMenuBar(new MenuController(this));
+		addKeyListener(ControllerFactory.createKeyController(this));
+		setMenuBar(ControllerFactory.createMenuController(this));
 		setSize(new Dimension(WIDTH_SCREEN, HEIGHT_SCREEN));
 		setVisible(true);
 	}

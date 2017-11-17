@@ -15,6 +15,7 @@ import java.util.List;
 import jabberpoint.model.action.Action;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.SlideItem;
+import jabberpoint.view.SlideViewerFrame;
 
 /**
  * @author rpott
@@ -24,12 +25,18 @@ public class MouseController extends MouseInputAdapter {
 	
 	private List<BoundingBox> boxes;
 	
-	public MouseController(){
+	protected MouseController(){
 		clearList();
 	}
 	
+	// just for contract reason, frame is not used, but MouseController uses input from SlideViewerComponent
+	protected MouseController(SlideViewerFrame frame){
+		//just eating the frame argument because it is not needed.
+		this();
+	}
+	
 	public void addBoundingBox(Rectangle r, ActionItemDecorator a){
-		boxes.add(new BoundingBox(r, a));
+		boxes.add(ControllerFactory.createBoundingBox(r, a));
 	}
 	
 	public void clearList(){

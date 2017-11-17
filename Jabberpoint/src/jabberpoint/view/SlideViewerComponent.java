@@ -13,9 +13,11 @@ import java.util.List;
 
 import javax.swing.*;
 
+import jabberpoint.controller.MouseController;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
 import jabberpoint.model.old.SlideOld;
+import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.model.style.BitmapStyle;
@@ -52,11 +54,22 @@ public class SlideViewerComponent extends JComponent {
     private int adjustableY;
     private float scale;
     private Font labelFont;
-
+    
     private Theme theme;
+    
+    private Rectangle lastRectangle; // used for drawing and adding event handling for action decorators
+    private MouseController mouseController; // the mouse controller needs input from the view so it can handle mouse clicks.
+    // Mouse events start from the view and deliver the position data to the controller.
 
-    public SlideViewerComponent() {
+    private SlideViewerComponent() {
         this.labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
+    }
+    
+    protected SlideViewerComponent(MouseController mouseController){
+    	this();
+    	this.mouseController = mouseController;
+    	this.addMouseListener(mouseController);
+    	this.addMouseMotionListener(mouseController);
     }
 
     /**
@@ -103,7 +116,7 @@ public class SlideViewerComponent extends JComponent {
      */
     public void drawCurrentSlideNumber(int currentSlideNumber, int totalSlides) {
 
-        this.graphics.setColor(COLOR_BLACK);
+//        this.graphics.setColor(COLOR_BLACK);
         this.graphics.drawString("Slide " + (1 + currentSlideNumber) + " of " + totalSlides,
                 XPOS, YPOS);
 
@@ -245,7 +258,8 @@ public class SlideViewerComponent extends JComponent {
             }
             ysize += layout.getLeading() + layout.getDescent();
         }
-        return new Rectangle((int) (style.getIndent() * scale), 0, xsize, ysize);
+        lastRectangle = new Rectangle((int) (style.getIndent() * scale), adjustableY, xsize, ysize);
+        return lastRectangle;
     }
 
     /**
@@ -260,10 +274,33 @@ public class SlideViewerComponent extends JComponent {
      * @return
      */
     private Rectangle getBoundingBox(BitmapItem bitmapItem, float scale, BitmapStyle style) {
-        return new Rectangle((int) (style.getIndent() * scale), 0, (int) (bitmapItem.getBufferedImage().getWidth(this) * scale),
+    	lastRectangle = new Rectangle((int) (style.getIndent() * scale), adjustableY, (int) (bitmapItem.getBufferedImage().getWidth(this) * scale),
                 ((int) (style.getLeading() * scale)) + (int) (bitmapItem.getBufferedImage().getHeight(this) * scale));
+        return lastRectangle;
 
     }
+    
+    /**
+     * Registers the SlideItem in the event handling MouseController and draws a rectangle if the SlideItem has actions
+     * @param s, the SlideItem object
+     * @param r, the corresponding Rectangle
+     */
+    public void registerEventHandling(ActionItemDecorator a){
+    	System.out.println("Registering event handling for Decorator");
+    	// getting the last generated rectangle
+    	Rectangle r = lastRectangle;
+    	// add the Action decorator to the mouse controller together with the rectangle
+    	if (mouseController != null){
+    		mouseController.addBoundingBox(r, a);
+    		//graphics.setColor(COLOR);
+    		// draw rectangle
+    		graphics.drawRect(r.x, r.y, r.width, r.height);
+    	}
+    	else {
+    		throw new NullPointerException("The mousController is not set.");
+    	}
+    }
+
 
     public Dimension getPreferredSize() {
         return new Dimension(SlideOld.WIDTH, SlideOld.HEIGHT);
