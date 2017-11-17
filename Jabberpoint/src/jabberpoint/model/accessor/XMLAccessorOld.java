@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import jabberpoint.model.slideitems.DisplayableItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -131,12 +132,12 @@ public class XMLAccessorOld implements Accessor {
     				SlideItem slideItem = (SlideItem) slide.getComponent(itemNumber);
     				out.print("<" + ITEM + " " + KIND + "="); 
     				if (slideItem instanceof TextItem) {
-    					out.print("\""+TEXT+"\" "+LEVEL+"=\"" + slideItem.getLevel() + "\">");
+    					out.print("\""+TEXT+"\" "+LEVEL+"=\"" + ((DisplayableItem) slideItem).getLevel() + "\">");
     					out.print( ( (TextItem) slideItem).getText());
     				}
     				else {
     					if (slideItem instanceof BitmapItem) {
-    						out.print("\""+IMAGE+"\" "+LEVEL+"=\"" + slideItem.getLevel() + "\">");
+    						out.print("\""+IMAGE+"\" "+LEVEL+"=\"" + ((DisplayableItem) slideItem).getLevel() + "\">");
     						out.print( ( (BitmapItem) slideItem).getFileName());
     					}
     					else {

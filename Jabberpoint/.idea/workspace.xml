@@ -2,101 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48153e5b-6bde-457e-b791-991d173f967c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/DisplayableItem.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/JabberPoint.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/BoundingBox.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/ControllerFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/KeyController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController$9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MenuController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/controller/MouseController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/Accessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/CompositeSlideShowComponent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/Configuration$AccessorConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/Configuration$DrawingDriverConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/Configuration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/DemoPresentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/Slide.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/SlideFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/Slideshow.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/Theme.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/accessor/Accessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/accessor/AccessorFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/accessor/DemoAccessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/accessor/XMLAccessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/AbsoluteNavigationAction$NavigationPosition.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/AbsoluteNavigationAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/Action.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/ActionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/AuxiliaryAction$Action.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/AuxiliaryAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/NavigationAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/OpenDemoSlideshowAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/RelativeNavigationAction$NavigationDirection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/RelativeNavigationAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/action/SlideshowAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/drawingdriver/DrawingDriver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/exception/ConfigurationException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/exception/NotImplementedExcpeption.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/BitmapItemOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/JabberPointOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/KeyControllerOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/MenuControllerOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/PresentationOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/SlideItemOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/SlideOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/SlideViewerComponentOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/SlideViewerFrameOld$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/SlideViewerFrameOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/StyleOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/TextItemOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/old/XMLAccessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/slideitems/ActionItemDecorator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/slideitems/BitmapItem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/slideitems/SlideItem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/slideitems/SlideItemFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/slideitems/TextItem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/style/BaseStyleFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/style/BitmapStyle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/style/BitmapStyleFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/style/Style.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/style/StyleFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/style/TextStyle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/style/TextStyleFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/util/Parameters$Parameter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/util/Parameters.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/AboutBox.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/SlideViewerComponent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/SlideViewerFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/SlideViewerFrame$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/SlideViewerFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/ThemeColorMapping.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/drawingdriver/DrawingDriverFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/drawingdriver/JavaFXDrawingDriver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/drawingdriver/SwingDrawingDriver.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessor.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/ActionItemDecorator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/BitmapItem.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/BitmapItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/TextItem.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slideitems/TextItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/view/drawingdriver/SwingDrawingDriver.java" afterPath="$PROJECT_DIR$/src/jabberpoint/view/drawingdriver/SwingDrawingDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessorOld.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessorOld.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,67 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Slideshow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jabberpoint/controller/KeyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Slide.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slide.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlideItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/TextItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="20" column="66" lean-forward="true" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="XMLAccessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="141" column="40" lean-forward="true" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
+            <state relative-caret-position="557">
+              <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -314,6 +165,7 @@
         <option value="$PROJECT_DIR$/src/jabberpoint/model/slideitems/TextItem.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/slideitems/BitmapItem.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/view/drawingdriver/SwingDrawingDriver.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessorOld.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessor.java" />
       </list>
     </option>
@@ -388,13 +240,6 @@
               <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -410,31 +255,7 @@
               <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="slideitems" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="drawingdriver" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -754,7 +575,7 @@
       <workItem from="1510830452524" duration="1878000" />
       <workItem from="1510832882329" duration="9417000" />
       <workItem from="1510910569396" duration="6181000" />
-      <workItem from="1510940645769" duration="2787000" />
+      <workItem from="1510940645769" duration="3705000" />
     </task>
     <task id="LOCAL-00001" summary="Make MVC structure">
       <created>1510390038714</created>
@@ -896,18 +717,32 @@
       <option name="project" value="LOCAL" />
       <updated>1510855400757</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="formatting">
+      <created>1510950917582</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1510950917582</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Merge branch 'master' of https://github.com/rpottgens/project_Pottgens_Willemsen&#10;&#10;# Conflicts:&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MenuController$5.class&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MouseController.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration$AccessorConfig.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/AccessorFactory.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/DemoAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/XMLAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction$Action.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction.class&#10;#&#9;Jabberpoint/bin/jabberpoint/view/drawingdriver/JavaFXDrawingDriver.class&#10;#&#9;Jabberpoint/src/jabberpoint/model/accessor/XMLAccessor.java">
+      <created>1510951814710</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1510951814710</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117827000" />
+    <option name="totallyTimeSpent" value="118745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Enso" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22257721" sideWeight="0.5533049" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22257721" sideWeight="0.57036245" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.58102345" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -920,12 +755,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4483493" sideWeight="0.46268657" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.47654584" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.46162048" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.41897655" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22257721" sideWeight="0.4466951" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.41577825" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22257721" sideWeight="0.42963752" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -943,6 +778,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1022,7 +867,8 @@
     <MESSAGE value="CompositeSlideShowComponent change to interface" />
     <MESSAGE value="Some refactoring" />
     <MESSAGE value="formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="formatting" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/rpottgens/project_Pottgens_Willemsen&#10;&#10;# Conflicts:&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MenuController$5.class&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MouseController.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration$AccessorConfig.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/AccessorFactory.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/DemoAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/XMLAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction$Action.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction.class&#10;#&#9;Jabberpoint/bin/jabberpoint/view/drawingdriver/JavaFXDrawingDriver.class&#10;#&#9;Jabberpoint/src/jabberpoint/model/accessor/XMLAccessor.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/rpottgens/project_Pottgens_Willemsen&#10;&#10;# Conflicts:&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MenuController$5.class&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MouseController.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration$AccessorConfig.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/AccessorFactory.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/DemoAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/XMLAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction$Action.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction.class&#10;#&#9;Jabberpoint/bin/jabberpoint/view/drawingdriver/JavaFXDrawingDriver.class&#10;#&#9;Jabberpoint/src/jabberpoint/model/accessor/XMLAccessor.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1064,13 +910,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/view/AboutBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Accessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1190,6 +1029,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1197">
           <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1276,6 +1116,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="66" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1433,6 +1274,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1639,7 +1483,7 @@
         <state relative-caret-position="288">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <marker date="1510928062718" expanded="false" signature="1216:1225" ph=" { " />
+            <marker date="1510950937921" expanded="false" signature="1643:1652" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1778,7 +1622,7 @@
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/controller/KeyController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1786,7 +1630,7 @@
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+          <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1796,7 +1640,7 @@
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slide.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1804,7 +1648,7 @@
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/SlideItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1814,17 +1658,25 @@
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/TextItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
-          <caret line="20" column="66" lean-forward="true" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+          <caret line="20" column="66" lean-forward="false" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessorOld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="134" column="93" lean-forward="false" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="141" column="40" lean-forward="true" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
+        <state relative-caret-position="557">
+          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
