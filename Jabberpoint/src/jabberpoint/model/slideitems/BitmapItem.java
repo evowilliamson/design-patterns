@@ -11,10 +11,12 @@ import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 public class BitmapItem extends SlideItem {
 
     private BufferedImage bufferedImage;
+    private String fileName;
 
-    public BitmapItem(final int level, String fileName) {
+    protected BitmapItem(final int level, String fileName) {
 
         super(level);
+        this.fileName = fileName;
         try {
             bufferedImage = ImageIO.read(new File(fileName));
         } catch (IOException e) {
@@ -35,6 +37,10 @@ public class BitmapItem extends SlideItem {
 
         return bufferedImage;
 
+    }
+    
+    public String getFileName() {
+    	return fileName;
     }
 
 }

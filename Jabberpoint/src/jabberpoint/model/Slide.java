@@ -17,7 +17,7 @@ public class Slide implements CompositeSlideShowComponent {
 
     private String title;
 
-    public Slide(String title) {
+    protected Slide(String title) {
         this.title = title;
     }
 

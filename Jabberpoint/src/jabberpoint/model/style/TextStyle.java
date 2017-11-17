@@ -32,7 +32,7 @@ public class TextStyle extends Style {
      * @param leading
      *            number of units that should be reserved as space Y-wise.
      */
-    TextStyle(
+    protected TextStyle(
             @NotNull final Color color,
             final int fontSize,
             int indent,

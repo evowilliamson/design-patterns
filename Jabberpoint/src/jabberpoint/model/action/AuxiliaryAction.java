@@ -10,7 +10,8 @@ public class AuxiliaryAction implements Action {
 
     private AuxiliaryAction.Action action;
 
-    public AuxiliaryAction(AuxiliaryAction.Action action) {
+    private AuxiliaryAction(){}
+    protected AuxiliaryAction(AuxiliaryAction.Action action) {
         this.action = action;
     }
 

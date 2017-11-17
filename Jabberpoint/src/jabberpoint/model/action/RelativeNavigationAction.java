@@ -12,13 +12,16 @@ public class RelativeNavigationAction extends NavigationAction {
 
     private NavigationDirection direction;
 
+    
+    private RelativeNavigationAction(){}
+    
     /**
      * Constructor that creates an action to move according to the indicated {@link NavigationDirection}
      * 
      * @param direction
      *            the position to move to
      */
-    public RelativeNavigationAction(NavigationDirection direction) {
+    protected RelativeNavigationAction(NavigationDirection direction) {
 
         this.direction = direction;
 

@@ -24,7 +24,11 @@ import jabberpoint.view.SlideViewerFrame;
 public class KeyController extends KeyAdapter {
 	private SlideViewerFrame frame;
 
-	public KeyController(SlideViewerFrame frame) {
+	private KeyController(){
+		
+	}
+	
+	protected KeyController(SlideViewerFrame frame) {
 		this.frame = frame;
 
 	}

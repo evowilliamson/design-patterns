@@ -25,7 +25,7 @@ public class ActionItemDecorator extends SlideItem {
      * Constructor that creates an action decorated SlideItem with a certain level
      *
      */
-    public ActionItemDecorator(final SlideItem slideItem, final List<Action> actions) {
+    protected ActionItemDecorator(final SlideItem slideItem, final List<Action> actions) {
 
         super(0);
         this.setActions(actions);
@@ -43,5 +43,8 @@ public class ActionItemDecorator extends SlideItem {
         DrawingDriverFactory.getInstance().drawActionItemDecorator(this);
 
     }
-
+ // Getters and setters:
+    public SlideItem getSlideItem() {
+        return slideItem;
+    }
 }

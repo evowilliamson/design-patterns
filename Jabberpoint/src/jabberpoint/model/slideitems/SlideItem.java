@@ -15,6 +15,8 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
 
     private int level;
 
+    private SlideItem(){}
+    
     private List<Action> actions = new ArrayList<Action>();
 
     /**
@@ -23,8 +25,9 @@ public abstract class SlideItem implements CompositeSlideShowComponent {
      * @param level
      *            the level that is associated with the slide item
      */
-    public SlideItem(int level) {
-
+    protected SlideItem(int level) {
+    	
+    	this();
         this.level = level;
 
     }

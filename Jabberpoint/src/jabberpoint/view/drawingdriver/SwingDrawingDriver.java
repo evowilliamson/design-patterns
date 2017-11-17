@@ -1,14 +1,24 @@
 package jabberpoint.view.drawingdriver;
 
+import jabberpoint.controller.ControllerFactory;
+import jabberpoint.controller.MouseController;
+
 import jabberpoint.model.Theme;
+
 import jabberpoint.model.drawingdriver.DrawingDriver;
+
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
+import jabberpoint.model.slideitems.SlideItem;
+import jabberpoint.model.slideitems.SlideItemFactory;
 import jabberpoint.model.slideitems.TextItem;
+
 import jabberpoint.model.style.BitmapStyle;
 import jabberpoint.model.style.StyleFactory;
 import jabberpoint.model.style.TextStyle;
+
 import jabberpoint.view.SlideViewerComponent;
+import jabberpoint.view.SlideViewerFactory;
 import jabberpoint.view.SlideViewerFrame;
 
 /**
@@ -23,11 +33,15 @@ public class SwingDrawingDriver implements DrawingDriver {
 
     public SwingDrawingDriver() {
     }
+    
+    public void setMouseController(MouseController mouseController) {
+    	this.setMouseController(mouseController);
+    }
 
     @Override
     public void initialize(final String title) {
-        this.slideViewerFrame = new SlideViewerFrame(title);
-        this.slideViewerComponent = new SlideViewerComponent();
+        this.slideViewerFrame = SlideViewerFactory.createSlideViewerFrame(title);
+        this.slideViewerComponent = SlideViewerFactory.createSlideViewerComponent(ControllerFactory.createMouseController());
         this.slideViewerFrame.initialize(this.slideViewerComponent);
     }
 
@@ -47,7 +61,7 @@ public class SwingDrawingDriver implements DrawingDriver {
     @Override
     public void drawTitle(final String title) {
         // Title is a text item with level 0
-        TextItem textItem = new TextItem(TITLE_LEVEL, title);
+        TextItem textItem = SlideItemFactory.createTextItem(TITLE_LEVEL, title);
         drawTextItem(textItem);
     }
 
@@ -68,6 +82,9 @@ public class SwingDrawingDriver implements DrawingDriver {
     @Override
     public void drawActionItemDecorator(final ActionItemDecorator actionItemDecorator) {
         // TODO Code plaatsen voor de aansturing van printen van border in slideViewerComponent
+    	SlideItem decoratedItem = actionItemDecorator.getSlideItem();
+    	decoratedItem.draw(); // draw decorated item
+    	this.slideViewerComponent.registerEventHandling(actionItemDecorator);
     }
 
 }

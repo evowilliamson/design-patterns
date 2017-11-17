@@ -12,13 +12,15 @@ public class AbsoluteNavigationAction extends NavigationAction {
     private NavigationPosition position;
     private int slideNumber;
 
+    private AbsoluteNavigationAction(){}
+    
     /**
      * Constructor that creates an action to move to the indicated {@link NavigationPosition}
      * 
      * @param position
      *            the position to move to
      */
-    public AbsoluteNavigationAction(NavigationPosition position) {
+    protected AbsoluteNavigationAction(NavigationPosition position) {
 
         this.position = position;
 
@@ -30,7 +32,7 @@ public class AbsoluteNavigationAction extends NavigationAction {
      * @param position
      * @param slideNumber
      */
-    public AbsoluteNavigationAction(NavigationPosition position, int slideNumber) {
+    protected AbsoluteNavigationAction(NavigationPosition position, int slideNumber) {
         this(position);
         this.slideNumber = slideNumber;
     }

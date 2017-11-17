@@ -14,7 +14,7 @@ public class TextItem extends SlideItem {
      * @param text
      *            the text that is the essential part of the text item
      */
-    public TextItem(final int level, String text) {
+    protected TextItem(final int level, String text) {
 
         super(level);
         this.text = text;
