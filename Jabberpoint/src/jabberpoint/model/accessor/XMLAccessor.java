@@ -187,8 +187,8 @@ public class XMLAccessor implements Accessor {
     		writeActionItem(actionItem, out, 0);
     	}
     }
-    @Override
     
+    @Override
     public void save(final Parameters parameters, final Slideshow slideShow) {
     	try {
     		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
@@ -223,6 +223,10 @@ public class XMLAccessor implements Accessor {
 		}
     }
 
+    /**
+     * This private method is used to restructure the recursive structure in XML to a List, In order to do this, this method adds the items to a list in the background.
+     *      * @param element the XML parsed @Element
+     */
     private void getDecoratedActions(Element element){
     	try{
     		String name = element.getAttribute(NAME);
@@ -264,6 +268,12 @@ public class XMLAccessor implements Accessor {
     		System.err.println(NFE);
     	}
     }
+    
+    /**
+     * This method delivers a XML parsed visible SideItem
+     * @param element The XML parsed @Element
+     * @return the visible @SlideItem
+     */
     private SlideItem getVisibleItem(Element element){
     	try{
     		if (element.getTagName().equals(TEXT)){
@@ -285,6 +295,12 @@ public class XMLAccessor implements Accessor {
     		return lastSlideItem;
     	}
     }
+    
+    /**
+     * This private method gets a SlideItem from XML file
+     * @param element the XML parsed @element
+     * @return the @SlideItem
+     */
     private SlideItem getItem(Element element){
     	if (element.getTagName().equals(ACTION)){
     		if (actionList == null) // first begin
