@@ -27,8 +27,11 @@ import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.AbsoluteNavigationAction.NavigationPosition;
 import jabberpoint.model.action.Action;
 import jabberpoint.model.action.ActionFactory;
+import jabberpoint.model.action.AuxiliaryAction;
 import jabberpoint.model.action.AuxiliaryAction.AuxAction;
+import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.model.action.RelativeNavigationAction.NavigationDirection;
+import jabberpoint.model.exception.NotImplementedException;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
@@ -105,20 +108,29 @@ public class XMLAccessor implements Accessor {
     			out.print(INDEX);
     			out.print("\" "+ARGUMENT+"=\"");
     			out.print(navAction.getSlideNumber());
-    		}
-    		if (pos == NavigationPosition.FIRST){
+    		} else if (pos == NavigationPosition.FIRST){
     			out.print(FIRST);
-    		}
-    		if (pos == NavigationPosition.LAST){
+    		} else if (pos == NavigationPosition.LAST){
     			out.print(LAST);
+    		} else {
+    			throw new NotImplementedException("It is not allowed to write actions wich are not implemented.");
     		}
+    	} else if (action instanceof RelativeNavigationAction){
+    		RelativeNavigationAction navAction = (RelativeNavigationAction) action;
+    		NavigationDirection dir = navAction.getNavigationDirection();
+    		if (dir == NavigationDirection.NEXT){
+    			out.print(NEXT);
+    		} else if (dir == NavigationDirection.PREVIOUS){
+    			out.print(PREVIOUS);
+    		} else {
+    			throw new NotImplementedException("It is not allowed to write actions wich are not implemented.");
+    		}
+    	} else if (action instanceof AuxiliaryAction){
+    		AuxiliaryAction auxAction = (AuxiliaryAction) action;
+    		
     	}
     	/*
-    	if (name.equals(NEXT)){
-			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.NEXT));
-		} else if (name.equals(PREVIOUS)){
-			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.PREVIOUS));
-		} else if (name.equals(BEEP)){
+    	} else if (name.equals(BEEP)){
 			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.BEEP));
 		} else if (name.equals(FLASH)){
 			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.FLASH));
