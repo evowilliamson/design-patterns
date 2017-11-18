@@ -29,6 +29,7 @@ import jabberpoint.model.action.Action;
 import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.AuxiliaryAction;
 import jabberpoint.model.action.AuxiliaryAction.AuxAction;
+import jabberpoint.model.action.OpenDemoSlideshowAction;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.model.action.RelativeNavigationAction.NavigationDirection;
 import jabberpoint.model.exception.NotImplementedException;
@@ -137,18 +138,9 @@ public class XMLAccessor implements Accessor {
     		} else {
     			throw new NotImplementedException("It is not allowed to write actions wich are not implemented.");
     		}
-    	}
-    	/*
-    	} else if (name.equals(BEEP)){
-			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.BEEP));
-		} else if (name.equals(FLASH)){
-			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.FLASH));
-		} else if (name.equals(EXIT)){
-			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.EXIT));
-		} else if (name.equals(OPENDEMOSLIDESHOWACTION)){
-			actionList.add(ActionFactory.createOpenDemoSlideshowAction());
-    	 */
-		
+    	} else if (action instanceof OpenDemoSlideshowAction){
+    		out.print(OPENDEMOSLIDESHOWACTION);
+    	}	
     }
     
     private void writeActionItem(ActionItemDecorator item, PrintWriter out, int actionNumber){
