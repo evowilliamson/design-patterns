@@ -127,7 +127,16 @@ public class XMLAccessor implements Accessor {
     		}
     	} else if (action instanceof AuxiliaryAction){
     		AuxiliaryAction auxAction = (AuxiliaryAction) action;
-    		
+    		AuxAction aux = auxAction.getAction();
+    		if (aux == AuxAction.BEEP){
+    			out.print(BEEP);
+    		} else if (aux == AuxAction.FLASH){
+    			out.print(FLASH);
+    		} else if (aux == AuxAction.EXIT){
+    			out.print(EXIT);
+    		} else {
+    			throw new NotImplementedException("It is not allowed to write actions wich are not implemented.");
+    		}
     	}
     	/*
     	} else if (name.equals(BEEP)){
