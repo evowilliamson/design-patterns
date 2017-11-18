@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48153e5b-6bde-457e-b791-991d173f967c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/accessor/XMLAccessorOld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/accessor/XMLVersionAcessorFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/model/exception/NotImplementedException.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../VerslagWord/VerslagEindopdracht.docx" afterPath="$PROJECT_DIR$/../VerslagWord/VerslagEindopdracht.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../VerslagWord/eindeopdracht.eap" afterPath="$PROJECT_DIR$/../VerslagWord/eindeopdracht.eap" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -24,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="XMLAccessor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="XMLAccessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="516">
@@ -32,6 +29,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Accessor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Accessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -328,7 +335,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Slidshow&#9;PSI&#9;JAVA://jabberpoint.controller.MenuController#slideShow&#10;slidevie&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerComponentOld.java&#10;slide&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerFrameOld.java&#10;textItem&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/TextItemOld.java&#10;Para&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/util/Parameters.java&#10;Slidev&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/SlideViewerComponent.java&#10;Sw&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/drawingdriver/SwingDrawingDriver.java&#10;Driver&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/drawingdriver/DrawingDriver.java&#10;SlideO&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideOld.java&#10;KeyC&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/KeyControllerOld.java&#10;Bitm&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/slideitems/BitmapItem.java&#10;Bitmapite&#9;PSI&#9;JAVA://jabberpoint.model.BitmapItem" />
+    <property name="SearchEverywhereHistoryKey" value="Accessor&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/Accessor.java&#10;Slidshow&#9;PSI&#9;JAVA://jabberpoint.controller.MenuController#slideShow&#10;slidevie&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerComponentOld.java&#10;slide&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerFrameOld.java&#10;textItem&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/TextItemOld.java&#10;Para&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/util/Parameters.java&#10;Slidev&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/SlideViewerComponent.java&#10;Sw&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/drawingdriver/SwingDrawingDriver.java&#10;Driver&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/drawingdriver/DrawingDriver.java&#10;SlideO&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideOld.java&#10;KeyC&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/KeyControllerOld.java&#10;Bitm&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/slideitems/BitmapItem.java&#10;Bitmapite&#9;PSI&#9;JAVA://jabberpoint.model.BitmapItem" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -580,7 +587,7 @@
       <workItem from="1510832882329" duration="9417000" />
       <workItem from="1510910569396" duration="6181000" />
       <workItem from="1510940645769" duration="3829000" />
-      <workItem from="1510991056748" duration="595000" />
+      <workItem from="1510991056748" duration="2373000" />
     </task>
     <task id="LOCAL-00001" summary="Make MVC structure">
       <created>1510390038714</created>
@@ -747,7 +754,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119464000" />
+    <option name="totallyTimeSpent" value="121242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1422,13 +1429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Accessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/JabberPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1642,6 +1642,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Accessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
