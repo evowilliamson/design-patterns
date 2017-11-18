@@ -12,6 +12,7 @@ import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 public class BitmapItem extends DisplayableItem {
 
     private BufferedImage bufferedImage;
+    // file name is needed here in order to save
     private String fileName;
 
     protected BitmapItem(final int level, String fileName) {
