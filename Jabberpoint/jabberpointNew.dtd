@@ -3,7 +3,7 @@
  $Id$
  -->
 <!ELEMENT slideshow (head,slide+)>
-<!ELEMENT head (title, theme?)>
+<!ELEMENT head (title, theme?, slidenumber?)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT slide (title, items)>
 <!ELEMENT items (text|image|action)*>

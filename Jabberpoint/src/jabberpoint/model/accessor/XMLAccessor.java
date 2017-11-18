@@ -34,6 +34,8 @@ public class XMLAccessor implements Accessor {
     /** namen van xml tags of attributen */
     
     protected static final String HEAD = "head"; 
+    protected static final String THEME = "theme";
+    protected static final String SLIDENUMBER = "slidenumber";
     protected static final String SLIDESHOW = "slideshow";
     protected static final String SHOWTITLE = "showtitle";
     protected static final String SLIDETITLE = "title";
@@ -126,7 +128,8 @@ public class XMLAccessor implements Accessor {
     @Override
     public Slideshow load(final Parameters parameters) {
 		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
-		Slideshow slideShow = Slideshow.createInstance(Theme.MODERN);
+		Slideshow slideShow = Slideshow.createInstance(Theme.NORMAL);
+		Theme theme = Theme.NORMAL;
         
 		int slideNumber, itemNumber, max = 0, maxItems = 0;
 		try {
@@ -137,6 +140,16 @@ public class XMLAccessor implements Accessor {
 			NodeList headers = doc.getElementsByTagName(HEAD);
 			Element header = (Element)headers.item(0);
 			String showtitle = header.getElementsByTagName(TITLE).item(0).getTextContent();
+			NodeList themes = header.getElementsByTagName(THEME);
+			if (themes.getLength() > 0) // theme is present
+			{
+				String configTheme = themes.item(0).getTextContent();
+				for (Theme t : Theme.values()) {
+			        if (t.name().equals(configTheme)) {
+			            theme = t;
+			        }
+			    }
+			}
 			
 		} 
 		catch (IOException iox) {
