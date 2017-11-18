@@ -128,10 +128,10 @@ public class XMLAccessor implements Accessor {
     @Override
     public Slideshow load(final Parameters parameters) {
 		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
-		Slideshow slideShow = Slideshow.createInstance(Theme.NORMAL);
+		Slideshow slideshow = Slideshow.createInstance(Theme.NORMAL);
 		Theme theme = Theme.NORMAL;
         
-		int slideNumber = 0, setSlideNumber = 0, itemNumber, max = 0, maxItems = 0;
+		int slideNumber = 0, setSlideNumber = 1, itemNumber, max = 0, maxItems = 0;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
 			Document document = builder.parse(new File(filename)); // maak een JDOM document
@@ -156,12 +156,23 @@ public class XMLAccessor implements Accessor {
 				String numberText = slidenumbers.item(0).getTextContent();
 				if (numberText != null) {
 					try {
-						setSlideNumber = Integer.parseInt(leveltext);
+						setSlideNumber = Integer.parseInt(numberText);
 					}
 					catch(NumberFormatException x) {
 						System.err.println(NFE);
 					}
 				}
+			}
+			slideshow = Slideshow.createInstance(theme);
+			
+			NodeList slides = doc.getElementsByTagName(SLIDE);
+			max = slides.getLength();
+			for (slideNumber = 0; slideNumber < max; slideNumber++) {
+				Element xmlSlide = (Element) slides.item(slideNumber);
+				NodeList titles = xmlSlide.getElementsByTagName(TITLE);
+				Slide slide = SlideFactory.createSlide(titles.item(0).getTextContent());
+				
+				
 			}
 			
 		} 
@@ -174,9 +185,7 @@ public class XMLAccessor implements Accessor {
 		catch (ParserConfigurationException pcx) {
 			System.err.println(PCE);
 		}
-		
-        slideShow.setCurrentSlideNumber(0);
 
-        return slideShow;
+        return slideshow;
     }
 }
