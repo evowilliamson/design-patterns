@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -95,6 +96,30 @@ public class XMLAccessor implements Accessor {
     private ArrayList<Action> actionList = null;
     private SlideItem lastSlideItem = null;
     
+    private void writeActionItem(ActionItemDecorator item, PrintWriter out){
+    	/*List<Action> actions = item.getActions();
+    	for (int j = 0; j < actions.size();j++) {
+    		out.println("<"+ACTION+">");
+			Action action = actions.get(j);
+		}*/
+    }
+    
+    private void writeItem(SlideItem item, PrintWriter out){
+    	if (item instanceof BitmapItem){
+    		BitmapItem bitmapItem = (BitmapItem) item;
+    		out.print("<"+IMAGE+" "+LEVEL+"=\""+bitmapItem.getLevel()+"\">");
+    		out.print(bitmapItem.getFileName());
+    		out.println("</"+IMAGE+">");
+    	} else if (item instanceof TextItem){
+    		TextItem textItem = (TextItem) item;
+    		out.print("<"+TEXT+" "+LEVEL+"=\""+textItem.getLevel()+"\">");
+    		out.print(textItem.getText());
+    		out.println("</"+TEXT+">");
+    	} else if (item instanceof ActionItemDecorator){
+    		ActionItemDecorator actionItem = (ActionItemDecorator) item;
+    		writeActionItem(actionItem, out);
+    	}
+    }
     @Override
     public void save(final Parameters parameters, final Slideshow slideShow) {
     	try {
@@ -102,37 +127,27 @@ public class XMLAccessor implements Accessor {
     		PrintWriter out = new PrintWriter(new FileWriter(filename));
     		int amountOfSlides = slideShow.getComponentCount();
     		out.println("<?xml version=\"1.0\"?>");
-    		out.println("<!DOCTYPE slideshow SYSTEM \"jabberpoint.dtd\">");
-    		out.println("<" + PRESENTATION + ">");
-    		out.print("<" + SHOWTITLE +">");
-    		out.print(slideShow.getTitle());
-    		out.println("</"+SHOWTITLE+">");
+    		out.println("<!DOCTYPE slideshow SYSTEM \"jabberpointNew.dtd\">");
+    		out.println("<" + SLIDESHOW + ">");
+    		out.println("<" + HEAD + ">");
+    		out.println("<" + TITLE +">"+slideShow.getTitle()+"</"+TITLE+">");
+    		out.println("<"+THEME+">"+slideShow.getTheme().name()+"</"+THEME+">");
+    		out.println("<"+SLIDENUMBER+">"+slideShow.getCurrentSlideNumber()+1+"</"+SLIDENUMBER+">");
+    		out.println("</"+HEAD+">");
     		for (int slideNumber=0; slideNumber < amountOfSlides; slideNumber++) {
     			Slide slide = (Slide) slideShow.getComponent(slideNumber);
-    			out.println("<" + SLIDE + ">");
-    			out.println("<" + SLIDETITLE + ">" + slide.getTitle() + "</" + SLIDETITLE +">");
+    			out.println("<"+SLIDE+">");
+    			out.println("<"+TITLE+">" +slide.getTitle()+"</"+TITLE+">");
+    			out.println("<"+ITEMS+">");
     			int amountOfItems = slide.getComponentCount();
     			for (int itemNumber = 0; itemNumber < amountOfItems; itemNumber++) {
     				SlideItem slideItem = (SlideItem) slide.getComponent(itemNumber);
-    				out.print("<" + ITEM + " " + KIND + "="); 
-    				if (slideItem instanceof TextItem) {
-    					out.print("\""+TEXT+"\" "+LEVEL+"=\"" + ((DisplayableItem) slideItem).getLevel() + "\">");
-    					out.print( ( (TextItem) slideItem).getText());
-    				}
-    				else {
-    					if (slideItem instanceof BitmapItem) {
-    						out.print("\""+IMAGE+"\" "+LEVEL+"=\"" + ((DisplayableItem) slideItem).getLevel() + "\">");
-    						out.print( ( (BitmapItem) slideItem).getFileName());
-    					}
-    					else {
-    						System.out.println(IGNORING+ " " + slideItem);
-    					}
-    				}
-    				out.println("</"+ITEM+">");
+    				writeItem(slideItem, out);
     			}
+    			out.println("</"+ITEMS+">");
     			out.println("</"+SLIDE+">");
     		}
-    		out.println("</"+PRESENTATION+">");
+    		out.println("</"+SLIDESHOW+">");
     		out.close();
 		}
 		catch (Exception iox) {
@@ -247,7 +262,7 @@ public class XMLAccessor implements Accessor {
 			    }
 			}
 			NodeList slidenumbers = header.getElementsByTagName(SLIDENUMBER);
-			if (slidenumbers.getLength() > 0) // slideNumber  is present
+			if (slidenumbers.getLength() > 0) // slideNumber is present
 			{
 				String numberText = slidenumbers.item(0).getTextContent();
 				if (numberText != null) {
