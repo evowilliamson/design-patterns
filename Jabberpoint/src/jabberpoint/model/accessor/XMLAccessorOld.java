@@ -50,6 +50,7 @@ public class XMLAccessorOld implements Accessor {
     protected static final String TEXT = "text";
     protected static final String IMAGE = "image";
     protected static final String ACTIONITEM = "actionItem";
+    protected static final String IGNORING = "IGNORING";
     
     //actions
     protected static final String NAVIGATIONACTION = "navigationAction";
@@ -141,7 +142,7 @@ public class XMLAccessorOld implements Accessor {
     						out.print( ( (BitmapItem) slideItem).getFileName());
     					}
     					else {
-    						System.out.println("Ignoring " + slideItem);
+    						System.out.println(IGNORING+ " " + slideItem);
     					}
     				}
     				out.println("</"+ITEM+">");
