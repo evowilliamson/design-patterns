@@ -92,7 +92,8 @@ public class XMLAccessor implements Accessor {
     protected XMLAccessor() {
     }
 
-    ArrayList<Action> actionList = null;
+    private ArrayList<Action> actionList = null;
+    private SlideItem lastSlideItem = null;
     
     @Override
     public void save(final Parameters parameters, final Slideshow slideShow) {
@@ -180,15 +181,43 @@ public class XMLAccessor implements Accessor {
     		System.err.println(NFE);
     	}
     }
+    private SlideItem getVisibleItem(Element element){
+    	try{
+    		if (element.getTagName().equals(TEXT)){
+    			String level = element.getAttribute(LEVEL);
+    			String content = element.getTextContent();
+    			int i = Integer.parseInt(level);
+    			return SlideItemFactory.createTextItem(i, content);
+    		} else if (element.getTagName().equals(IMAGE)){
+    			String level = element.getAttribute(LEVEL);
+    			String content = element.getTextContent();
+    			int i = Integer.parseInt(level);
+    			return SlideItemFactory.createBitmapItem(i, content);
+    		} else {
+    			return lastSlideItem;// is not a visible Item
+    		}
+    	}
+    	catch (NumberFormatException e){
+    		System.err.println(NFE);
+    		return lastSlideItem;
+    	}
+    }
     private SlideItem getItem(Element element){
     	if (element.getTagName().equals(ACTION)){
-    		if (actionList == null)
+    		if (actionList == null) // first begin
     		{
     			actionList = new ArrayList<Action>();
+    			getDecoratedActions(element);
+    			SlideItem actionItem = SlideItemFactory.createActionItemDecorator(lastSlideItem, actionList);
+    			return actionItem;
+    		} else{
+    			getDecoratedActions(element);
+    			return lastSlideItem;
     		}
-    		getDecoratedActions(element);
-    	} else { // is visible item
     		
+    	} else { // is visible item
+    		lastSlideItem =  getVisibleItem(element);
+    		return lastSlideItem;
     	}
     }
     
@@ -231,7 +260,7 @@ public class XMLAccessor implements Accessor {
 				}
 			}
 			slideshow = Slideshow.createInstance(theme);
-			
+			slideshow.setTitle(showtitle);
 			NodeList slides = doc.getElementsByTagName(SLIDE);
 			max = slides.getLength();
 			for (slideNumber = 0; slideNumber < max; slideNumber++) {
@@ -251,11 +280,15 @@ public class XMLAccessor implements Accessor {
 					if(node instanceof Element){
 						slideItem = getItem((Element) node);
 						slide.addComponent(slideItem);
+						// resetting own vars
 						actionList = null;
+						lastSlideItem = null;
 					}
 				}
+				slideshow.addComponent(slide);
+				
 			}
-			
+			slideshow.setCurrentSlideNumber(setSlideNumber-1);
 		} 
 		catch (IOException iox) {
 			System.err.println(iox.toString());
