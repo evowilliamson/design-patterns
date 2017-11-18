@@ -54,25 +54,25 @@ public class SlideViewerComponent extends JComponent {
     private int adjustableY;
     private float scale;
     private Font labelFont;
-    
+
     private Theme theme;
-    
+
     private Rectangle lastRectangle; // used for drawing and adding event handling for action decorators
     private MouseController mouseController; // the mouse controller needs input from the view so it can handle mouse clicks.
+
     // Mouse events start from the view and deliver the position data to the controller.
 
     private SlideViewerComponent() {
         this.labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
     }
-    
-    protected SlideViewerComponent(MouseController mouseController){
-    	this();
-    	this.mouseController = mouseController;
-    	this.addMouseListener(mouseController);
-    	this.addMouseMotionListener(mouseController);
+
+    protected SlideViewerComponent(MouseController mouseController) {
+        this();
+        this.mouseController = mouseController;
+        this.addMouseListener(mouseController);
+        this.addMouseMotionListener(mouseController);
     }
-    
-    
+
     /**
      * Update the this.graphics object. This object will be used later when the text items and
      * bitmaps are printed on the screen.
@@ -81,10 +81,16 @@ public class SlideViewerComponent extends JComponent {
      *            the graphics object onto which elements are drawn
      */
     public void paintComponent(Graphics graphics) {
-    	// Clear the list in MouseController. This is needed every time a new slide will be drawn.
-    	// this removes old BoundingBoxes from the list.
-    	mouseController.clearList();
+        // Clear the list in MouseController. This is needed every time a new slide will be drawn.
+        // this removes old BoundingBoxes from the list.
+        mouseController.clearList();
         this.setGraphics(graphics);
+
+        /*
+         * The following code should be removed. Drawing of the slideshow should be triggers by the controller
+         * after the repaint on the frame is done. It should be able to draw the objects because the Graphics
+         * objects has been captured above.
+         */
         Slideshow slideshow = Slideshow.getInstance();
         if (slideshow != null) {
             slideshow.draw();
@@ -114,8 +120,10 @@ public class SlideViewerComponent extends JComponent {
     /**
      * This method draws the slide number on the screen
      *
-     * @param currentSlideNumber the current slide number
-     * @param totalSlides the total number of slides
+     * @param currentSlideNumber
+     *            the current slide number
+     * @param totalSlides
+     *            the total number of slides
      */
     public void drawCurrentSlideNumber(int currentSlideNumber, int totalSlides) {
 
@@ -277,33 +285,36 @@ public class SlideViewerComponent extends JComponent {
      * @return
      */
     private Rectangle getBoundingBox(BitmapItem bitmapItem, float scale, BitmapStyle style) {
-    	lastRectangle = new Rectangle((int) (style.getIndent() * scale), adjustableY, (int) (bitmapItem.getBufferedImage().getWidth(this) * scale),
+        lastRectangle = new Rectangle((int) (style.getIndent() * scale), adjustableY,
+                (int) (bitmapItem.getBufferedImage().getWidth(this) * scale),
                 ((int) (style.getLeading() * scale)) + (int) (bitmapItem.getBufferedImage().getHeight(this) * scale));
         return lastRectangle;
 
     }
-    
+
     /**
      * Registers the SlideItem in the event handling MouseController and draws a rectangle if the SlideItem has actions
-     * @param s, the SlideItem object
-     * @param r, the corresponding Rectangle
+     * 
+     * @param s
+     *            , the SlideItem object
+     * @param r
+     *            , the corresponding Rectangle
      */
-    public void registerEventHandling(ActionItemDecorator a){
-    	System.out.println("Registering event handling for Decorator");
-    	// getting the last generated rectangle
-    	Rectangle r = lastRectangle;
-    	// add the Action decorator to the mouse controller together with the rectangle
-    	if (mouseController != null){
-    		mouseController.addBoundingBox(r, a);
-    		//graphics.setColor(COLOR);
-    		// draw rectangle
-    		graphics.drawRect(r.x, r.y, r.width, r.height);
-    	}
-    	else {
-    		throw new NullPointerException("The mousController is not set.");
-    	}
+    public void registerEventHandling(ActionItemDecorator a) {
+        System.out.println("Registering event handling for Decorator");
+        // getting the last generated rectangle
+        Rectangle r = lastRectangle;
+        // add the Action decorator to the mouse controller together with the rectangle
+        if (mouseController != null) {
+            mouseController.addBoundingBox(r, a);
+            // graphics.setColor(COLOR);
+            // draw rectangle
+            graphics.drawRect(r.x, r.y, r.width, r.height);
+        }
+        else {
+            throw new NullPointerException("The mousController is not set.");
+        }
     }
-
 
     public Dimension getPreferredSize() {
         return new Dimension(SlideOld.WIDTH, SlideOld.HEIGHT);
