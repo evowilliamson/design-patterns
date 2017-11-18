@@ -73,5 +73,10 @@ public class RelativeNavigationAction extends NavigationAction {
     public enum NavigationDirection {
         NEXT, PREVIOUS
     }
+    
+    // SAVING TO FILE NEEDS GETTERS
+    public NavigationDirection getNavigationDirection(){
+    	return direction;
+    }
 
 }
