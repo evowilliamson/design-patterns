@@ -14,3 +14,4 @@
 <!ATTLIST text level CDATA #REQUIRED>
 <!ATTLIST image level CDATA #REQUIRED>
 <!ATTLIST action name CDATA #REQUIRED>
+<!ATTLIST action argument CDATA>

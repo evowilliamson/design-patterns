@@ -76,7 +76,7 @@ public class DemoAccessor implements Accessor {
         slide.addComponent(SlideItemFactory.createActionItemDecorator(SlideItemFactory.createTextItem(3, "Go to first slide"),
                         Arrays.asList(
                                 ActionFactory.createAbsoluteNavigationAction(AbsoluteNavigationAction.NavigationPosition.FIRST),
-                                ActionFactory.createAuxiliaryAction(AuxiliaryAction.Action.BEEP))));
+                                ActionFactory.createAuxiliaryAction(AuxiliaryAction.AuxAction.BEEP))));
 
         slideShow.addComponent(slide);
 

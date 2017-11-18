@@ -25,6 +25,8 @@ import jabberpoint.model.Theme;
 import jabberpoint.model.action.AbsoluteNavigationAction.NavigationPosition;
 import jabberpoint.model.action.Action;
 import jabberpoint.model.action.ActionFactory;
+import jabberpoint.model.action.AuxiliaryAction.AuxAction;
+import jabberpoint.model.action.RelativeNavigationAction.NavigationDirection;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
@@ -62,6 +64,7 @@ public class XMLAccessor implements Accessor {
     
     //actions
     protected static final String NAME = "name";
+    protected static final String ARGUMENT = "argument";
     protected static final String NAVIGATIONACTION = "navigationAction";
     
     protected static final String ABSOLUTENAVIGATIONACTION = "absoluteNavigationAction";
@@ -137,21 +140,44 @@ public class XMLAccessor implements Accessor {
     }
 
     private void getDecoratedActions(Element element){
-    	String name = element.getAttribute(NAME);
-    	if (name.equals(ABSOLUTENAVIGATIONACTION)){
-    		
-    	} else if (name.equals(FIRST)){
-    		actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.FIRST));
-    	} else if (name.equals(LAST)){
-    		actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.LAST));
-    	} else if (name.equals(INDEX)){
-    		actionList.add(ActionFactory.createAbsoluteNavigationAction(1))
-    	} else if (name.equals(BEEP)){
-    		
-    	} else if (name.equals(FLASH)){
-    		
-    	} else if (name.equals(EXIT)){
-    		
+    	try{
+    		String name = element.getAttribute(NAME);
+    		if  (name.equals(FIRST)){
+    			actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.FIRST));
+    		} else if (name.equals(LAST)){
+    			actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.LAST));
+    		} else if (name.equals(INDEX)){
+    			String argument = element.getAttribute(ARGUMENT);
+    			Action action = ActionFactory.createAbsoluteNavigationAction(Integer.valueOf(argument));
+    			actionList.add(action);
+    		} else if (name.equals(NEXT)){
+    			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.NEXT));
+    		} else if (name.equals(PREVIOUS)){
+    			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.PREVIOUS));
+    		} else if (name.equals(BEEP)){
+    			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.BEEP));
+    		} else if (name.equals(FLASH)){
+    			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.FLASH));
+    		} else if (name.equals(EXIT)){
+    			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.EXIT));
+    		} else if (name.equals(OPENDEMOSLIDESHOWACTION)){
+    			actionList.add(ActionFactory.createOpenDemoSlideshowAction());
+    		} else {
+    			System.out.println("Parsing of unknown action.");
+    		}
+    		NodeList nodes = element.getChildNodes();
+			int maxNodes = nodes.getLength();
+			
+			SlideItem  slideItem = null;
+			for (int i = 0; i < maxNodes; i++){
+				Node node = nodes.item(i);
+				if(node instanceof Element){
+					getItem((Element) node);
+				}
+			}
+    	}
+    	catch (NumberFormatException e){
+    		System.err.println(NFE);
     	}
     }
     private SlideItem getItem(Element element){
@@ -161,6 +187,7 @@ public class XMLAccessor implements Accessor {
     			actionList = new ArrayList<Action>();
     		}
     		getDecoratedActions(element);
+    	} else { // is visible item
     		
     	}
     }
@@ -224,7 +251,7 @@ public class XMLAccessor implements Accessor {
 					if(node instanceof Element){
 						slideItem = getItem((Element) node);
 						slide.addComponent(slideItem);
-						actionItemDecorator  = null;
+						actionList = null;
 					}
 				}
 			}

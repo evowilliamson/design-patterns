@@ -41,8 +41,8 @@ public class ActionFactory {
         return new OpenDemoSlideshowAction();
     }
     
-    public static Action createAuxiliaryAction(AuxiliaryAction.Action action){
-    	return new AuxiliaryAction(action);
+    public static Action createAuxiliaryAction(AuxiliaryAction.AuxAction auxAction){
+    	return new AuxiliaryAction(auxAction);
     }
 
 }

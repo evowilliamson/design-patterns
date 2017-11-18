@@ -8,27 +8,27 @@ import java.awt.*;
  */
 public class AuxiliaryAction implements Action {
 
-    private AuxiliaryAction.Action action;
+    private AuxiliaryAction.AuxAction action;
 
     private AuxiliaryAction(){}
-    protected AuxiliaryAction(AuxiliaryAction.Action action) {
-        this.action = action;
+    protected AuxiliaryAction(AuxiliaryAction.AuxAction auxAction) {
+        this.action = auxAction;
     }
 
     @Override
     public void execute() {
 
-        if (this.action == Action.BEEP) {
+        if (this.action == AuxAction.BEEP) {
             Toolkit.getDefaultToolkit().beep();
-        } else if (this.action == Action.FLASH) {
+        } else if (this.action == AuxAction.FLASH) {
             // flash
-        } else if (this.action == Action.EXIT){
+        } else if (this.action == AuxAction.EXIT){
         	System.exit(0);
         }
 
     }
 
-    public enum Action {
+    public enum AuxAction {
         BEEP, FLASH, EXIT
     }
 
