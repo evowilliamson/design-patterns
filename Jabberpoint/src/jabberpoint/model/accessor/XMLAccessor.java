@@ -98,10 +98,17 @@ public class XMLAccessor implements Accessor {
     private SlideItem lastSlideItem = null;
     
     private void writeAction(Action action, PrintWriter out){
-    	/*if (action instanceof AbsoluteNavigationAction){
+    	if (action instanceof AbsoluteNavigationAction){
     		AbsoluteNavigationAction navAction = (AbsoluteNavigationAction) action;
-    		if (navAction.)
-    	}*/
+    		NavigationPosition pos = navAction.getPosition();
+    		if (pos == NavigationPosition.INDEX){
+    			out.print(INDEX);
+    			out.print(" "+ARGUMENT+"=\"");
+    			out.print(navAction.getSlideNumber());
+    			out.println("\">");
+    		}
+    		if (pos == NavigationPosition.FIRST)
+    	}
     	/*
     	if  (name.equals(FIRST)){
 			actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.FIRST));
@@ -128,7 +135,7 @@ public class XMLAccessor implements Accessor {
     }
     
     private void writeActionItem(ActionItemDecorator item, PrintWriter out, int actionNumber){
-    	/*List<Action> actions = item.getActions();
+    	List<Action> actions = item.getActions();
     	if (actionNumber < actions.size()){
     		Action action = actions.get(actionNumber);
     		out.print("<"+ACTION+" name=\"");
@@ -138,7 +145,7 @@ public class XMLAccessor implements Accessor {
     		out.println("</"+ACTION+">");
     	} else{
     		writeItem(item.getSlideItem(), out);
-    	}*/
+    	}
     }
     
     private void writeItem(SlideItem item, PrintWriter out){
