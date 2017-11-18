@@ -33,7 +33,7 @@ public class XMLAccessor implements Accessor {
     
     /** namen van xml tags of attributen */
     
-    
+    protected static final String HEAD = "head"; 
     protected static final String SLIDESHOW = "slideshow";
     protected static final String SHOWTITLE = "showtitle";
     protected static final String SLIDETITLE = "title";
@@ -48,7 +48,7 @@ public class XMLAccessor implements Accessor {
     protected static final String TEXT = "text";
     protected static final String IMAGE = "image";
     protected static final String ACTIONITEM = "actionItem";
-    protected static final String IGNORING = "IGNORING";
+    protected static final String IGNORING = "ignoring";
     
     //actions
     protected static final String NAVIGATIONACTION = "navigationAction";
@@ -134,8 +134,10 @@ public class XMLAccessor implements Accessor {
 			Document document = builder.parse(new File(filename)); // maak een JDOM document
 			Element doc = document.getDocumentElement();
 			doc.normalize();
-			NodeList headers = doc.getElementsByTagName()
-			}
+			NodeList headers = doc.getElementsByTagName(HEAD);
+			Element header = (Element)headers.item(0);
+			String showtitle = header.getElementsByTagName(TITLE).item(0).getTextContent();
+			
 		} 
 		catch (IOException iox) {
 			System.err.println(iox.toString());
