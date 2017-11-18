@@ -167,9 +167,9 @@ public class XMLAccessor implements Accessor {
     	}
     }
     /**
-     * This private method
-     * @param item
-     * @param out
+     * This private method writes a @SlideItem to XML. This method is also used in the writeAction method to write the contained @SlideItem to XML
+     * @param item the @SlideItem
+     * @param out the @PrintWriter
      */
     private void writeItem(SlideItem item, PrintWriter out){
     	if (item instanceof BitmapItem){
@@ -188,6 +188,7 @@ public class XMLAccessor implements Accessor {
     	}
     }
     @Override
+    
     public void save(final Parameters parameters, final Slideshow slideShow) {
     	try {
     		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
