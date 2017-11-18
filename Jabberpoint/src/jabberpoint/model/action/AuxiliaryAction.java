@@ -31,5 +31,10 @@ public class AuxiliaryAction implements Action {
     public enum AuxAction {
         BEEP, FLASH, EXIT
     }
+    
+    // SAVING TO FILE NEEDS GETTERS
+    public AuxAction getAction(){
+    	return this.action;
+    }
 
 }
