@@ -23,6 +23,7 @@ import jabberpoint.model.Slide;
 import jabberpoint.model.SlideFactory;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
+import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.AbsoluteNavigationAction.NavigationPosition;
 import jabberpoint.model.action.Action;
 import jabberpoint.model.action.ActionFactory;
@@ -96,12 +97,48 @@ public class XMLAccessor implements Accessor {
     private ArrayList<Action> actionList = null;
     private SlideItem lastSlideItem = null;
     
-    private void writeActionItem(ActionItemDecorator item, PrintWriter out){
+    private void writeAction(Action action, PrintWriter out){
+    	/*if (action instanceof AbsoluteNavigationAction){
+    		AbsoluteNavigationAction navAction = (AbsoluteNavigationAction) action;
+    		if (navAction.)
+    	}*/
+    	/*
+    	if  (name.equals(FIRST)){
+			actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.FIRST));
+		} else if (name.equals(LAST)){
+			actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.LAST));
+		} else if (name.equals(INDEX)){
+			String argument = element.getAttribute(ARGUMENT);
+			Action action = ActionFactory.createAbsoluteNavigationAction(Integer.valueOf(argument));
+			actionList.add(action);
+		} else if (name.equals(NEXT)){
+			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.NEXT));
+		} else if (name.equals(PREVIOUS)){
+			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.PREVIOUS));
+		} else if (name.equals(BEEP)){
+			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.BEEP));
+		} else if (name.equals(FLASH)){
+			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.FLASH));
+		} else if (name.equals(EXIT)){
+			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.EXIT));
+		} else if (name.equals(OPENDEMOSLIDESHOWACTION)){
+			actionList.add(ActionFactory.createOpenDemoSlideshowAction());
+    	 */
+		
+    }
+    
+    private void writeActionItem(ActionItemDecorator item, PrintWriter out, int actionNumber){
     	/*List<Action> actions = item.getActions();
-    	for (int j = 0; j < actions.size();j++) {
-    		out.println("<"+ACTION+">");
-			Action action = actions.get(j);
-		}*/
+    	if (actionNumber < actions.size()){
+    		Action action = actions.get(actionNumber);
+    		out.print("<"+ACTION+" name=\"");
+    		writeAction(action, out);
+    		out.println("\">");
+    		writeActionItem(item, out, actionNumber + 1);
+    		out.println("</"+ACTION+">");
+    	} else{
+    		writeItem(item.getSlideItem(), out);
+    	}*/
     }
     
     private void writeItem(SlideItem item, PrintWriter out){
@@ -117,7 +154,7 @@ public class XMLAccessor implements Accessor {
     		out.println("</"+TEXT+">");
     	} else if (item instanceof ActionItemDecorator){
     		ActionItemDecorator actionItem = (ActionItemDecorator) item;
-    		writeActionItem(actionItem, out);
+    		writeActionItem(actionItem, out, 0);
     	}
     }
     @Override
