@@ -21,7 +21,7 @@ public class AbsoluteNavigationAction extends NavigationAction {
      *            the position to move to
      */
     protected AbsoluteNavigationAction(NavigationPosition position) {
-
+    	this();
         this.position = position;
 
     }
@@ -59,4 +59,12 @@ public class AbsoluteNavigationAction extends NavigationAction {
         FIRST, LAST, INDEX
     }
 
+    // SAVING TO FILE NEEDS GETTERS
+    public NavigationPosition getPosition(){
+    	return this.position;
+    }
+    
+    public int getSlideNumber(){
+    	return this.slideNumber;
+    }
 }
