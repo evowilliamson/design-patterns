@@ -23,7 +23,6 @@
 					<text level="2">Vorige slide: PgUp or up-arrow</text>
 				</action>
 			</action>
-			<text level="2">Vorige slide: PgUp or up-arrow</text>
 			<action name="beep">
 				<action name="exit">
 					<text level="2">Stoppen: q or Q</text>

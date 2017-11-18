@@ -71,7 +71,8 @@ public class SlideViewerComponent extends JComponent {
     	this.addMouseListener(mouseController);
     	this.addMouseMotionListener(mouseController);
     }
-
+    
+    
     /**
      * Update the this.graphics object. This object will be used later when the text items and
      * bitmaps are printed on the screen.
@@ -80,7 +81,9 @@ public class SlideViewerComponent extends JComponent {
      *            the graphics object onto which elements are drawn
      */
     public void paintComponent(Graphics graphics) {
-
+    	// Clear the list in MouseController. This is needed every time a new slide will be drawn.
+    	// this removes old BoundingBoxes from the list.
+    	mouseController.clearList();
         this.setGraphics(graphics);
         Slideshow slideshow = Slideshow.getInstance();
         if (slideshow != null) {
@@ -116,7 +119,7 @@ public class SlideViewerComponent extends JComponent {
      */
     public void drawCurrentSlideNumber(int currentSlideNumber, int totalSlides) {
 
-//        this.graphics.setColor(COLOR_BLACK);
+        this.graphics.setColor(COLOR_BLACK);
         this.graphics.drawString("Slide " + (1 + currentSlideNumber) + " of " + totalSlides,
                 XPOS, YPOS);
 
