@@ -6,8 +6,7 @@ package jabberpoint.controller;
 import javax.swing.JComponent;
 import javax.swing.event.MouseInputAdapter;
 
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +23,7 @@ import jabberpoint.view.SlideViewerFrame;
 public class MouseController extends MouseInputAdapter {
 	
 	private List<BoundingBox> boxes;
+	private SlideViewerFrame frame;
 	
 	protected MouseController(){
 		clearList();
@@ -33,6 +33,7 @@ public class MouseController extends MouseInputAdapter {
 	protected MouseController(SlideViewerFrame frame){
 		//just eating the frame argument because it is not needed.
 		this();
+		this.frame = frame;
 	}
 	
 	public void addBoundingBox(Rectangle r, ActionItemDecorator a){
@@ -49,7 +50,6 @@ public class MouseController extends MouseInputAdapter {
 	@Override
 	public void mouseClicked(MouseEvent event) {
 		System.out.println("Mouse Click Detected.");
-		JComponent component = (JComponent) event.getComponent();
 		Point point = event.getPoint();
 		int s = boxes.size();
 		for (int i = 0; i < s; i++)
@@ -75,6 +75,6 @@ public class MouseController extends MouseInputAdapter {
 			}
 		}
 		//clearList();
-		component.repaint();
+		this.frame.update();
 	}
 }

@@ -35,7 +35,7 @@ public class SwingDrawingDriver implements DrawingDriver {
     @Override
     public void initialize(final String title) {
         this.slideViewerFrame = SlideViewerFactory.createSlideViewerFrame(title);
-        this.slideViewerComponent = SlideViewerFactory.createSlideViewerComponent(ControllerFactory.createMouseController());
+        this.slideViewerComponent = SlideViewerFactory.createSlideViewerComponent(ControllerFactory.createMouseController(this.slideViewerFrame));
         this.slideViewerFrame.initialize(this.slideViewerComponent);
     }
 
