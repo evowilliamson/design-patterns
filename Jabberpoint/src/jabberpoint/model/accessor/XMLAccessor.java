@@ -103,22 +103,18 @@ public class XMLAccessor implements Accessor {
     		NavigationPosition pos = navAction.getPosition();
     		if (pos == NavigationPosition.INDEX){
     			out.print(INDEX);
-    			out.print(" "+ARGUMENT+"=\"");
+    			out.print("\" "+ARGUMENT+"=\"");
     			out.print(navAction.getSlideNumber());
-    			out.println("\">");
     		}
-    		if (pos == NavigationPosition.FIRST)
+    		if (pos == NavigationPosition.FIRST){
+    			out.print(FIRST);
+    		}
+    		if (pos == NavigationPosition.LAST){
+    			out.print(LAST);
+    		}
     	}
     	/*
-    	if  (name.equals(FIRST)){
-			actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.FIRST));
-		} else if (name.equals(LAST)){
-			actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.LAST));
-		} else if (name.equals(INDEX)){
-			String argument = element.getAttribute(ARGUMENT);
-			Action action = ActionFactory.createAbsoluteNavigationAction(Integer.valueOf(argument));
-			actionList.add(action);
-		} else if (name.equals(NEXT)){
+    	if (name.equals(NEXT)){
 			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.NEXT));
 		} else if (name.equals(PREVIOUS)){
 			actionList.add(ActionFactory.createRelativeNavigationAction(NavigationDirection.PREVIOUS));
