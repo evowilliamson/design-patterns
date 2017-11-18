@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -13,6 +14,7 @@ import jabberpoint.model.slideitems.DisplayableItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -20,6 +22,8 @@ import jabberpoint.model.Slide;
 import jabberpoint.model.SlideFactory;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
+import jabberpoint.model.action.Action;
+import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.model.slideitems.SlideItemFactory;
@@ -42,6 +46,7 @@ public class XMLAccessor implements Accessor {
     protected static final String TITLE = "title";
     protected static final String SLIDE = "slide";
     protected static final String ITEM = "item";
+    protected static final String ITEMS = "items";
     protected static final String LEVEL = "level";
     protected static final String KIND = "kind";
     protected static final String PRESENTATION = "presentation";
@@ -49,6 +54,7 @@ public class XMLAccessor implements Accessor {
     //kinds
     protected static final String TEXT = "text";
     protected static final String IMAGE = "image";
+    protected static final String ACTION = "action";
     protected static final String ACTIONITEM = "actionItem";
     protected static final String IGNORING = "ignoring";
     
@@ -79,7 +85,8 @@ public class XMLAccessor implements Accessor {
     protected XMLAccessor() {
     }
 
-
+    ArrayList<Action> actionList = null;
+    
     @Override
     public void save(final Parameters parameters, final Slideshow slideShow) {
     	try {
@@ -125,6 +132,20 @@ public class XMLAccessor implements Accessor {
 		}
     }
 
+    private void decorateActions(Element element){
+    	String name = element.getAttribute(NAME);
+    }
+    private SlideItem getItem(Element element){
+    	if (element.getTagName().equals(ACTION)){
+    		if (actionList == null)
+    		{
+    			actionList = new ArrayList<Action>();
+    		}
+    		decorateActions(element);
+    		
+    	}
+    }
+    
     @Override
     public Slideshow load(final Parameters parameters) {
 		String filename = parameters.getString(Parameters.Parameter.FILE_NAME);
@@ -172,7 +193,21 @@ public class XMLAccessor implements Accessor {
 				NodeList titles = xmlSlide.getElementsByTagName(TITLE);
 				Slide slide = SlideFactory.createSlide(titles.item(0).getTextContent());
 				
+				NodeList items = xmlSlide.getElementsByTagName(ITEMS);
+				Element itemList = (Element) items.item(0);
 				
+				NodeList itemNodes = itemList.getChildNodes();
+				int maxItemNodes = itemNodes.getLength();
+				
+				SlideItem  slideItem = null;
+				for (itemNumber = 0; itemNumber < maxItemNodes; itemNumber++){
+					Node node = itemNodes.item(itemNumber);
+					if(node instanceof Element){
+						slideItem = getItem((Element) node);
+						slide.addComponent(slideItem);
+						actionItemDecorator  = null;
+					}
+				}
 			}
 			
 		} 
