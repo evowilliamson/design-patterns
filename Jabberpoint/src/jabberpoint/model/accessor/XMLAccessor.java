@@ -131,7 +131,7 @@ public class XMLAccessor implements Accessor {
 		Slideshow slideShow = Slideshow.createInstance(Theme.NORMAL);
 		Theme theme = Theme.NORMAL;
         
-		int slideNumber, itemNumber, max = 0, maxItems = 0;
+		int slideNumber = 0, setSlideNumber = 0, itemNumber, max = 0, maxItems = 0;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
 			Document document = builder.parse(new File(filename)); // maak een JDOM document
@@ -149,6 +149,19 @@ public class XMLAccessor implements Accessor {
 			            theme = t;
 			        }
 			    }
+			}
+			NodeList slidenumbers = header.getElementsByTagName(SLIDENUMBER);
+			if (slidenumbers.getLength() > 0) // slideNumber  is present
+			{
+				String numberText = slidenumbers.item(0).getTextContent();
+				if (numberText != null) {
+					try {
+						setSlideNumber = Integer.parseInt(leveltext);
+					}
+					catch(NumberFormatException x) {
+						System.err.println(NFE);
+					}
+				}
 			}
 			
 		} 
