@@ -22,7 +22,9 @@ import jabberpoint.model.Slide;
 import jabberpoint.model.SlideFactory;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
+import jabberpoint.model.action.AbsoluteNavigationAction.NavigationPosition;
 import jabberpoint.model.action.Action;
+import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
@@ -59,6 +61,7 @@ public class XMLAccessor implements Accessor {
     protected static final String IGNORING = "ignoring";
     
     //actions
+    protected static final String NAME = "name";
     protected static final String NAVIGATIONACTION = "navigationAction";
     
     protected static final String ABSOLUTENAVIGATIONACTION = "absoluteNavigationAction";
@@ -73,6 +76,7 @@ public class XMLAccessor implements Accessor {
     protected static final String AUXILIARYACTION = "auxiliaryAction";
     protected static final String BEEP = "beep";
     protected static final String FLASH = "flash";
+    protected static final String EXIT = "exit";
     
     protected static final String SLIDESHOWACTION = "slideShowAction";
     protected static final String OPENDEMOSLIDESHOWACTION = "openDemoSlideshowAction";
@@ -132,8 +136,23 @@ public class XMLAccessor implements Accessor {
 		}
     }
 
-    private void decorateActions(Element element){
+    private void getDecoratedActions(Element element){
     	String name = element.getAttribute(NAME);
+    	if (name.equals(ABSOLUTENAVIGATIONACTION)){
+    		
+    	} else if (name.equals(FIRST)){
+    		actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.FIRST));
+    	} else if (name.equals(LAST)){
+    		actionList.add(ActionFactory.createAbsoluteNavigationAction(NavigationPosition.LAST));
+    	} else if (name.equals(INDEX)){
+    		actionList.add(ActionFactory.createAbsoluteNavigationAction(1))
+    	} else if (name.equals(BEEP)){
+    		
+    	} else if (name.equals(FLASH)){
+    		
+    	} else if (name.equals(EXIT)){
+    		
+    	}
     }
     private SlideItem getItem(Element element){
     	if (element.getTagName().equals(ACTION)){
@@ -141,7 +160,7 @@ public class XMLAccessor implements Accessor {
     		{
     			actionList = new ArrayList<Action>();
     		}
-    		decorateActions(element);
+    		getDecoratedActions(element);
     		
     	}
     }
