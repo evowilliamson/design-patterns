@@ -20,5 +20,7 @@ public class OpenDemoSlideshowAction extends SlideshowAction {
         AccessorFactory.getDemoAccessor().load(parameters);
         Slideshow slideShow = Slideshow.getInstance();
         slideShow.setCurrentSlideNumber(Slideshow.FIRST_SLIDE);
+        //slideShow.draw();
+
     }
 }

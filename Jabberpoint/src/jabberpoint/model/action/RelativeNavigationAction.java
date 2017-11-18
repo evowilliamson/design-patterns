@@ -38,6 +38,8 @@ public class RelativeNavigationAction extends NavigationAction {
             slideShow.setCurrentSlideNumber(slideShow.getCurrentSlideNumber() - 1);
         }
 
+        //slideShow.draw();
+
     }
 
     /**

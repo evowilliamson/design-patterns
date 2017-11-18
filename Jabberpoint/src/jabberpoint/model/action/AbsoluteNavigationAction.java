@@ -26,17 +26,6 @@ public class AbsoluteNavigationAction extends NavigationAction {
 
     }
 
-    /**
-     * Constructor to create an action to move to the indicated slide number
-     * 
-     * @param position
-     * @param slideNumber
-     */
-    protected AbsoluteNavigationAction(NavigationPosition position, int slideNumber) {
-        this(position);
-        this.slideNumber = slideNumber;
-    }
-
     @Override
     public void execute() {
 
@@ -50,6 +39,7 @@ public class AbsoluteNavigationAction extends NavigationAction {
         else if (this.position == NavigationPosition.INDEX) {
             slideShow.setCurrentSlideNumber(this.slideNumber);
         }
+        //slideShow.draw();
 
     }
 
