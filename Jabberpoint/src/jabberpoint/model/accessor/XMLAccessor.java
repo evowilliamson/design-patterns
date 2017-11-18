@@ -100,7 +100,11 @@ public class XMLAccessor implements Accessor {
 
     private ArrayList<Action> actionList = null;
     private SlideItem lastSlideItem = null;
-    
+    /**
+     * This private method writs the action details in XML
+     * @param action the @Action
+     * @param out the @PrintWriter
+     */
     private void writeAction(Action action, PrintWriter out){
     	if (action instanceof AbsoluteNavigationAction){
     		AbsoluteNavigationAction navAction = (AbsoluteNavigationAction) action;
@@ -143,6 +147,12 @@ public class XMLAccessor implements Accessor {
     	}	
     }
     
+    /**
+     * This private method writes an ActionItemDecorator to XML.
+     * @param item the @ActionItemDecorator
+     * @param out the @PrintWriter
+     * @param actionNumber This method uses recursive calls to implement the new DTD, this number is used in the recursive calls.
+     */
     private void writeActionItem(ActionItemDecorator item, PrintWriter out, int actionNumber){
     	List<Action> actions = item.getActions();
     	if (actionNumber < actions.size()){
@@ -156,7 +166,11 @@ public class XMLAccessor implements Accessor {
     		writeItem(item.getSlideItem(), out);
     	}
     }
-    
+    /**
+     * This private method
+     * @param item
+     * @param out
+     */
     private void writeItem(SlideItem item, PrintWriter out){
     	if (item instanceof BitmapItem){
     		BitmapItem bitmapItem = (BitmapItem) item;
