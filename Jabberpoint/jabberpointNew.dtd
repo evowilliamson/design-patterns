@@ -10,6 +10,7 @@
 <!ELEMENT text (#PCDATA)>
 <!ELEMENT image (#PCDATA)>
 <!ELEMENT action (text|image|action)+>
+<!ELEMENT theme (#PCDATA)>
 <!ELEMENT slidenumber (#PCDATA)>
 <!ATTLIST text level CDATA #REQUIRED>
 <!ATTLIST image level CDATA #REQUIRED>
