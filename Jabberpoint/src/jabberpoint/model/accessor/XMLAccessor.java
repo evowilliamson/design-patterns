@@ -29,6 +29,7 @@ import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.AuxiliaryAction;
 import jabberpoint.model.action.AuxiliaryAction.AuxAction;
 import jabberpoint.model.action.OpenDemoSlideshowAction;
+import jabberpoint.model.action.OpenSlideshowAction;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.model.action.RelativeNavigationAction.NavigationDirection;
 import jabberpoint.model.exception.NotImplementedException;
@@ -88,6 +89,7 @@ public class XMLAccessor implements Accessor {
     
     protected static final String SLIDESHOWACTION = "slideShowAction";
     protected static final String OPENDEMOSLIDESHOWACTION = "openDemoSlideshowAction";
+    protected static final String OPENSLIDESHOWACTION = "openSlideShowAction";
 
     /** tekst van messages */
     protected static final String PCE = "Parser Configuration Exception";
@@ -143,7 +145,12 @@ public class XMLAccessor implements Accessor {
     		}
     	} else if (action instanceof OpenDemoSlideshowAction){
     		out.print(OPENDEMOSLIDESHOWACTION);
-    	}	
+    	} else if (action instanceof OpenSlideshowAction){
+    		OpenSlideshowAction act = (OpenSlideshowAction) action;
+    		out.print(OPENSLIDESHOWACTION);
+			out.print("\" "+ARGUMENT+"=\"");
+			out.print(act.getFileName());
+    	}
     }
     
     /**
@@ -249,7 +256,11 @@ public class XMLAccessor implements Accessor {
     			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.EXIT));
     		} else if (name.equals(OPENDEMOSLIDESHOWACTION)){
     			actionList.add(ActionFactory.createOpenDemoSlideshowAction());
-    		} else {
+    		} else if (name.equals(OPENSLIDESHOWACTION)){
+    			String argument = element.getAttribute(ARGUMENT);
+    			Action action = ActionFactory.createOpenSlideshowAction(argument);
+    			actionList.add(action);
+    		}else {
     			System.out.println("Parsing of unknown action.");
     		}
     		NodeList nodes = element.getChildNodes();
