@@ -1,7 +1,5 @@
 package jabberpoint.model.old;
 
-import jabberpoint.model.Accessor;
-
 import javax.swing.JOptionPane;
 
 import java.io.IOException;
@@ -33,7 +31,7 @@ public class JabberPointOld {
 		new SlideViewerFrameOld(JABVERSION, presentation);
 		try {
 			if (argv.length == 0) { // een demo presentatie
-				Accessor.getDemoAccessor().loadFile(presentation, "");
+				AccessorOld.getDemoAccessor().loadFile(presentation, "");
 			} else {
 				new XMLAccessor().loadFile(presentation, argv[0]);
 			}

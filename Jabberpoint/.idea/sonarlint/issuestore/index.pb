@@ -5,3 +5,5 @@
 testNew.xml,8\0\8099efbb87bd403b45146e032975b43cb9c8e81a
 ?
 jabberpoint.dtd,0\f\0fffc2a095c7d914f7a5856dd8e395ea1bb8a827
+?
+Jabberpoint.iml,2\5\252e24694fdaa8ee61ba3f271196050098d6fe74

@@ -1,4 +1,4 @@
-package jabberpoint.model;
+package jabberpoint.model.slide;
 
 public class SlideFactory {
 	public static Slide createSlide(String title){

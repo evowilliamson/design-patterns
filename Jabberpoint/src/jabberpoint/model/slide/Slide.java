@@ -1,5 +1,7 @@
-package jabberpoint.model;
+package jabberpoint.model.slide;
 
+import jabberpoint.model.CompositeSlideShowComponent;
+import jabberpoint.model.Slideshow;
 import jabberpoint.model.drawingdriver.DrawingDriver;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 

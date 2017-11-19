@@ -92,11 +92,17 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/drawingdriver/DrawingDriverFactory.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/drawingdriver/JavaFXDrawingDriver.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jabberpoint/view/drawingdriver/SwingDrawingDriver.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jabberpoint/model/Accessor.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/old/AccessorOld.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jabberpoint/model/DemoPresentation.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/old/DemoPresentation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jabberpoint/model/Slide.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slide/Slide.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/jabberpoint/model/SlideFactory.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/slide/SlideFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../VerslagWord/VerslagEindopdracht.docx" afterPath="$PROJECT_DIR$/../VerslagWord/VerslagEindopdracht.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../VerslagWord/eindeopdracht.eap" afterPath="$PROJECT_DIR$/../VerslagWord/eindeopdracht.eap" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/action/OpenDemoSlideshowAction.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/action/OpenDemoSlideshowAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/action/RelativeNavigationAction.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/action/RelativeNavigationAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/view/SlideViewerComponent.java" afterPath="$PROJECT_DIR$/src/jabberpoint/view/SlideViewerComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/old/JabberPointOld.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/old/JabberPointOld.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/old/MenuControllerOld.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/old/MenuControllerOld.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jabberpoint/model/old/XMLAccessor.java" afterPath="$PROJECT_DIR$/src/jabberpoint/model/old/XMLAccessor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,7 +118,18 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AccessorOld.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/AccessorOld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -151,7 +168,7 @@
       <find>theme</find>
       <find>setColor</find>
       <find>component</find>
-      <find>component</find>
+      <find>argument</find>
     </findStrings>
     <replaceStrings>
       <replace>addComponent</replace>
@@ -232,7 +249,6 @@
         <option value="$PROJECT_DIR$/src/jabberpoint/model/style/TextStyleFactory.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/Theme.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/Slideshow.java" />
-        <option value="$PROJECT_DIR$/src/jabberpoint/model/old/XMLAccessor.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/Slide.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/DemoPresentation.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/Configuration.java" />
@@ -250,6 +266,11 @@
         <option value="$PROJECT_DIR$/src/jabberpoint/model/action/RelativeNavigationAction.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/action/OpenDemoSlideshowAction.java" />
         <option value="$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/action/OpenSlideshowAction.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/old/XMLAccessor.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/old/DemoPresentation.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/old/AccessorOld.java" />
+        <option value="$PROJECT_DIR$/src/jabberpoint/model/slide/Slide.java" />
       </list>
     </option>
   </component>
@@ -300,43 +321,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jabberpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -360,7 +344,17 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Jabberpoint" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jabberpoint" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -389,6 +383,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,7 +395,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Ke&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/controller/KeyController.java&#10;KeyCono&#9;null&#9;null&#10;SlideV&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/SlideViewerComponent.java&#10;Bounding&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/controller/BoundingBox.java&#10;MenuCon&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/controller/MenuController.java&#10;slideitem&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/slideitems/SlideItem.java&#10;Accessor&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/Accessor.java&#10;Slidshow&#9;PSI&#9;JAVA://jabberpoint.controller.MenuController#slideShow&#10;slidevie&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerComponentOld.java&#10;slide&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerFrameOld.java&#10;textItem&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/TextItemOld.java&#10;Para&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/util/Parameters.java&#10;Slidev&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/SlideViewerComponent.java&#10;Sw&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/drawingdriver/SwingDrawingDriver.java&#10;Driver&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/drawingdriver/DrawingDriver.java&#10;SlideO&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideOld.java&#10;KeyC&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/KeyControllerOld.java&#10;Bitm&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/slideitems/BitmapItem.java&#10;Bitmapite&#9;PSI&#9;JAVA://jabberpoint.model.BitmapItem" />
+    <property name="SearchEverywhereHistoryKey" value="Accessor&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/accessor/Accessor.java&#10;XMLAcc&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/accessor/XMLAccessor.java&#10;DemoAcc&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/accessor/DemoAccessor.java&#10;StyleFa&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/style/StyleFactory.java&#10;Demoa&#9;RUN_CONFIGURATION&#9;DemoAccessor&#10;Demo&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/accessor/DemoAccessor.java&#10;Ke&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/controller/KeyController.java&#10;KeyCono&#9;null&#9;null&#10;SlideV&#9;FILE&#9;file://C:/ou_alt/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/SlideViewerComponent.java&#10;Bounding&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/controller/BoundingBox.java&#10;MenuCon&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/controller/MenuController.java&#10;slideitem&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/slideitems/SlideItem.java&#10;Slidshow&#9;PSI&#9;JAVA://jabberpoint.controller.MenuController#slideShow&#10;slidevie&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerComponentOld.java&#10;slide&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideViewerFrameOld.java&#10;textItem&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/TextItemOld.java&#10;Para&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/util/Parameters.java&#10;Slidev&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/SlideViewerComponent.java&#10;Sw&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/view/drawingdriver/SwingDrawingDriver.java&#10;Driver&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/drawingdriver/DrawingDriver.java&#10;SlideO&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/SlideOld.java&#10;KeyC&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/old/KeyControllerOld.java&#10;Bitm&#9;FILE&#9;file://C:/ou/project_Pottgens_Willemsen/Jabberpoint/src/jabberpoint/model/slideitems/BitmapItem.java&#10;Bitmapite&#9;PSI&#9;JAVA://jabberpoint.model.BitmapItem" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -654,7 +649,8 @@
       <workItem from="1510940645769" duration="3829000" />
       <workItem from="1510991056748" duration="2373000" />
       <workItem from="1510998111829" duration="3915000" />
-      <workItem from="1511023613959" duration="552000" />
+      <workItem from="1511023613959" duration="6881000" />
+      <workItem from="1511079245838" duration="1178000" />
     </task>
     <task id="LOCAL-00001" summary="Make MVC structure">
       <created>1510390038714</created>
@@ -817,18 +813,25 @@
       <option name="project" value="LOCAL" />
       <updated>1510951834154</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Comments about what to do with Slideshow.draw()">
+      <created>1511026279681</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1511026279681</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125709000" />
+    <option name="totallyTimeSpent" value="133216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Enso" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.5788913" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.5804904" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.58102345" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -841,16 +844,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4483493" sideWeight="0.46268657" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.46162048" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.45735607" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.41098082" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.42110875" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.4195096" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28647497" sideWeight="0.40938166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.4552239" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -859,7 +863,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14712153" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.45735607" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -954,7 +957,8 @@
     <MESSAGE value="Some refactoring" />
     <MESSAGE value="formatting" />
     <MESSAGE value="Merge branch 'master' of https://github.com/rpottgens/project_Pottgens_Willemsen&#10;&#10;# Conflicts:&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MenuController$5.class&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MouseController.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration$AccessorConfig.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/AccessorFactory.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/DemoAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/XMLAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction$Action.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction.class&#10;#&#9;Jabberpoint/bin/jabberpoint/view/drawingdriver/JavaFXDrawingDriver.class&#10;#&#9;Jabberpoint/src/jabberpoint/model/accessor/XMLAccessor.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/rpottgens/project_Pottgens_Willemsen&#10;&#10;# Conflicts:&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MenuController$5.class&#10;#&#9;Jabberpoint/bin/jabberpoint/controller/MouseController.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration$AccessorConfig.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/Configuration.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/AccessorFactory.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/DemoAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/accessor/XMLAccessor.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction$Action.class&#10;#&#9;Jabberpoint/bin/jabberpoint/model/action/AuxiliaryAction.class&#10;#&#9;Jabberpoint/bin/jabberpoint/view/drawingdriver/JavaFXDrawingDriver.class&#10;#&#9;Jabberpoint/src/jabberpoint/model/accessor/XMLAccessor.java" />
+    <MESSAGE value="Comments about what to do with Slideshow.draw()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments about what to do with Slideshow.draw()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -967,7 +971,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/jabberpoint/model/old/MenuControllerOld.java</url>
-          <line>61</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
@@ -996,42 +1000,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/StyleOld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/MenuControllerOld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="56" column="52" lean-forward="false" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/PresentationOld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/DemoPresentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/SlideViewerComponentOld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1239">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/dev/java/jdk1.6/src.zip!/java/awt/Rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4032">
@@ -1060,7 +1028,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/DemoPresentation.java">
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/DemoPresentation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="44" column="15" lean-forward="true" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
@@ -1312,10 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#326#340#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1341,46 +1305,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/Accessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/AuxiliaryAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/NavigationAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/SlideshowAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/util/Parameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1402,21 +1330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/XMLAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/DemoPresentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="32" column="28" lean-forward="false" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1444,30 +1357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="68" column="53" lean-forward="false" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/style/BaseStyleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/style/StyleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1487,13 +1376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/style/BitmapStyleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1521,26 +1403,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Slide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessorOld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="134" column="93" lean-forward="false" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/Accessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1556,7 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1571,19 +1436,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/AccessorFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slideitems/BitmapItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1599,10 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#218#219#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1610,7 +1462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="37" column="121" lean-forward="false" selection-start-line="37" selection-start-column="121" selection-end-line="37" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1627,19 +1478,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/controller/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2394">
-          <caret line="130" column="39" lean-forward="false" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/dev/java/jdk1.7/src.zip!/java/awt/Container.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39837">
           <caret line="1982" column="16" lean-forward="false" selection-start-line="1982" selection-start-column="16" selection-end-line="1982" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1663,7 +1505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1671,14 +1512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="91" column="43" lean-forward="false" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
-            <element signature="e#2256#2257#0" expanded="true" />
-            <element signature="e#6784#6796#0" expanded="true" />
-            <marker date="1511026054817" expanded="false" signature="11055:11066" ph=" { " />
-            <marker date="1511026054817" expanded="false" signature="11120:11126" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1686,14 +1519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="41" column="54" lean-forward="false" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/ActionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1714,18 +1539,185 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java">
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/OpenSlideshowAction.java" />
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/AccessorFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/SlideshowAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/AuxiliaryAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/ActionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="15" column="88" lean-forward="false" selection-start-line="15" selection-start-column="88" selection-end-line="15" selection-end-column="88" />
+          <folding>
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1624#1625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/action/AbsoluteNavigationAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/style/BaseStyleFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/style/StyleFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/style/BitmapStyleFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/DemoAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="42" column="74" lean-forward="false" selection-start-line="42" selection-start-column="74" selection-end-line="42" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/util/Parameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="12" column="81" lean-forward="false" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/controller/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="145" column="12" lean-forward="true" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
+          <folding>
+            <element signature="e#4933#5086#0" expanded="true" />
+            <element signature="e#5085#5086#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/XMLAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="-210">
+          <caret line="142" column="62" lean-forward="false" selection-start-line="142" selection-start-column="62" selection-end-line="142" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jabberpointNew.dtd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testNew.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jabberpoint.dtd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/accessor/Accessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="18" column="65" lean-forward="false" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/XMLAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/DemoPresentation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slide/SlideFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/slide/Slide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jabberpoint/model/old/AccessorOld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -1,5 +1,6 @@
-package jabberpoint.model;
+package jabberpoint.model.old;
 
+import jabberpoint.model.old.AccessorOld;
 import jabberpoint.model.old.BitmapItemOld;
 import jabberpoint.model.old.PresentationOld;
 import jabberpoint.model.old.SlideOld;
@@ -16,7 +17,7 @@ import jabberpoint.model.old.SlideOld;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-class DemoPresentation extends Accessor {
+class DemoPresentation extends AccessorOld {
 
     public void loadFile(PresentationOld presentation, String unusedFilename) {
         presentation.setTitle("Demo Presentation");
