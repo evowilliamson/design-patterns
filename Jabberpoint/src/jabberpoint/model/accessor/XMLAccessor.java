@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import jabberpoint.model.slideitems.DisplayableItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -305,7 +306,7 @@ public class XMLAccessor implements Accessor {
     		{
     			actionList = new ArrayList<Action>();
     			getDecoratedActions(element);
-    			SlideItem actionItem = SlideItemFactory.createActionItemDecorator(lastSlideItem, actionList);
+    			SlideItem actionItem = SlideItemFactory.createActionItemDecorator((DisplayableItem)lastSlideItem, actionList);
     			return actionItem;
     		} else{
     			getDecoratedActions(element);

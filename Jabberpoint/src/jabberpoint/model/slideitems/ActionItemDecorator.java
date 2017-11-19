@@ -25,7 +25,7 @@ public class ActionItemDecorator extends SlideItem {
      * Constructor that creates an action decorated SlideItem with a certain level
      *
      */
-    protected ActionItemDecorator(final SlideItem slideItem, final List<Action> actions) {
+    protected ActionItemDecorator(final DisplayableItem slideItem, final List<Action> actions) {
 
         super();
         this.setActions(actions);
