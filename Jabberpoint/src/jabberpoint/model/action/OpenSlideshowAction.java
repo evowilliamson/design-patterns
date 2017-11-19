@@ -29,4 +29,9 @@ public class OpenSlideshowAction extends SlideshowAction {
         //slideShow.draw();
 
     }
+    
+    // SAVE TO FILE NEEDS GETTERS
+    public String getFileName(){
+    	return fileName;
+    }
 }

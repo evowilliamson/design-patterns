@@ -30,9 +30,9 @@ import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.AuxiliaryAction;
 import jabberpoint.model.action.AuxiliaryAction.AuxAction;
 import jabberpoint.model.action.OpenDemoSlideshowAction;
+import jabberpoint.model.action.OpenSlideshowAction;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.model.action.RelativeNavigationAction.NavigationDirection;
-import jabberpoint.model.exception.NotImplementedException;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
@@ -89,6 +89,7 @@ public class XMLAccessor implements Accessor {
     
     protected static final String SLIDESHOWACTION = "slideShowAction";
     protected static final String OPENDEMOSLIDESHOWACTION = "openDemoSlideshowAction";
+    protected static final String OPENSLIDESHOWACTION = "openSlideShowAction";
 
     /** tekst van messages */
     protected static final String PCE = "Parser Configuration Exception";
@@ -144,7 +145,12 @@ public class XMLAccessor implements Accessor {
     		}
     	} else if (action instanceof OpenDemoSlideshowAction){
     		out.print(OPENDEMOSLIDESHOWACTION);
-    	}	
+    	} else if (action instanceof OpenSlideshowAction){
+    		OpenSlideshowAction act = (OpenSlideshowAction) action;
+    		out.print(OPENSLIDESHOWACTION);
+			out.print("\" "+ARGUMENT+"=\"");
+			out.print(act.getFileName());
+    	}
     }
     
     /**
@@ -250,13 +256,16 @@ public class XMLAccessor implements Accessor {
     			actionList.add(ActionFactory.createAuxiliaryAction(AuxAction.EXIT));
     		} else if (name.equals(OPENDEMOSLIDESHOWACTION)){
     			actionList.add(ActionFactory.createOpenDemoSlideshowAction());
-    		} else {
+    		} else if (name.equals(OPENSLIDESHOWACTION)){
+    			String argument = element.getAttribute(ARGUMENT);
+    			Action action = ActionFactory.createOpenSlideshowAction(argument);
+    			actionList.add(action);
+    		}else {
     			System.out.println("Parsing of unknown action.");
     		}
     		NodeList nodes = element.getChildNodes();
 			int maxNodes = nodes.getLength();
 			
-			SlideItem  slideItem = null;
 			for (int i = 0; i < maxNodes; i++){
 				Node node = nodes.item(i);
 				if(node instanceof Element){
@@ -326,7 +335,7 @@ public class XMLAccessor implements Accessor {
 		Slideshow slideshow = Slideshow.createInstance(Theme.NORMAL);
 		Theme theme = Theme.NORMAL;
         
-		int slideNumber = 0, setSlideNumber = 1, itemNumber, max = 0, maxItems = 0;
+		int slideNumber = 0, setSlideNumber = 1, itemNumber, max = 0;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
 			Document document = builder.parse(new File(filename)); // maak een JDOM document

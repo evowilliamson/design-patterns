@@ -68,25 +68,8 @@ public class MenuController extends MenuBar {
 		if (r == JFileChooser.APPROVE_OPTION) {
 			System.out.println("Opening file...");
             File file = fc.getSelectedFile();
-            Accessor xmlAccessor = AccessorFactory.getInstance();
-			//try {
-				Parameters param = new Parameters();
-				System.out.println(file.getAbsolutePath());
-				param.setValue(Parameters.Parameter.FILE_NAME, file.getAbsolutePath());
-				Slideshow show = xmlAccessor.load(param);
-				//show.setSlideNumber(0);
-				//throw new IOException("fdfd");
-			//} catch (IOException exc) {
-				//JOptionPane.showMessageDialog(frame, IOEX + exc,
-     			//LOADERR, JOptionPane.ERROR_MESSAGE);
-			//}
-			
-            //This is where a real application would open the file.
-            //log.append("Opening: " + file.getName() + "." + newline);
-        } else {
-            //log.append("Open command cancelled by user." + newline);
-        }
-        //log.setCaretPosition(log.getDocument().getLength());
+            ActionFactory.createOpenSlideshowAction(file.getAbsolutePath()).execute();
+		}
 	}
 	
 	private void saveFile(Frame frame){
