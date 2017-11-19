@@ -9,16 +9,23 @@ import jabberpoint.model.util.Parameters;
  * 
  * @author Ivo Willemsen
  */
-public class OpenDemoSlideshowAction extends SlideshowAction {
+public class OpenSlideshowAction extends SlideshowAction {
 
-	protected OpenDemoSlideshowAction(){}
+    private String fileName;
+
+	protected OpenSlideshowAction(final String fileName) {
+
+	    this.fileName = fileName;
+
+    }
 	
     @Override
     public void execute() {
         Parameters parameters = new Parameters();
-        parameters.setValue(Parameters.Parameter.SLIDESHOW_NAME, "Demo Slideshow");
-        AccessorFactory.getDemoAccessor().load(parameters);
+        parameters.setValue(Parameters.Parameter.FILE_NAME, this.fileName);
+        AccessorFactory.getInstance().load(parameters);
         Slideshow slideShow = Slideshow.getInstance();
+        slideShow.setCurrentSlideNumber(slideShow.getCurrentSlideNumber());
         //slideShow.draw();
 
     }

@@ -359,6 +359,7 @@ public class XMLAccessor implements Accessor {
 			}
 			slideshow = Slideshow.createInstance(theme);
 			slideshow.setTitle(showtitle);
+			slideshow.setTitle(showtitle);
 			NodeList slides = doc.getElementsByTagName(SLIDE);
 			max = slides.getLength();
 			for (slideNumber = 0; slideNumber < max; slideNumber++) {
