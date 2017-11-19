@@ -3,6 +3,10 @@ package jabberpoint.model.slideitems;
 import jabberpoint.model.style.StyleFactory;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
+/**
+ * Class that represents a text item
+ * @author Ivo Willemsen
+ */
 public class TextItem extends DisplayableItem {
 
     private String text;

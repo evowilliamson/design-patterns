@@ -9,6 +9,9 @@ import javax.imageio.ImageIO;
 import jabberpoint.model.style.StyleFactory;
 import jabberpoint.view.drawingdriver.DrawingDriverFactory;
 
+/**
+ * Class that represents a bitmap item
+ */
 public class BitmapItem extends DisplayableItem {
 
     private BufferedImage bufferedImage;

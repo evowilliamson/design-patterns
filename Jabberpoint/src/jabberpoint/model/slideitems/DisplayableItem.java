@@ -1,9 +1,15 @@
 package jabberpoint.model.slideitems;
 
 import jabberpoint.model.style.Style;
-import jabberpoint.model.style.StyleFactory;
-import jabberpoint.model.style.TextStyleFactory;
 
+/**
+ * This class serves as an abstract class for child classes {@link TextItem} and {@link BitmapItem}. It adds the attribute
+ * {@link DisplayableItem#level} to the
+ * base class {@link SlideItem} as a {@link DisplayableItem} is subject to
+ * displaying and thus the level should be taken into account
+ * 
+ * @author Ivo Willemsen
+ */
 public abstract class DisplayableItem extends SlideItem {
 
     private int level;
@@ -12,7 +18,8 @@ public abstract class DisplayableItem extends SlideItem {
     /**
      * Constructor that creates a SlideItem with a certain level
      *
-     * @param level the level that is associated with the slide item
+     * @param level
+     *            the level that is associated with the slide item
      */
     protected DisplayableItem(final int level) {
 
