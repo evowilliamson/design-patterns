@@ -198,9 +198,9 @@ public class XMLAccessor implements Accessor {
     		out.println("<" + SLIDESHOW + ">");
     		out.println("<" + HEAD + ">");
     		out.println("<" + TITLE +">"+slideShow.getTitle()+"</"+TITLE+">");
-    		out.println("<"+THEME+">"+slideShow.getTheme().name()+"</"+THEME+">");
     		out.println("<"+SLIDENUMBER+">"+slideShow.getCurrentSlideNumber()+1+"</"+SLIDENUMBER+">");
     		out.println("</"+HEAD+">");
+    		out.println("<"+THEME+">"+slideShow.getTheme().name()+"</"+THEME+">");
     		for (int slideNumber=0; slideNumber < amountOfSlides; slideNumber++) {
     			Slide slide = (Slide) slideShow.getComponent(slideNumber);
     			out.println("<"+SLIDE+">");
@@ -334,16 +334,6 @@ public class XMLAccessor implements Accessor {
 			NodeList headers = doc.getElementsByTagName(HEAD);
 			Element header = (Element)headers.item(0);
 			String showtitle = header.getElementsByTagName(TITLE).item(0).getTextContent();
-			NodeList themes = header.getElementsByTagName(THEME);
-			if (themes.getLength() > 0) // theme is present
-			{
-				String configTheme = themes.item(0).getTextContent();
-				for (Theme t : Theme.values()) {
-			        if (t.name().equals(configTheme)) {
-			            theme = t;
-			        }
-			    }
-			}
 			NodeList slidenumbers = header.getElementsByTagName(SLIDENUMBER);
 			if (slidenumbers.getLength() > 0) // slideNumber is present
 			{
@@ -356,6 +346,16 @@ public class XMLAccessor implements Accessor {
 						System.err.println(NFE);
 					}
 				}
+			}
+			NodeList themes = doc.getElementsByTagName(THEME);
+			if (themes.getLength() > 0) // theme is present
+			{
+				String configTheme = themes.item(0).getTextContent();
+				for (Theme t : Theme.values()) {
+			        if (t.name().equals(configTheme)) {
+			            theme = t;
+			        }
+			    }
 			}
 			slideshow = Slideshow.createInstance(theme);
 			slideshow.setTitle(showtitle);
