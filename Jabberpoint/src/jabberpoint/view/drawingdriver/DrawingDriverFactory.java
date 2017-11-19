@@ -3,6 +3,7 @@ package jabberpoint.view.drawingdriver;
 import jabberpoint.model.Configuration;
 import jabberpoint.model.drawingdriver.DrawingDriver;
 import jabberpoint.model.exception.ConfigurationException;
+import jabberpoint.model.exception.ExceptionFactory;
 
 /**
  * Factory for the creation of implementations of {@link DrawingDriver}
@@ -24,7 +25,7 @@ public class DrawingDriverFactory {
         } else if (Configuration.getDrawingDriverConfig().equals(Configuration.DrawingDriverConfig.JAVAFX)) {
             return JAVAFX_DRAWING_DRIVER;
         } else {
-            throw new ConfigurationException("Incorrect DrawingDriver configuration");
+            throw ExceptionFactory.createConfigurationException("Incorrect DrawingDriver configuration");
         }
 
     }

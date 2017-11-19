@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import jabberpoint.model.exception.ConfigurationException;
+import jabberpoint.model.exception.ExceptionFactory;
 
 /**
  * This abstract class is extended by concrete implementations that create the styles
@@ -25,7 +26,7 @@ public abstract class BaseStyleFactory {
 
         Style style = styles.get(adjustLevel(level));
         if (style == null) {
-            throw new ConfigurationException("Styles not correctly configured");
+            throw ExceptionFactory.createConfigurationException("Styles not correctly configured");
         }
 
         return style;

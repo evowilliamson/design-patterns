@@ -3,6 +3,7 @@ package jabberpoint.model.accessor;
 import jabberpoint.model.Configuration;
 import jabberpoint.model.drawingdriver.DrawingDriver;
 import jabberpoint.model.exception.ConfigurationException;
+import jabberpoint.model.exception.ExceptionFactory;
 
 /**
  * Factory for the creation of implementations of {@link DrawingDriver}
@@ -37,7 +38,7 @@ public class AccessorFactory {
         	}
             return XML_ACCESSOR_OLD;
         } else {
-            throw new ConfigurationException("Incorrect Accessor configuration");
+            throw ExceptionFactory.createConfigurationException("Incorrect Accessor configuration");
         }
 
     }
