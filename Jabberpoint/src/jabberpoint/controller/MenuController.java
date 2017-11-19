@@ -61,10 +61,10 @@ public class MenuController extends MenuBar {
 		
 	}
 	
-	private void loadFile(){
+	private void loadFile(Frame frame){
 		System.out.println("loadFile chosen.");
         JFileChooser fc = new JFileChooser();
-		int r = fc.showOpenDialog(new Frame());
+		int r = fc.showOpenDialog(frame);
 		if (r == JFileChooser.APPROVE_OPTION) {
 			System.out.println("Opening file...");
             File file = fc.getSelectedFile();
@@ -89,10 +89,10 @@ public class MenuController extends MenuBar {
         //log.setCaretPosition(log.getDocument().getLength());
 	}
 	
-	private void saveFile(){
+	private void saveFile(Frame frame){
 		System.out.println("saveFile chosen.");
         JFileChooser fc = new JFileChooser();
-		int r = fc.showSaveDialog(new Frame());
+		int r = fc.showSaveDialog(frame);
 		if (r == JFileChooser.APPROVE_OPTION) {
 			System.out.println("saving to file...");
             File file = fc.getSelectedFile();
@@ -133,7 +133,7 @@ public class MenuController extends MenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				//presentation.clear();
-				loadFile();
+				loadFile(frame);
 				frame.update();
 			}
 		} );
@@ -154,7 +154,7 @@ public class MenuController extends MenuBar {
 		fileMenu.add(menuItem = mkMenuItem(SAVE));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				saveFile();
+				saveFile(frame);
 				frame.update();
 			}
 		});
