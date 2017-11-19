@@ -33,6 +33,7 @@ import jabberpoint.model.action.OpenDemoSlideshowAction;
 import jabberpoint.model.action.OpenSlideshowAction;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.model.action.RelativeNavigationAction.NavigationDirection;
+import jabberpoint.model.action.SaveSlideshowAction;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
@@ -90,6 +91,7 @@ public class XMLAccessor implements Accessor {
     protected static final String SLIDESHOWACTION = "slideShowAction";
     protected static final String OPENDEMOSLIDESHOWACTION = "openDemoSlideshowAction";
     protected static final String OPENSLIDESHOWACTION = "openSlideShowAction";
+    protected static final String SAVESLIDESHOWACTION = "saveSlideShowAction";
 
     /** tekst van messages */
     protected static final String PCE = "Parser Configuration Exception";
@@ -148,6 +150,11 @@ public class XMLAccessor implements Accessor {
     	} else if (action instanceof OpenSlideshowAction){
     		OpenSlideshowAction act = (OpenSlideshowAction) action;
     		out.print(OPENSLIDESHOWACTION);
+			out.print("\" "+ARGUMENT+"=\"");
+			out.print(act.getFileName());
+    	} else if (action instanceof SaveSlideshowAction){
+    		SaveSlideshowAction act = (SaveSlideshowAction) action;
+    		out.print(SAVESLIDESHOWACTION);
 			out.print("\" "+ARGUMENT+"=\"");
 			out.print(act.getFileName());
     	}
@@ -260,7 +267,11 @@ public class XMLAccessor implements Accessor {
     			String argument = element.getAttribute(ARGUMENT);
     			Action action = ActionFactory.createOpenSlideshowAction(argument);
     			actionList.add(action);
-    		}else {
+    		} else if (name.equals(SAVESLIDESHOWACTION)){
+    			String argument = element.getAttribute(ARGUMENT);
+    			Action action = ActionFactory.createSaveSlideshowAction(argument);
+    			actionList.add(action);
+    		} else {
     			System.out.println("Parsing of unknown action.");
     		}
     		NodeList nodes = element.getChildNodes();
