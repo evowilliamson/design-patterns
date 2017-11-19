@@ -8,6 +8,7 @@ import jabberpoint.model.util.Parameters;
  * Definition of an action that opens the Demo Slideshow
  * 
  * @author Ivo Willemsen
+ * @author Randy Pottgens (copy from file open and change to save)
  */
 public class SaveSlideshowAction extends SlideshowAction {
 
