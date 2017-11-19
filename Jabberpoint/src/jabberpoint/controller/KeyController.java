@@ -25,9 +25,8 @@ public class KeyController extends KeyAdapter {
 	private SlideViewerFrame frame;
 
 	private KeyController(){
-		
 	}
-	
+
 	protected KeyController(SlideViewerFrame frame) {
 		this.frame = frame;
 
