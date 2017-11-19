@@ -1,5 +1,6 @@
 package jabberpoint.model.accessor;
 
+import jabberpoint.model.exception.ExceptionFactory;
 import jabberpoint.model.slide.Slide;
 import jabberpoint.model.slide.SlideFactory;
 import jabberpoint.model.Slideshow;
@@ -24,7 +25,7 @@ public class DemoAccessor implements Accessor {
 
     @Override
     public void save(final Parameters parameters, final Slideshow slideShow) {
-        throw new NotImplementedException("Saving a Demo slideshow is not implemented");
+        throw ExceptionFactory.createNotImplementedException("Saving a Demo slideshow is not implemented");
     }
 
     @Override
