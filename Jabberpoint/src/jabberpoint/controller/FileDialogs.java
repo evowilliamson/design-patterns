@@ -9,6 +9,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import jabberpoint.model.action.ActionFactory;
 
+/**
+ * This class has only static methods to display the file open and file save dialog boxes.
+ * @author Randy Pottgens
+ *
+ */
 public class FileDialogs {
 	public static void loadFile(Frame frame){
 		System.out.println("loadFile chosen.");

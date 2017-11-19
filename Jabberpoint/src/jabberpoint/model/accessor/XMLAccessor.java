@@ -41,6 +41,11 @@ import jabberpoint.model.slideitems.SlideItemFactory;
 import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.model.util.Parameters;
 
+/**
+ * This class handles XML presentations
+ * @author Randy Pottgens
+ *
+ */
 public class XMLAccessor implements Accessor {
 
 	/** Default API to use. */
@@ -240,7 +245,7 @@ public class XMLAccessor implements Accessor {
 
     /**
      * This private method is used to restructure the recursive structure in XML to a List, In order to do this, this method adds the items to a list in the background.
-     *      * @param element the XML parsed @Element
+     *  @param element the XML parsed @Element
      */
     private void getDecoratedActions(Element element){
     	try{

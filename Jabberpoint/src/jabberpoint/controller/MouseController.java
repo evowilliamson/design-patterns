@@ -17,7 +17,7 @@ import jabberpoint.model.slideitems.SlideItem;
 import jabberpoint.view.SlideViewerFrame;
 
 /**
- * @author rpott
+ * @author Randy Pottgens
  *
  */
 public class MouseController extends MouseInputAdapter {

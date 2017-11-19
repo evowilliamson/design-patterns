@@ -61,9 +61,6 @@ public class MenuController extends MenuBar {
 		
 	}
 	
-	
-	
-	
 	/**
 	 * Constructor that builds the menu controller
 	 * @param frame the frame that owns the composite drawing component

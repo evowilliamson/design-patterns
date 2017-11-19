@@ -5,7 +5,7 @@ import jabberpoint.model.accessor.AccessorFactory;
 import jabberpoint.model.util.Parameters;
 
 /**
- * Definition of an action that opens the Demo Slideshow
+ * Definition of an action that opens a Slideshow
  * 
  * @author Ivo Willemsen
  */
