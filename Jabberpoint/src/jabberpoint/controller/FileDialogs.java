@@ -15,6 +15,7 @@ public class FileDialogs {
 		JFileChooser fc = new JFileChooser();
 		FileFilter filter = new FileNameExtensionFilter("XML presentations", "xml");
 		fc.addChoosableFileFilter(filter);
+		fc.setAcceptAllFileFilterUsed(false);
 		int r = fc.showOpenDialog(frame);
 		if (r == JFileChooser.APPROVE_OPTION) {
 			System.out.println("Opening file...");
@@ -28,6 +29,7 @@ public class FileDialogs {
         JFileChooser fc = new JFileChooser();
         FileFilter filter = new FileNameExtensionFilter("XML presentations", "xml");
         fc.addChoosableFileFilter(filter);
+        fc.setAcceptAllFileFilterUsed(false);
 		int r = fc.showSaveDialog(frame);
 		if (r == JFileChooser.APPROVE_OPTION) {
 			System.out.println("Saving file...");
