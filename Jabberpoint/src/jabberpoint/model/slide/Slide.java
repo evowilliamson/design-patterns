@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * This class represents a Slide in a SlideShow. A Slide maintains and
- * manages a list of SlideItems
+ * manages a list of SlideItems using the Composite Design Pattern
  * @author Ivo Willemsen
  */
 public class Slide implements CompositeSlideShowComponent {
