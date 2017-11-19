@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import jabberpoint.model.exception.ExceptionFactory;
 import jabberpoint.model.slideitems.DisplayableItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -119,7 +120,7 @@ public class XMLAccessor implements Accessor {
     		} else if (pos == NavigationPosition.LAST){
     			out.print(LAST);
     		} else {
-    			throw new NotImplementedException("It is not allowed to write actions wich are not implemented.");
+    			throw ExceptionFactory.createNotImplementedException("It is not allowed to write actions wich are not implemented.");
     		}
     	} else if (action instanceof RelativeNavigationAction){
     		RelativeNavigationAction navAction = (RelativeNavigationAction) action;
@@ -129,7 +130,7 @@ public class XMLAccessor implements Accessor {
     		} else if (dir == NavigationDirection.PREVIOUS){
     			out.print(PREVIOUS);
     		} else {
-    			throw new NotImplementedException("It is not allowed to write actions wich are not implemented.");
+    			throw ExceptionFactory.createNotImplementedException("It is not allowed to write actions which are not implemented.");
     		}
     	} else if (action instanceof AuxiliaryAction){
     		AuxiliaryAction auxAction = (AuxiliaryAction) action;
@@ -141,7 +142,7 @@ public class XMLAccessor implements Accessor {
     		} else if (aux == AuxAction.EXIT){
     			out.print(EXIT);
     		} else {
-    			throw new NotImplementedException("It is not allowed to write actions wich are not implemented.");
+    			throw ExceptionFactory.createNotImplementedException("It is not allowed to write actions wich are not implemented.");
     		}
     	} else if (action instanceof OpenDemoSlideshowAction){
     		out.print(OPENDEMOSLIDESHOWACTION);
