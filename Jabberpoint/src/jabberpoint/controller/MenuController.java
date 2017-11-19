@@ -3,22 +3,20 @@ package jabberpoint.controller;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
 import javax.swing.*;
 
-import jabberpoint.model.accessor.Accessor;
-import jabberpoint.model.accessor.AccessorFactory;
 import jabberpoint.model.Slideshow;
-import jabberpoint.model.accessor.XMLAccessor;
-import jabberpoint.model.util.Parameters;
 import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.view.AboutBox;
 import jabberpoint.view.SlideViewerFrame;
 
-/** <p>De controller voor het menu</p>
+/**
+ * <p>
+ * De controller voor het menu
+ * </p>
+ * 
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -30,122 +28,116 @@ import jabberpoint.view.SlideViewerFrame;
  */
 public class MenuController extends MenuBar {
 
-	private SlideViewerFrame frame; // het frame, alleen gebruikt als ouder voor de Dialogs
-	private Slideshow slideShow; // Er worden commando's gegeven aan de presentatie
+    protected static final String ABOUT = "About";
+    protected static final String FILE = "File";
+    protected static final String EXIT = "Exit";
+    protected static final String GOTO = "Go to";
+    protected static final String HELP = "Help";
+    protected static final String NEXT = "Next";
+    protected static final String OPEN_SOURCE = "Open...";
+    protected static final String OPEN_DEMO = "Open configured demo";
+    protected static final String SLIDE_NUMBER = "Enter the slide number to navigate to";
+    protected static final String PREV = "Prev";
+    protected static final String SAVE = "Save...";
+    protected static final String VIEW = "View";
+    protected static final String TESTFILE = "test.xml";
+    protected static final String SAVEFILE = "dump.xml";
+    protected static final String IOEX = "IO Exception: ";
+    protected static final String LOADERR = "Load Error";
+    protected static final String SAVEERR = "Save Error";
+    private static final long serialVersionUID = 227L;
+    private SlideViewerFrame frame; // het frame, alleen gebruikt als ouder voor de Dialogs
 
-	private static final long serialVersionUID = 227L;
+    // blocking empty construction
+    private MenuController() {
 
-	protected static final String ABOUT = "About";
-	protected static final String FILE = "File";
-	protected static final String EXIT = "Exit";
-	protected static final String GOTO = "Go to";
-	protected static final String HELP = "Help";
-	protected static final String NEW = "New";
-	protected static final String NEXT = "Next";
-	protected static final String OPEN_SOURCE = "Open...";
-	protected static final String OPEN_DEMO = "Open configured demo";
-	protected static final String SLIDE_NUMBER = "Enter the slide number to navigate to";
-	protected static final String PREV = "Prev";
-	protected static final String SAVE = "Save";
-	protected static final String VIEW = "View";
+    }
 
-	protected static final String TESTFILE = "test.xml";
-	protected static final String SAVEFILE = "dump.xml";
+    /**
+     * Constructor that builds the menu controller
+     * 
+     * @param frame
+     *            the frame that owns the composite drawing component
+     */
+    protected MenuController(final SlideViewerFrame frame) {
+        this();
+        this.frame = frame;
+        MenuItem menuItem;
+        Menu fileMenu = new Menu(FILE);
+        fileMenu.add(menuItem = mkMenuItem(OPEN_SOURCE));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                // presentation.clear();
+                FileDialogs.loadFile(frame);
+                frame.update();
+            }
+        });
+        fileMenu.add(menuItem = mkMenuItem(OPEN_DEMO));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                ActionFactory.createOpenDemoSlideshowAction().execute();
+                frame.update();
+            }
+        });
+        fileMenu.add(menuItem = mkMenuItem(SAVE));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                FileDialogs.saveFile(frame);
+                frame.update();
+            }
+        });
+        fileMenu.addSeparator();
+        fileMenu.add(menuItem = mkMenuItem(EXIT));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        });
+        add(fileMenu);
+        Menu viewMenu = new Menu(VIEW);
+        viewMenu.add(menuItem = mkMenuItem(NEXT));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
+                frame.update();
+            }
+        });
+        viewMenu.add(menuItem = mkMenuItem(PREV));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
+                frame.update();
+            }
+        });
+        viewMenu.add(menuItem = mkMenuItem(GOTO));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                int slideNumber = Integer.parseInt(JOptionPane.showInputDialog((Object) SLIDE_NUMBER)) - 1;
+                if (Slideshow.getInstance().isCorrectSlideNumber(slideNumber)) {
+                    ActionFactory.createAbsoluteNavigationAction(slideNumber).execute();
+                }
+                frame.update();
+            }
+        });
+        add(viewMenu);
+        Menu helpMenu = new Menu(HELP);
+        helpMenu.add(menuItem = mkMenuItem(ABOUT));
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                AboutBox.show(frame);
+            }
+        });
+        setHelpMenu(helpMenu); // nodig for portability (Motif, etc.).
+    }
 
-	protected static final String IOEX = "IO Exception: ";
-	protected static final String LOADERR = "Load Error";
-	protected static final String SAVEERR = "Save Error";
-
-	// blocking empty construction
-	private MenuController(){
-		
-	}
-	
-	/**
-	 * Constructor that builds the menu controller
-	 * @param frame the frame that owns the composite drawing component
-	 */
-	protected MenuController(final SlideViewerFrame frame) {
-		this();
-		this.frame = frame;
-		slideShow = Slideshow.getInstance();
-		MenuItem menuItem;
-		Menu fileMenu = new Menu(FILE);
-		fileMenu.add(menuItem = mkMenuItem(OPEN_SOURCE));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				//presentation.clear();
-				FileDialogs.loadFile(frame);
-				frame.update();
-			}
-		} );
-		fileMenu.add(menuItem = mkMenuItem(OPEN_DEMO));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				ActionFactory.createOpenDemoSlideshowAction().execute();
-				frame.update();
-			}
-		} );
-		fileMenu.add(menuItem = mkMenuItem(NEW));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				//presentation.clear();
-				frame.update();
-			}
-		});
-		fileMenu.add(menuItem = mkMenuItem(SAVE));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				FileDialogs.saveFile(frame);
-				frame.update();
-			}
-		});
-		fileMenu.addSeparator();
-		fileMenu.add(menuItem = mkMenuItem(EXIT));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				System.exit(0);
-			}
-		});
-		add(fileMenu);
-		Menu viewMenu = new Menu(VIEW);
-		viewMenu.add(menuItem = mkMenuItem(NEXT));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.NEXT).execute();
-				frame.update();
-			}
-		});
-		viewMenu.add(menuItem = mkMenuItem(PREV));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				ActionFactory.createRelativeNavigationAction(RelativeNavigationAction.NavigationDirection.PREVIOUS).execute();
-				frame.update();
-			}
-		});
-		viewMenu.add(menuItem = mkMenuItem(GOTO));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				int slideNumber = Integer.parseInt(JOptionPane.showInputDialog((Object) SLIDE_NUMBER)) - 1;
-				if (Slideshow.getInstance().isCorrectSlideNumber(slideNumber)) {
-					ActionFactory.createAbsoluteNavigationAction(slideNumber ).execute();
-				}
-				frame.update();
-			}
-		});
-		add(viewMenu);
-		Menu helpMenu = new Menu(HELP);
-		helpMenu.add(menuItem = mkMenuItem(ABOUT));
-		menuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent actionEvent) {
-				AboutBox.show(frame);
-			}
-		});
-		setHelpMenu(helpMenu);		// nodig for portability (Motif, etc.).
-	}
-
-// een menu-item aanmaken
-	public MenuItem mkMenuItem(String name) {
-		return new MenuItem(name, new MenuShortcut(name.charAt(0)));
-	}
+    /**
+     * Create a menu item
+     * 
+     * @param name
+     *            the name of the menu item
+     * @return the MenuItem object
+     */
+    public MenuItem mkMenuItem(String name) {
+        return new MenuItem(name, new MenuShortcut(name.charAt(0)));
+    }
 }
