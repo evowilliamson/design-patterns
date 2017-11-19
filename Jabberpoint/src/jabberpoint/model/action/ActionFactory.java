@@ -59,6 +59,18 @@ public class ActionFactory {
         return new OpenSlideshowAction(fileName);
 
     }
+    /**
+     * This factory method creates a new {@link OpenSlideshowAction}
+     * 
+     * @param fileName
+     *            the file name that corresponds with a file on the file system
+     * @return the created OpenSlideshowAction
+     */
+    public static Action createSaveSlideshowAction(String fileName) {
+
+        return new SaveSlideshowAction(fileName);
+
+    }
 
     public static Action createAuxiliaryAction(AuxiliaryAction.AuxAction auxAction) {
         return new AuxiliaryAction(auxAction);
