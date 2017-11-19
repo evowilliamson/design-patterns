@@ -5,7 +5,7 @@ import java.util.List;
 import jabberpoint.model.action.Action;
 
 public class SlideItemFactory {
-	public static ActionItemDecorator createActionItemDecorator(SlideItem slideItem, List<Action> actions){
+	public static ActionItemDecorator createActionItemDecorator(DisplayableItem slideItem, List<Action> actions){
 		return new ActionItemDecorator(slideItem, actions);
 	}
 	
