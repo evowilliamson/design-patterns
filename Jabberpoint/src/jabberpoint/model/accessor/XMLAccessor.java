@@ -33,7 +33,6 @@ import jabberpoint.model.action.OpenDemoSlideshowAction;
 import jabberpoint.model.action.OpenSlideshowAction;
 import jabberpoint.model.action.RelativeNavigationAction;
 import jabberpoint.model.action.RelativeNavigationAction.NavigationDirection;
-import jabberpoint.model.exception.NotImplementedException;
 import jabberpoint.model.slideitems.ActionItemDecorator;
 import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItem;
@@ -267,7 +266,6 @@ public class XMLAccessor implements Accessor {
     		NodeList nodes = element.getChildNodes();
 			int maxNodes = nodes.getLength();
 			
-			SlideItem  slideItem = null;
 			for (int i = 0; i < maxNodes; i++){
 				Node node = nodes.item(i);
 				if(node instanceof Element){
@@ -337,7 +335,7 @@ public class XMLAccessor implements Accessor {
 		Slideshow slideshow = Slideshow.createInstance(Theme.NORMAL);
 		Theme theme = Theme.NORMAL;
         
-		int slideNumber = 0, setSlideNumber = 1, itemNumber, max = 0, maxItems = 0;
+		int slideNumber = 0, setSlideNumber = 1, itemNumber, max = 0;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
 			Document document = builder.parse(new File(filename)); // maak een JDOM document
