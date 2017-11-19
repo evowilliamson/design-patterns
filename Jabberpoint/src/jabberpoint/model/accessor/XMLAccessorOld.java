@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import java.util.Vector;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -18,9 +16,8 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import jabberpoint.model.CompositeSlideShowComponent;
-import jabberpoint.model.Slide;
-import jabberpoint.model.SlideFactory;
+import jabberpoint.model.slide.Slide;
+import jabberpoint.model.slide.SlideFactory;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
 import jabberpoint.model.slideitems.BitmapItem;

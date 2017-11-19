@@ -11,16 +11,14 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import jabberpoint.model.slideitems.DisplayableItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import jabberpoint.model.Slide;
-import jabberpoint.model.SlideFactory;
+import jabberpoint.model.slide.Slide;
+import jabberpoint.model.slide.SlideFactory;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
 import jabberpoint.model.action.AbsoluteNavigationAction;

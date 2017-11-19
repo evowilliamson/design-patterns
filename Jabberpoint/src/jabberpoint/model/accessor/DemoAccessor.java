@@ -1,17 +1,14 @@
 package jabberpoint.model.accessor;
 
-import jabberpoint.model.Slide;
-import jabberpoint.model.SlideFactory;
+import jabberpoint.model.slide.Slide;
+import jabberpoint.model.slide.SlideFactory;
 import jabberpoint.model.Slideshow;
 import jabberpoint.model.Theme;
 import jabberpoint.model.action.AbsoluteNavigationAction;
 import jabberpoint.model.action.ActionFactory;
 import jabberpoint.model.action.AuxiliaryAction;
 import jabberpoint.model.exception.NotImplementedException;
-import jabberpoint.model.slideitems.ActionItemDecorator;
-import jabberpoint.model.slideitems.BitmapItem;
 import jabberpoint.model.slideitems.SlideItemFactory;
-import jabberpoint.model.slideitems.TextItem;
 import jabberpoint.model.util.Parameters;
 
 import java.util.Arrays;
