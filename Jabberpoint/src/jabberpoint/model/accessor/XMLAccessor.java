@@ -212,7 +212,9 @@ public class XMLAccessor implements Accessor {
     		out.println("<" + SLIDESHOW + ">");
     		out.println("<" + HEAD + ">");
     		out.println("<" + TITLE +">"+slideShow.getTitle()+"</"+TITLE+">");
-    		out.println("<"+SLIDENUMBER+">"+slideShow.getCurrentSlideNumber()+1+"</"+SLIDENUMBER+">");
+    		int number = slideShow.getCurrentSlideNumber() + 1;
+    		String numberString = Integer.toString(number);
+    		out.println("<"+SLIDENUMBER+">"+numberString+"</"+SLIDENUMBER+">");
     		out.println("</"+HEAD+">");
     		out.println("<"+THEME+">"+slideShow.getTheme().name()+"</"+THEME+">");
     		for (int slideNumber=0; slideNumber < amountOfSlides; slideNumber++) {
