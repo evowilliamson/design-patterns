@@ -61,45 +61,7 @@ public class MenuController extends MenuBar {
 		
 	}
 	
-	private void loadFile(Frame frame){
-		System.out.println("loadFile chosen.");
-        JFileChooser fc = new JFileChooser();
-		int r = fc.showOpenDialog(frame);
-		if (r == JFileChooser.APPROVE_OPTION) {
-			System.out.println("Opening file...");
-            File file = fc.getSelectedFile();
-            ActionFactory.createOpenSlideshowAction(file.getAbsolutePath()).execute();
-		}
-	}
 	
-	private void saveFile(Frame frame){
-		System.out.println("saveFile chosen.");
-        JFileChooser fc = new JFileChooser();
-		int r = fc.showSaveDialog(frame);
-		if (r == JFileChooser.APPROVE_OPTION) {
-			System.out.println("saving to file...");
-            File file = fc.getSelectedFile();
-            Accessor xmlAccessor = AccessorFactory.getInstance();
-			//try {
-				Parameters param = new Parameters();
-				System.out.println(file.getAbsolutePath());
-				param.setValue(Parameters.Parameter.FILE_NAME, file.getAbsolutePath());
-				Slideshow show = Slideshow.getInstance();
-				xmlAccessor.save(param, show);
-				//show.setSlideNumber(0);
-				//throw new IOException("fdfd");
-			//} catch (IOException exc) {
-				//JOptionPane.showMessageDialog(frame, IOEX + exc,
-     			//LOADERR, JOptionPane.ERROR_MESSAGE);
-			//}
-			
-            //This is where a real application would open the file.
-            //log.append("Opening: " + file.getName() + "." + newline);
-        } else {
-            //log.append("Open command cancelled by user." + newline);
-        }
-        //log.setCaretPosition(log.getDocument().getLength());
-	}
 	
 	
 	/**
@@ -116,7 +78,7 @@ public class MenuController extends MenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				//presentation.clear();
-				loadFile(frame);
+				FileDialogs.loadFile(frame);
 				frame.update();
 			}
 		} );
@@ -137,7 +99,7 @@ public class MenuController extends MenuBar {
 		fileMenu.add(menuItem = mkMenuItem(SAVE));
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				saveFile(frame);
+				FileDialogs.saveFile(frame);
 				frame.update();
 			}
 		});
