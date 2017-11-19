@@ -14,7 +14,6 @@ public class BitmapStyleFactory extends BaseStyleFactory {
      */
     BitmapStyleFactory() {
 
-        styles = new HashMap<Integer, Style>();
         styles.put(1, new BitmapStyle(0, 20));
         styles.put(2, new BitmapStyle(20, 10));
         styles.put(3, new BitmapStyle(50, 10));

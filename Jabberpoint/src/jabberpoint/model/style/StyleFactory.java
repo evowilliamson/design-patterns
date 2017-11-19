@@ -7,7 +7,7 @@ package jabberpoint.model.style;
  * 
  * @author Ivo Willemsen
  */
-public abstract class StyleFactory {
+public class StyleFactory {
 
     private static BitmapStyleFactory bitmapStyleFactory = new BitmapStyleFactory();
     private static TextStyleFactory textStyleFactory = new TextStyleFactory();

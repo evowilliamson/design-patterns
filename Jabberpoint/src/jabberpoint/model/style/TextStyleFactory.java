@@ -15,7 +15,6 @@ public class TextStyleFactory extends BaseStyleFactory {
      */
     TextStyleFactory() {
 
-        styles = new HashMap<Integer, Style>();
         styles.put(1, new TextStyle(Color.red, 48, 0, 20));
         styles.put(2, new TextStyle(Color.blue, 40, 20, 10));
         styles.put(3, new TextStyle(Color.black, 36, 50, 10));

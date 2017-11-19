@@ -1,5 +1,6 @@
 package jabberpoint.model.style;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import jabberpoint.model.exception.ConfigurationException;
@@ -11,7 +12,7 @@ import jabberpoint.model.exception.ConfigurationException;
  */
 public abstract class BaseStyleFactory {
 
-    protected Map<Integer, Style> styles;
+    protected Map<Integer, Style> styles = new HashMap<Integer, Style>();
 
     /**
      * This method returns the style instance that is associated with the style
