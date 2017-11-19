@@ -1,7 +1,6 @@
 package jabberpoint.view.drawingdriver;
 
 import jabberpoint.controller.ControllerFactory;
-import jabberpoint.controller.MouseController;
 import jabberpoint.model.Theme;
 import jabberpoint.model.drawingdriver.DrawingDriver;
 import jabberpoint.model.slideitems.ActionItemDecorator;
@@ -23,14 +22,6 @@ public class SwingDrawingDriver implements DrawingDriver {
     private static final int TITLE_LEVEL = 1;
     private SlideViewerFrame slideViewerFrame;
     private SlideViewerComponent slideViewerComponent;
-
-    public SwingDrawingDriver() {
-    }
-
-    //TODO remove!
-    public void setMouseController(MouseController mouseController) {
-        this.setMouseController(mouseController);
-    }
 
     @Override
     public void initialize(final String title) {

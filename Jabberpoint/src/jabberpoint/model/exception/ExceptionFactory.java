@@ -2,6 +2,7 @@ package jabberpoint.model.exception;
 
 /**
  * This class encapsulates the creation of Exceptions
+ * @author Ivo Willemsen
  */
 public class ExceptionFactory {
 
